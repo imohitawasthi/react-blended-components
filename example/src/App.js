@@ -1,10 +1,10 @@
 import React from 'react'
 
-import { ExampleComponent } from 'react-blended-components'
+import { Button, Example } from 'react-blended-components'
 import 'react-blended-components/dist/index.css'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return <Button label="Testing New Button" />
 }
 
 export default App

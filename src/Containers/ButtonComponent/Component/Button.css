@@ -1,0 +1,93 @@
+/* BUTTON BASIC START */
+
+.rbc-button {
+  position: relative;
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+}
+.rbc-button:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.rbc-button:active {
+    opacity: 0.9;
+}
+.rbc-button:hover {
+    filter: brightness(97%);
+}
+
+/* BUTTON BASIC END */
+
+/* BUTTON TYPE START */
+
+.rbc-button-type-basic {
+  background: #d4d4d4;
+  color: #3c3c3c;
+}
+.rbc-button-type-default {
+  background: #f4f4f4;
+  color: #3c3c3c;
+  border: 1px solid #3c3c3c;
+}
+.rbc-button-type-primary {
+  background: #4080e7;
+  color: #ffffff;
+}
+.rbc-button-type-success {
+  background: #42ba0b;
+  color: #ffffff;
+}
+.rbc-button-type-info {
+  background: #5fb4cb;
+  color: #3c3c3c;
+}
+.rbc-button-type-warning {
+  background: #f1ec5d;
+  color: #3c3c3c;
+}
+.rbc-button-type-danger {
+  background: #f15151;
+  color: #ffffff;
+}
+.rbc-button-type-transparent {
+  background: transparent;
+  color: #3c3c3c;
+}
+
+/* BUTTON TYPE END */
+
+/* BUTTON SIZE START */
+
+.rbc-button-size-normal {
+  padding: 10px 14px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.rbc-button-size-extra-large {
+  padding: 18px 24px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.rbc-button-size-large {
+  padding: 16px 20px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.rbc-button-size-small {
+  padding: 8px 12px;
+  font-size: 10px;
+  font-weight: 500;
+}
+.rbc-button-size-extra-small {
+  padding: 8px 12px;
+  font-size: 8px;
+  font-weight: 500;
+}
+/* BUTTON SIZE END */
