@@ -1,10 +1,22 @@
 import React from 'react'
 
-import { Button, Example } from 'react-blended-components'
+import { Button, Card } from 'react-blended-components'
 import 'react-blended-components/dist/index.css'
 
 const App = () => {
-  return <Button label="Testing New Button" />
+  return (
+
+    <div style={{background: "#D3D3D3", padding: 50}}>
+      <Card 
+        rootStyles={{}}
+        childStyle={{textAlign: "center"}}
+        header="Testing the Amazing button"
+      > 
+        <Button label="Testing New Button" />
+      </Card>
+    </div>
+    
+  )
 }
 
 export default App

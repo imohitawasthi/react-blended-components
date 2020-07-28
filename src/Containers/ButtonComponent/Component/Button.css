@@ -7,20 +7,15 @@
   border: none;
   outline: none;
 }
-.rbc-button:after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
-}
 
 .rbc-button:active {
-    opacity: 0.9;
+    opacity: 0.85;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
 }
 .rbc-button:hover {
-    filter: brightness(97%);
+    filter: brightness(95%);
 }
 
 /* BUTTON BASIC END */

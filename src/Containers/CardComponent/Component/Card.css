@@ -1,0 +1,54 @@
+
+/* CARD BASIC START */
+
+.rbc-card {
+  background-color: #ffffff;
+  border-radius: 2px;
+}
+
+/* CARD BASIC END */
+
+/* CARD HEADER START */
+
+.rbc-card-head {
+  text-align: left;
+  color: #333333;
+  font-size: 16px;
+  font-weight: 600;
+
+  padding: 10px 10px;
+
+  border-bottom: 1px #E2E2E2 solid ;
+  border-radius: 2px;
+}
+
+/* CARD HEADER END */
+
+/* CARD CHILD START */
+
+.rbc-card-child {
+  text-align: left;
+  color: #333333;
+  font-size: 14px;
+  font-weight: 500;
+
+  padding: 10px 10px;
+}
+
+/* CARD CHILD END */
+
+/* CARD FOOTER START */
+
+.rbc-card-foot {
+  text-align: left;
+  color: #333333;
+  font-size: 10px;
+  font-weight: 500;
+
+  padding: 10px 10px;
+
+  border-top: 1px #E2E2E2 solid ;
+  border-radius: 2px;
+}
+
+/* CARD FOOTER END */

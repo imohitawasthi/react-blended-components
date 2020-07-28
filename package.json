@@ -2,7 +2,7 @@
   "name": "react-blended-components",
   "version": "1.0.0",
   "description": "React Blended Components",
-  "author": "imohitawasthi",
+  "author": "Mohit Awasthi",
   "license": "MIT",
   "repository": "imohitawasthi/react-blended-components",
   "main": "dist/index.js",
