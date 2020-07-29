@@ -53,10 +53,33 @@
 }
 
 /* Modal Header */
-.rbc-modal-header { }
+.rbc-modal-header {
+  padding: 10px;
+}
 
 /* Modal Body */
-.rbc-modal-body { }
+.rbc-modal-body {
+  padding: 10px;
+}
 
 /* Modal Footer */
-.rbc-modal-footer { }
+.rbc-modal-footer { 
+  padding: 10px;
+}
+
+.rbc-modal-close {
+  position: absolute;
+  color: #aaa;
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  right: 7px;
+  top: -2px;
+}
+
+.rbc-modal-close:hover,
+.rbc-modal-close:focus {
+  color: #333333;
+  text-decoration: none;
+  cursor: pointer;
+}

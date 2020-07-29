@@ -62,6 +62,9 @@ class Dialog extends React.Component {
     return (
       <Modal
         active={active}
+        onClose={()=>console.log("Made Closed")}
+        onHide={()=>console.log("Made Hidden")}
+        showClose
       >
         {this.renderHeader(this.props)}
         {/* {form ? this.renderBody(this.props) : null} */}
