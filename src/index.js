@@ -3,11 +3,10 @@ import styles from './styles.module.css'
 
 import Button from './Containers/ButtonComponent'
 import Card from './Containers/CardComponent'
-import Example from './Containers/ExampleComponent'
-
+import Dialog from './Containers/DialogComponent'
 
 export {
   Button,
   Card,
-  Example
+  Dialog,
 }
