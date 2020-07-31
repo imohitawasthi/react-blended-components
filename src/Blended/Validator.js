@@ -1,8 +1,8 @@
 'use strict'
 
-Object.defineProperty(exports, '__esModule', {
-  value: true
-})
+// Object.defineProperty(exports, '__esModule', {
+//   value: true
+// })
 
 var checkDate = function checkDate(value) {
   return value && /^(\d{4})(\/|-)(\d{1,2})(\/|-)(\d{1,2})$/.test(value)
@@ -131,7 +131,7 @@ var checkGender = function checkGender(value, array) {
     : "Invalid Gender"
 }
 
-var Validator = {
+export default {
   checkDate: checkDate,
   checkEmail: checkEmail,
   checkIndianNumber: checkIndianNumber,
@@ -152,5 +152,3 @@ var Validator = {
   checkNumeric: checkNumeric,
   checkGender: checkGender
 }
-
-exports.default = Validator
