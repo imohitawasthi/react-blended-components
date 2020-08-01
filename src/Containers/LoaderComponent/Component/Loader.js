@@ -42,14 +42,12 @@ class Loader extends React.Component {
   renderBody = ({body, bodyClass, bodyStyle}) => {
     
     return (
-      body ?
-        <ModalHead
-          className={bodyClass}
-          style={bodyStyle}
-        >
-          {TYPE_LOADERS['DOT_BOUNCE']()}
-        </ModalHead>
-        : null
+      <ModalHead
+        className={bodyClass}
+        style={bodyStyle}
+      >
+        {TYPE_LOADERS['DOT_BOUNCE']()}
+      </ModalHead>
     )
   }
 

@@ -34,37 +34,38 @@ const POSSIBLE_COLORS = [
 
 class Avatar extends React.Component {
   render() {
-    const { round, boarderRadius, name, src, size, className } = this.props
+    const { round, borderRadius, name, src, size, fontSize, className } = this.props
 
     const color =
       POSSIBLE_COLORS[Math.floor(Math.random() * POSSIBLE_COLORS.length)]
 
     const styles = {
-      boarderRadius: round
+      borderRadius: round
         ? '100%'
-        : boarderRadius
-        ? `${boarderRadius}px`
+        : borderRadius
+        ? `${borderRadius}px`
         : '0px',
       height: size,
       width: size,
+      fontSize: fontSize,
       backgroundColor: color.background,
       color: color.label
     }
 
     return src ? (
       <img
-        className={className || Styles['rbc-avatar']}
+        className={`${className} ${Styles['rbc-avatar'] || ''}`}
         alt={name}
         style={styles}
       ></img>
     ) : (
-      <span
+      <div
         className={className || Styles['rbc-avatar']}
         alt={name}
         style={styles}
       >
-        {Constants.GENERATE_INITIALS(name)}
-      </span>
+        <span className={Styles['rbc-avatar-content']}>{Constants.GENERATE_INITIALS(name)}</span>
+      </div>
     )
   }
 }
@@ -75,11 +76,13 @@ Avatar.propTypes = {
   name: propTypes.string.isRequired,
   src: propTypes.string,
   size: propTypes.number,
+  fontSize: propTypes.number,
   className: propTypes.string
 }
 
 Avatar.defaultProps = {
   size: 50,
+  fontSize: 14, 
   round: true
 }
 

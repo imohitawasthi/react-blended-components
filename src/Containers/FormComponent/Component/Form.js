@@ -7,7 +7,7 @@ import Styles from './Form.css'
 
 const VALIDATION_FAILED = 'form-has-error'
 
-function getClasses(className, baseClass) {
+function getClasses(className = {}, baseClass) {
   return {
     rootClass: className.rootClassName || Styles[`${baseClass}-root`],
     groupClass: className.groupClassName || Styles[`${baseClass}-group`],
@@ -148,22 +148,23 @@ const formInputSelectElement = (props, classes, type) => (
             : this.onChange(e.target.value, props.name, props.validation)
         }
         autoFocus={props.autoFocus}
-      />
-      {props.options.map((element) =>
-        element.meta && element.meta.length ? (
-          <optgroup className={element.className} label={element.label}>
-            {element.meta.map((element) => (
-              <option className={element.className} value={element.value}>
-                {element.label}
-              </option>
-            ))}
-          </optgroup>
-        ) : (
-          <option className={element.className} value={element.value}>
-            {element.label}
-          </option>
-        )
-      )}
+      >
+        {props.options.map((element) =>
+          element.meta && element.meta.length ? (
+            <optgroup className={element.className} label={element.label}>
+              {element.meta.map((element) => (
+                <option className={element.className} value={element.value}>
+                  {element.label}
+                </option>
+              ))}
+            </optgroup>
+          ) : (
+            <option className={element.className} value={element.value}>
+              {element.label}
+            </option>
+          )
+        )}
+      </select>
       <span className={classes.errorClass}>{props.error}</span>
     </div>
   </div>
@@ -203,7 +204,7 @@ const formInputDatePickerElement = (props, classes) => (
 )
 
 // Switch
-const formInputDatePickerElement = (props, classes) => (
+const formInputSwitchElement = (props, classes) => (
   <div
     key={props.index}
     className={`${classes.rootClass} ${props.error ? VALIDATION_FAILED : ''}`}
@@ -250,7 +251,7 @@ const Text = (props) => {
 const Password = (props) => {
   const classes = getClasses(props.className, 'rbc-form-input-password')
 
-  return formInputPasswordElement(props, classes, 'password')
+  return formInputTextElement(props, classes, 'password')
 }
 
 // Props: index, name, className, label, placeholder, validation, onChange, disabled, hidden, value, error, autocomplete, maxLength, stopResize, autoFocus
@@ -312,3 +313,5 @@ Form.propTypes = {}
 Form.defaultProps = {}
 
 export default Form
+
+export { Text, Password, TextArea, Radio, CheckBox, Select, DatePicker, Switch }

@@ -1,5 +1,13 @@
 
 .rbc-avatar {
+    /* padding: 5px; */
+    display: inline-table;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.rbc-avatar-content {
+    display: table-cell;
     text-align: center;
     vertical-align: middle;
 }
