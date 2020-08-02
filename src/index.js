@@ -8,6 +8,7 @@ import Card from './Containers/CardComponent'
 import Dialog from './Containers/DialogComponent'
 import Loader from './Containers/LoaderComponent'
 import Avatar from './Containers/AvatarComponent'
+import Pagination from './Containers/PaginationComponent'
 
 import Form, { Text, Password, TextArea, Radio, CheckBox, Select, DatePicker, Switch } from './Containers/FormComponent'
 
@@ -21,6 +22,7 @@ export {
   Dialog, 
   Loader,
   Avatar,
+  Pagination,
 
   Form,
   FormElements

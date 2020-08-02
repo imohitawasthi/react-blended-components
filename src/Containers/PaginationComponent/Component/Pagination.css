@@ -1,0 +1,49 @@
+
+.rbc-pagination {
+    display: inline-table;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.rbc-pagination-content {
+    display: flex;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.rbc-pagination-icon-back {
+    /* padding: 0px 5px; */
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.rbc-pagination-icon-back-icon {
+    height: 24px;
+    width: 24px;
+}
+
+.rbc-pagination-icon-forward {
+    /* padding: 0px 5px; */
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.rbc-pagination-icon-forward-icon {
+    height: 24px;
+    width: 24px;
+}
+
+.rbc-pagination-icon-back-disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.rbc-pagination-icon-forward-disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.rbc-pagination-icon-element {
+    padding: 0px 5px;
+}

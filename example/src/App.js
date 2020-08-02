@@ -7,7 +7,8 @@ import {
   Loader,
   Avatar,
   Form,
-  FormElements
+  FormElements,
+  Pagination
 } from 'react-blended-components'
 import 'react-blended-components/dist/index.css'
 
@@ -80,6 +81,12 @@ const App = () => {
                 </div>
               }
             ></Loader> */}
+            
+            <Pagination
+              limit={10}
+              offset={0}
+              total={100} 
+            />
           </div>
         }
       />
