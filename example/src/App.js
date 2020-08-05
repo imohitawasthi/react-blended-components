@@ -8,7 +8,8 @@ import {
   Avatar,
   Form,
   FormElements,
-  Pagination
+  Pagination,
+  Tab
 } from 'react-blended-components'
 import 'react-blended-components/dist/index.css'
 
@@ -81,6 +82,31 @@ const App = () => {
                 </div>
               }
             ></Loader> */}
+
+            <Tab 
+              className=""
+              tabs={[
+                {
+                  label: 'Testing 1',
+                  className: '',
+                  style: {borderRadius: 0},
+                  onClick: () => console.log('Testing 1') 
+                },
+                {
+                  label: 'Testing 2',
+                  className: '',
+                  style: {borderRadius: 0},
+                  onClick: () => console.log('Testing 2') 
+                },
+                {
+                  label: 'Testing 3',
+                  className: '',
+                  style: {borderRadius: 0},
+                  onClick: () => console.log('Testing 3'),
+                  disabled: true 
+                },
+              ]}
+            />
             
             <Pagination
               limit={10}

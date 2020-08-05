@@ -9,6 +9,7 @@ import Dialog from './Containers/DialogComponent'
 import Loader from './Containers/LoaderComponent'
 import Avatar from './Containers/AvatarComponent'
 import Pagination from './Containers/PaginationComponent'
+import Tab from './Containers/TabComponent'
 
 import Form, { Text, Password, TextArea, Radio, CheckBox, Select, DatePicker, Switch } from './Containers/FormComponent'
 
@@ -23,6 +24,7 @@ export {
   Loader,
   Avatar,
   Pagination,
+  Tab,
 
   Form,
   FormElements

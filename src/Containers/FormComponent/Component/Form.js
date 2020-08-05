@@ -237,6 +237,41 @@ const formInputSwitchElement = (props, classes) => (
   </div>
 )
 
+// Slider
+const formInputSliderElement = (props, classes) => (
+  <div
+    key={props.index}
+    className={`${classes.rootClass} ${props.error ? VALIDATION_FAILED : ''}`}
+    style={makeHidden(props.hidden)}
+  >
+    <div className={classes.groupClass}>
+      {props.label ? (
+        <label className={classes.labelClass}>{props.label}</label>
+      ) : null}
+      <div
+        name={props.name}
+        autoFocus={props.autoFocus}
+        disabled={props.disabled || false}
+        className={classes.fieldClass}
+      >
+        <input
+          type='range'
+          onChange={(e) =>
+            onChange
+              ? onChange(e.target.value)
+              : this.onChange(e.target.value, props.name, props.validation)
+          }
+          min={props.minValue}
+          max={props.maxValue}
+          value={props.value}
+          class='slider'
+        />
+      </div>
+      <span className={classes.errorClass}>{props.error}</span>
+    </div>
+  </div>
+)
+
 // INPUTS
 
 //
@@ -294,6 +329,13 @@ const Switch = (props) => {
   const classes = getClasses(props.className, 'rbc-form-input-switch')
 
   return formInputSwitchElement(props, classes)
+}
+
+// Props: index, name, className, label, validation, onChange, disabled, hidden, value, error, autoFocus, minValue, maxValue
+const Slider = (props) => {
+  const classes = getClasses(props.className, 'rbc-form-input-slider')
+
+  return formInputSliderElement(props, classes)
 }
 
 class Form extends React.Component {
