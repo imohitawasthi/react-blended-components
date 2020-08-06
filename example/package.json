@@ -11,9 +11,13 @@
   },
   "dependencies": {
     "react": "file:../node_modules/react",
+    "react-blended-components": "file:..",
     "react-dom": "file:../node_modules/react-dom",
+    "react-redux": "^7.2.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "file:../node_modules/react-scripts",
-    "react-blended-components": "file:.."
+    "redux": "^4.0.5",
+    "reduxsauce": "^1.2.0"
   },
   "devDependencies": {
     "@babel/plugin-syntax-object-rest-spread": "^7.8.3"
