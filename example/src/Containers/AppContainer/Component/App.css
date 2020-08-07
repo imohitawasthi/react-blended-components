@@ -1,0 +1,12 @@
+
+@font-face {
+    font-family:Roboto Condensed;
+   src: url(fonts/Roboto_Condensed/RobotoCondensed-Regular.tff);
+}
+
+.rbc-example-app-root {
+    background: #FFFFFF;
+    font-family:Roboto Condensed;
+    font-weight: normal;
+    font-style: normal;
+}

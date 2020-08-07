@@ -13,11 +13,11 @@ class Routes extends React.Component {
   render() {
     return (
       <section className='root-container'>
-          <Switch>
+          {/* <Switch> */}
             <App>
-
+              {/* <Route> */}
             </App>
-          </Switch>
+          {/* </Switch> */}
       </section>
     )
   }
