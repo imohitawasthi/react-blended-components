@@ -13,11 +13,11 @@ class App extends React.Component {
          <Navigation />
        </div>
        <div className="col-lg-10 padding-0 rbc-example-app-container-children">
-         Children
+         Children .... 
        </div>
     </div>
   )
-  
+
   render() {
     const { children } = this.props
     return (
