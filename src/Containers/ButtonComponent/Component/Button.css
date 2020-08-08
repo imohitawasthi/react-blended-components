@@ -13,9 +13,16 @@
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
     transition: all 0.2s;
+
+    outline: none;
 }
 .rbc-button:hover {
     filter: brightness(95%);
+
+    outline: none;
+}
+.rbc-button:focus {
+  outline: none;
 }
 
 /* BUTTON BASIC END */
@@ -63,7 +70,7 @@
 .rbc-button-size-normal {
   padding: 10px 14px;
   font-size: 12px;
-  font-weight: 600;
+  /* font-weight: 600; */
 }
 .rbc-button-size-extra-large {
   padding: 18px 24px;

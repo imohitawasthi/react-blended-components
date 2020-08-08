@@ -26,18 +26,18 @@ const SIZE_BUTTON_COMPONENT = {
 
 class Button extends React.Component {
   render() {
-    const { id, children, type, style, className, disable, size, onClick } = this.props
+    const { id, key, children, type, style, className, disable, size, onClick } = this.props
 
-    const buttonClass = `
+    const buttonClass = className && className.trim() ? className : `
         ${Styles['rbc-button']}
         ${Styles[TYPE_BUTTON_COMPONENT[type].className] || ''} 
         ${Styles[SIZE_BUTTON_COMPONENT[size].className] || ''} 
-        ${className}
     `
 
     return (
       <button
         id={id}
+        key={key}
         className={buttonClass}
         style={style}
         onClick={onClick}
