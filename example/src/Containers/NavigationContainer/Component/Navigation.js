@@ -14,7 +14,7 @@ class Navigation extends React.Component {
         <Tab 
           className='rbc-example-navigation-container'
           tabs={Source.META_NAVIGATION}
-          selected={{tab:0, subTab: 2}}
+          selected={{tab:0, subTab: 2}} 
         />
      </div>
    )
