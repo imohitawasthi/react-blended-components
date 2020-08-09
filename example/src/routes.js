@@ -1,9 +1,11 @@
 import React from 'react'
-import { Route, Switch, withRouter } from 'react-router-dom'
+import { Route, Switch, withRouter, Redirect } from 'react-router-dom'
 
 import Constants from './Blended/Constants'
 
 import App from './Containers/AppContainer'
+
+import OverviewIntroduction from './Containers/OverviewIntroductionContainer'
 
 class Routes extends React.Component {
   constructor(props) {
@@ -84,7 +86,12 @@ class Routes extends React.Component {
       <section className='root-container'>
         <Switch>
           <App parentIndex={parentIndex} childIndex={childIndex} history={this.props.history}>
-            <Route />
+
+            <Route path={`/`} component={OverviewIntroduction} exact/>
+            <Route path={`/${Constants.MAP_NAVIGATION.OVERVIEW.self}`} component={OverviewIntroduction} exact/>
+            <Route path={`/${Constants.MAP_NAVIGATION.OVERVIEW.self}/${Constants.MAP_NAVIGATION.OVERVIEW.sub.INTRODUCTION}`} component={OverviewIntroduction} exact/>
+
+            <Redirect to={`/${Constants.MAP_NAVIGATION.OVERVIEW.self}/${Constants.MAP_NAVIGATION.OVERVIEW.sub.INTRODUCTION}`}/>
           </App>
         </Switch>
       </section>
