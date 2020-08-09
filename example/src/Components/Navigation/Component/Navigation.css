@@ -8,9 +8,7 @@
   border-right: 1px solid rgba(206, 212, 218, 0.5);
 }
 
-.rbc-example-navigation-container {
-  margin-top: 24px;
-}
+.rbc-example-navigation-container {}
 
 .rbc-example-navigation-tab {
   font-size: 16px;

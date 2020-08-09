@@ -8,13 +8,13 @@ import './App.css'
 class App extends React.Component {
   container = (children) => (
     <div className='rbc-example-app-container'>
-      <div className='col-lg-2 padding-0 rbc-example-app-container-navigation'>
+      <div className='col-lg-3 padding-0 rbc-example-app-container-navigation'>
         <Navigation
           parentIndex={this.props.parentIndex}
           childIndex={this.props.childIndex}
         />
       </div>
-      <div className='col-lg-10 padding-0 rbc-example-app-container-children'>
+      <div className='col-lg-9 padding-0 rbc-example-app-container-children'>
         {children}
       </div>
     </div>
