@@ -1,0 +1,21 @@
+
+.rbc-overview-introduction-icon-group {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: 144px 0px;
+}
+
+.rbc-overview-introduction-icon-img {
+    height: 80px;
+    width: 80px;
+}
+
+.rbc-overview-introduction-icon-span {
+    font-size: 16px;
+    line-height: 19px;
+
+    font-weight: bold;
+    
+    margin: 24px 0px;
+}

@@ -39,6 +39,12 @@ class ChildLayout extends React.Component {
     </div>
   )
 
+  renderCustom = (element, index) => (
+    <div key={index} className={`${element.className || 'rbc-example-layout-custom'}`}>
+      {element.render}
+    </div>
+  )
+
   render() {
     const { meta } = this.props
 
@@ -48,7 +54,8 @@ class ChildLayout extends React.Component {
       CONTENT: this.renderContent(element, index),
       REMARK: this.renderRemark(element, index),
       CODE: this.renderCode(element, index),
-      EXAMPLE: this.renderExample(element, index)
+      EXAMPLE: this.renderExample(element, index),
+      CUSTOM: this.renderCustom(element, index)
     })
 
     return (

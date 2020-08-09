@@ -15,6 +15,7 @@
 
 .rbc-example-app-container {
     display: flex;
+    flex-wrap: wrap;
     padding-top: 72px;
 }
 
