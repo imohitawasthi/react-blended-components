@@ -16,7 +16,7 @@ class Tab extends React.Component {
       className={`${element.className} ${selectedTab === index ? 'tab-selected' : ''}`}
       style={{ borderRadius: 0, ...element.style }}
       disable={element.disable || false}
-      onClick={element.onClick}
+      onClick={()=>element.onClick(element)}
     >
       {element.label}
     </Button>
@@ -30,7 +30,7 @@ class Tab extends React.Component {
       className={`${subElement.className} ${selectedSubTab === subIndex && selectedTab === index ? 'sub-tab-selected' : ''}`}
       style={{ borderRadius: 0, ...subElement.style }}
       disable={subElement.disable || false}
-      onClick={subElement.onClick}
+      onClick={()=>subElement.onClick(subElement)}
     >
       {subElement.label}
     </Button>

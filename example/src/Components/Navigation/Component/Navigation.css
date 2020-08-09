@@ -26,6 +26,10 @@
   border: none;
   border-left: 0px solid #e0e0e0;
 
+  -webkit-transition: all 0.15s;
+  -moz-transition: all 0.15s;
+  transition: all 0.15s;
+
   outline: none;
 }
 
@@ -37,12 +41,12 @@
   outline: none;
 }
 .rbc-example-navigation-tab:hover {
-  border-left: 3px solid #e0e0e0;
+  border-left: 6px solid #e0e0e0;
   outline: none;
 
-  -webkit-transition: ease-in-out 0.15s;
-  -moz-transition: ease-in-out 0.15s;
-  transition: ease-in-out 0.15s;
+  -webkit-transition: all 0.15s;
+  -moz-transition: all 0.15s;
+  transition: all 0.15s;
 }
 .rbc-example-navigation-tab:focus {
   outline: none;
@@ -62,11 +66,15 @@
   text-align: left;
   padding: 16px;
   margin: 3px 0px 3px 48px;
-  background: rgba(47, 128, 237, 0.04);
+
+  background: transparent;
 
   border: none;
   border-left: 0px solid #e0e0e0;
-  background: transparent;
+
+  -webkit-transition: ease-in-out 0.15s;
+  -moz-transition: ease-in-out 0.15s;
+  transition: ease-in-out 0.15s;
 
   outline: none;
 }
@@ -89,7 +97,7 @@
 }
 
 .rbc-example-navigation-sub-tab.sub-tab-selected {
-  background: rgba(47, 128, 237, 0.04);
+  background: transparent;
   color: #2f80ed;
   border-left: 3px solid #2f80ed;
 }
