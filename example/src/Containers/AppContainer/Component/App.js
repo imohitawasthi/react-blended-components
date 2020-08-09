@@ -1,20 +1,22 @@
 import React from 'react'
 
-import Header from './../../HeaderContainer'
-import Navigation from './../../NavigationContainer'
+import Header from '../../../Components/Header'
+import Navigation from '../../../Components/Navigation'
 
 import './App.css'
 
 class App extends React.Component {
-
   container = (children) => (
-    <div className="rbc-example-app-container">
-      <div className="col-lg-2 padding-0 rbc-example-app-container-navigation">
-         <Navigation />
-       </div>
-       <div className="col-lg-10 padding-0 rbc-example-app-container-children">
-         Children...
-       </div>
+    <div className='rbc-example-app-container'>
+      <div className='col-lg-2 padding-0 rbc-example-app-container-navigation'>
+        <Navigation
+          parentIndex={this.props.parentIndex}
+          childIndex={this.props.childIndex}
+        />
+      </div>
+      <div className='col-lg-10 padding-0 rbc-example-app-container-children'>
+        {children}
+      </div>
     </div>
   )
 

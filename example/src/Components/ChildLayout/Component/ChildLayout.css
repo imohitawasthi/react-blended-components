@@ -1,0 +1,59 @@
+.rbc-example-layout-root {
+}
+
+.rbc-example-layout-heading {
+  font-size: 24px;
+  line-height: 28px;
+
+  margin: 12px 0px;
+}
+
+.rbc-example-layout-sub-heading {
+  font-size: 18px;
+  line-height: 21px;
+
+  margin: 8px 0px;
+}
+
+.rbc-example-layout-content {
+  font-size: 14px;
+  line-height: 16px;
+
+  margin: 8px 0px;
+}
+
+.rbc-example-layout-remark {
+  font-size: 14px;
+  line-height: 16px;
+
+  color: #828282;
+
+  margin: 8px 0px;
+  padding: 4px 8px;
+
+  border-radius: 2px;
+  border-left: 2px solid #e0e0e0;
+}
+
+.rbc-example-layout-code {
+  font-size: 14px;
+  line-height: 16px;
+
+  margin: 8px 0px;
+  padding: 8px;
+
+  border-radius: 2px;
+
+  background: #e0e0e0;
+}
+
+.rbc-example-layout-example {
+  font-size: 14px;
+  line-height: 16px;
+
+  margin: 8px 0px;
+  padding: 8px;
+
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+}
