@@ -20,12 +20,8 @@ class OverviewContribute extends React.Component {
     </div>
   );
 
-  renderCustomSpacing = () => (
-    <div className='rbc-example-overview-contribute-custom-margin'></div>
-  )
-
   render() {
-    return <ChildLayout meta={META(this.renderFork, this.renderRemark, this.renderCustomSpacing)} />;
+    return <ChildLayout meta={META(this.renderFork, this.renderRemark)} />;
   }
 }
 

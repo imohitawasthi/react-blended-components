@@ -43,16 +43,12 @@ class OverviewIntroduction extends React.Component {
 
   renderFootNotes = () => (
     <div>
-      <div> - React Blended Components comes under MIT licence © (imohitawasthi) Mohit Awasthi.</div>
-      <div>
-        {' '}
-        - You can ask questions or raise issues on{' '}
-        <a target='_black' href='https://github.com/imohitawasthi/react-blended-components/issues'>
-          https://github.com/imohitawasthi/react-blended-components/issues
-        </a>
-        .
-      </div>
-      <div> - Fork it on Github!</div>
+      {' '}
+      - You can ask questions or raise issues on{' '}
+      <a target="_black" href="https://github.com/imohitawasthi/react-blended-components/issues">
+        https://github.com/imohitawasthi/react-blended-components/issues
+      </a>
+      .
     </div>
   );
 

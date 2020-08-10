@@ -4,6 +4,10 @@ const META = (renderFork, renderRemark, renderCustomSpacing) => [
     render: 'How to contribute',
   },
   {
+    type: 'SPACING',
+    style: {padding: 4},
+  },
+  {
     type: 'CONTENT',
     render: renderFork(),
   },
@@ -52,8 +56,8 @@ const META = (renderFork, renderRemark, renderCustomSpacing) => [
     render: ' - Sync the updated master back to your fork',
   },
   {
-    type: 'CUSTOM',
-    render: renderCustomSpacing(),
+    type: 'SPACING',
+    style: {padding: 4},
   },
   {
     type: 'REMARK',

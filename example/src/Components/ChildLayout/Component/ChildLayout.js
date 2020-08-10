@@ -17,25 +17,25 @@ class ChildLayout extends React.Component {
 
   renderContent = (element, index) => (
     <div key={index} className='rbc-example-layout-content'>
-      {element.render}
+      {typeof element.render === 'object' && element.render.length ? element.render.map((e, i) => <div key={i}>{e}</div>) : element.render}
     </div>
   )
 
   renderRemark = (element, index) => (
     <div key={index} className='rbc-example-layout-remark'>
-      {element.render}
+      {typeof element.render === 'object' && element.render.length ? element.render.map((e, i) => <div key={i}>{e}</div>) : element.render}
     </div>
   )
 
   renderCode = (element, index) => (
     <div key={index} className='rbc-example-layout-code'>
-      {element.render}
+      {typeof element.render === 'object' && element.render.length ? element.render.map((e, i) => <div key={i}>{e}</div>) : element.render}
     </div>
   )
 
   renderExample = (element, index) => (
     <div key={index} className='rbc-example-layout-example'>
-      {element.render}
+      {typeof element.render === 'object' && element.render.length ? element.render.map((e, i) => <div key={i}>{e}</div>) : element.render}
     </div>
   )
 
@@ -43,6 +43,10 @@ class ChildLayout extends React.Component {
     <div key={index} className={`${element.className || 'rbc-example-layout-custom'}`}>
       {element.render}
     </div>
+  )
+
+  renderSpacing = (element, index) => (
+    <div key={index} style={element.style}></div>
   )
 
   render() {
@@ -55,7 +59,8 @@ class ChildLayout extends React.Component {
       REMARK: this.renderRemark(element, index),
       CODE: this.renderCode(element, index),
       EXAMPLE: this.renderExample(element, index),
-      CUSTOM: this.renderCustom(element, index)
+      CUSTOM: this.renderCustom(element, index),
+      SPACING: this.renderSpacing(element, index)
     })
 
     return (

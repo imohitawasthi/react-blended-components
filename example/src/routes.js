@@ -9,6 +9,8 @@ import OverviewIntroduction from './Containers/OverviewIntroductionContainer';
 import OverviewAuthor from './Containers/OverviewAuthorContainer';
 import OverviewContribute from './Containers/OverviewContributeContainer';
 
+import Installation from './Containers/InstallationContainer';
+
 class Routes extends React.Component {
   constructor(props) {
     super(props);
@@ -85,7 +87,6 @@ class Routes extends React.Component {
       <section className="root-container">
         <Switch>
           <App parentIndex={parentIndex} childIndex={childIndex} history={this.props.history}>
-
             {/* Overview Default */}
             <Route path={`/`} component={OverviewIntroduction} exact />
             <Route path={`/${Constants.MAP_NAVIGATION.OVERVIEW.self}`} component={OverviewIntroduction} exact />
@@ -99,7 +100,18 @@ class Routes extends React.Component {
             {/* Overview Author */}
             <Route path={`/${Constants.MAP_NAVIGATION.OVERVIEW.self}/${Constants.MAP_NAVIGATION.OVERVIEW.sub.AUTHOR}`} component={OverviewAuthor} exact />
             {/* Overview How to contribute */}
-            <Route path={`/${Constants.MAP_NAVIGATION.OVERVIEW.self}/${Constants.MAP_NAVIGATION.OVERVIEW.sub.HOW_TO_CONTRIBUTE}`} component={OverviewContribute} exact />
+            <Route
+              path={`/${Constants.MAP_NAVIGATION.OVERVIEW.self}/${Constants.MAP_NAVIGATION.OVERVIEW.sub.HOW_TO_CONTRIBUTE}`}
+              component={OverviewContribute}
+              exact
+            />
+
+            {/* Installation */}
+            <Route
+              path={`/${Constants.MAP_NAVIGATION.INSTALLATION.self}`}
+              component={Installation}
+              exact
+            />
 
             {/* Default Redirection */}
             <Redirect to={`/${Constants.MAP_NAVIGATION.OVERVIEW.self}/${Constants.MAP_NAVIGATION.OVERVIEW.sub.INTRODUCTION}`} />
