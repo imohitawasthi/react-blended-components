@@ -111,9 +111,7 @@ const formInputRadioElement = (props, classes, type) => (
             checked={element.value === props.value}
             disabled={props.disabled || false}
             onChange={(e) =>
-              onChange
-                ? onChange(e.target.value)
-                : this.onChange(e.target.value, props.name, props.validation)
+              props.onChange(element.value, props.name, props.validation)
             }
             autoFocus={props.autoFocus}
           />
