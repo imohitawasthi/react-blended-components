@@ -1,22 +1,30 @@
 {
   "files": {
-    "main.css": "./static/css/main.96655910.chunk.css",
-    "main.js": "./static/js/main.3d6d73d1.chunk.js",
-    "main.js.map": "./static/js/main.3d6d73d1.chunk.js.map",
+    "main.css": "./static/css/main.22ea015c.chunk.css",
+    "main.js": "./static/js/main.bd770a07.chunk.js",
+    "main.js.map": "./static/js/main.bd770a07.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.4e65e573.js",
     "runtime-main.js.map": "./static/js/runtime-main.4e65e573.js.map",
-    "static/js/2.92aecacf.chunk.js": "./static/js/2.92aecacf.chunk.js",
-    "static/js/2.92aecacf.chunk.js.map": "./static/js/2.92aecacf.chunk.js.map",
+    "static/css/2.afc36f9d.chunk.css": "./static/css/2.afc36f9d.chunk.css",
+    "static/js/2.4c76b3e6.chunk.js": "./static/js/2.4c76b3e6.chunk.js",
+    "static/js/2.4c76b3e6.chunk.js.map": "./static/js/2.4c76b3e6.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.3e742af0a8682e29102a7ff035c3fa9a.js": "./precache-manifest.3e742af0a8682e29102a7ff035c3fa9a.js",
+    "precache-manifest.6bcf081b27c2ff79bfe999b9fa4d2beb.js": "./precache-manifest.6bcf081b27c2ff79bfe999b9fa4d2beb.js",
     "service-worker.js": "./service-worker.js",
-    "static/css/main.96655910.chunk.css.map": "./static/css/main.96655910.chunk.css.map",
-    "static/js/2.92aecacf.chunk.js.LICENSE.txt": "./static/js/2.92aecacf.chunk.js.LICENSE.txt"
+    "static/css/2.afc36f9d.chunk.css.map": "./static/css/2.afc36f9d.chunk.css.map",
+    "static/css/main.22ea015c.chunk.css.map": "./static/css/main.22ea015c.chunk.css.map",
+    "static/js/2.4c76b3e6.chunk.js.LICENSE.txt": "./static/js/2.4c76b3e6.chunk.js.LICENSE.txt",
+    "static/media/App.css": "./static/media/Montserrat-Regular.92db9a07.otf",
+    "static/media/icon-oi-effective.svg": "./static/media/icon-oi-effective.61368384.svg",
+    "static/media/icon-oi-heart.svg": "./static/media/icon-oi-heart.ac1605f7.svg",
+    "static/media/icon-oi-ruler.svg": "./static/media/icon-oi-ruler.c4986973.svg",
+    "static/media/icon-oi-simple.svg": "./static/media/icon-oi-simple.d2e54293.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.4e65e573.js",
-    "static/js/2.92aecacf.chunk.js",
-    "static/css/main.96655910.chunk.css",
-    "static/js/main.3d6d73d1.chunk.js"
+    "static/css/2.afc36f9d.chunk.css",
+    "static/js/2.4c76b3e6.chunk.js",
+    "static/css/main.22ea015c.chunk.css",
+    "static/js/main.bd770a07.chunk.js"
   ]
 }
