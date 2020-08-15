@@ -95,15 +95,15 @@ class Routes extends React.Component {
 
             {/* Overview Introduction */}
             <Route
-              path={`/${Constants.MAP_NAVIGATION.OVERVIEW.self}-${Constants.MAP_NAVIGATION.OVERVIEW.sub.INTRODUCTION}`}
+              path={`/${Constants.MAP_NAVIGATION.OVERVIEW.self}/${Constants.MAP_NAVIGATION.OVERVIEW.sub.INTRODUCTION}`}
               component={OverviewIntroduction}
               exact
             />
             {/* Overview Author */}
-            <Route path={`/${Constants.MAP_NAVIGATION.OVERVIEW.self}-${Constants.MAP_NAVIGATION.OVERVIEW.sub.AUTHOR}`} component={OverviewAuthor} exact />
+            <Route path={`/${Constants.MAP_NAVIGATION.OVERVIEW.self}/${Constants.MAP_NAVIGATION.OVERVIEW.sub.AUTHOR}`} component={OverviewAuthor} exact />
             {/* Overview How to contribute */}
             <Route
-              path={`/${Constants.MAP_NAVIGATION.OVERVIEW.self}-${Constants.MAP_NAVIGATION.OVERVIEW.sub.HOW_TO_CONTRIBUTE}`}
+              path={`/${Constants.MAP_NAVIGATION.OVERVIEW.self}/${Constants.MAP_NAVIGATION.OVERVIEW.sub.HOW_TO_CONTRIBUTE}`}
               component={OverviewContribute}
               exact
             />
@@ -117,13 +117,13 @@ class Routes extends React.Component {
 
             {/* Documentation Button */}
             <Route
-              path={`/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}-${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.BUTTON}`}
+              path={`/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.BUTTON}`}
               component={DocumentationButton}
               exact
             />
 
             {/* Default Redirection */}
-            <Redirect to={`/${Constants.MAP_NAVIGATION.OVERVIEW.self}-${Constants.MAP_NAVIGATION.OVERVIEW.sub.INTRODUCTION}`} />
+            <Redirect to={`/${Constants.MAP_NAVIGATION.OVERVIEW.self}/${Constants.MAP_NAVIGATION.OVERVIEW.sub.INTRODUCTION}`} />
           </App>
         </Switch>
       </section>
