@@ -1,5 +1,22 @@
-
 .rbc-overview-button-demo-group {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.rbc-overview-button-custom {
+
+  font-weight: 600;
+
+  background-color: white;
+  color: #4caf50;
+  border: 2px solid #4caf50;
+  border-radius: 50%;
+
+  padding: 32px;
+
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  transition: all 0.25s;
+
+  outline: none !important;
 }

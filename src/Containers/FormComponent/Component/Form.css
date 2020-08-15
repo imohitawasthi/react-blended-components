@@ -60,6 +60,8 @@
 
     height: 20px;
     width: 20px;
+
+    cursor: pointer;
 }
 
 .rbc-form-input-radio-field input:checked {
@@ -81,3 +83,57 @@
 }
 
 /* FORM RADIO END */
+
+/* FORM CHECKBOX START */
+
+.rbc-form-input-checkbox-root {
+
+    
+}
+
+.rbc-form-input-checkbox-group {
+    
+}
+
+.rbc-form-input-checkbox-label {
+    display: block;
+    margin: 4px 8px;
+}
+
+.rbc-form-input-checkbox-field {
+    display: inline-block;
+    margin: 4px 8px;
+
+    vertical-align: middle;
+}
+
+.rbc-form-input-checkbox-field input {
+    margin: -2px 4px 0px 0px;
+
+    vertical-align: middle;
+
+    height: 20px;
+    width: 20px;
+
+    cursor: pointer;
+}
+
+.rbc-form-input-checkbox-field input:checked {
+    margin: -2px 4px 0px 0px;
+
+    vertical-align: middle;
+
+    height: 20px;
+    width: 20px;
+}
+
+.rbc-form-input-checkbox-field label {
+    font-weight: 600;
+    margin: 0px;    
+}
+
+.rbc-form-input-checkbox-error {
+    
+}
+
+/* FORM CHECKBOX END */

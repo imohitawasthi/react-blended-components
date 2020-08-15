@@ -86,9 +86,23 @@ const OPTION_SIZE_BUTTON = [
   }
 ]
 
+const OPTION_DISABLED_BUTTON = [
+  {
+    id: 'disabled',
+    label: 'DISABLE',
+    value: true,
+  },
+  {
+    id: 'custom',
+    label: 'CUSTOM',
+    value: true,
+  }
+]
+
 export {
   OPTION_TYPE_BUTTON,
-  OPTION_SIZE_BUTTON
+  OPTION_SIZE_BUTTON,
+  OPTION_DISABLED_BUTTON
 }
 
 export default META;

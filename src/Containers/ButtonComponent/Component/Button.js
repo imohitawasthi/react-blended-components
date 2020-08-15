@@ -26,7 +26,7 @@ const SIZE_BUTTON_COMPONENT = {
 
 class Button extends React.Component {
   render() {
-    const { id, key, children, type, style, className, disable, size, onClick } = this.props
+    const { id, key, children, type, style, className, disabled, size, onClick } = this.props
 
     const buttonClass = className && className.trim() ? className : `
         ${Styles['rbc-button']}
@@ -41,7 +41,7 @@ class Button extends React.Component {
         className={buttonClass}
         style={style}
         onClick={onClick}
-        disable={disable}
+        disabled={disabled}
       >
         {children}
       </button>

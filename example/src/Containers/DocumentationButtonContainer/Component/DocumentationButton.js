@@ -4,7 +4,7 @@ import ChildLayout from '../../../Components/ChildLayout';
 
 import './DocumentationButton.css';
 
-import META, { OPTION_TYPE_BUTTON, OPTION_SIZE_BUTTON } from '../source';
+import META, { OPTION_TYPE_BUTTON, OPTION_SIZE_BUTTON, OPTION_DISABLED_BUTTON } from '../source';
 
 import { Button, FormElements } from 'react-blended-components';
 
@@ -14,14 +14,19 @@ class DocumentationButton extends React.Component {
 
     this.state = {
       type: 'PRIMARY',
-      size: 'NORMAL'
+      size: 'NORMAL',
+      disabled: false,
+      custom: false,
+      customClass: 'rbc-overview-button-custom',
     };
   }
 
   renderDemo = () => (
     <div className="rbc-overview-button-demo-group">
       <div className="col-lg-12 center">
-        <Button type={this.state.type} size={this.state.size}>Demo</Button>
+        <Button className={this.state.custom ? this.state.customClass : ''} type={this.state.type} size={this.state.size} disabled={this.state.disabled}>
+          Demo
+        </Button>
       </div>
     </div>
   );
@@ -50,11 +55,28 @@ class DocumentationButton extends React.Component {
           options={OPTION_SIZE_BUTTON}
         />
       </div>
+      <div className="col-lg-12">
+        <FormElements.CheckBox
+          name="button-other"
+          label="Other"
+          onChange={(value, id) => {
+            if (id === 'disabled') {
+              this.setState((pState) => ({ disabled: !pState.disabled }));
+            } else if (id === 'custom') {
+              this.setState((pState) => ({ custom: !pState.custom }));
+            }
+          }}
+          value={{
+            disabled: this.state.disabled,
+            custom: this.state.custom,
+          }}
+          options={OPTION_DISABLED_BUTTON}
+        />
+      </div>
     </div>
   );
 
   render() {
-    console.log(this.refButton);
     return <ChildLayout meta={META(this.renderDemo, this.renderDemoOptions)} />;
   }
 }

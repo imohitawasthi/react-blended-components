@@ -6,23 +6,27 @@
   border-radius: 4px;
   border: none;
   outline: none;
+
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  transition: all 0.25s;
 }
 
 .rbc-button:active {
-    opacity: 0.85;
-    -webkit-transition: all 0.2s;
-    -moz-transition: all 0.2s;
-    transition: all 0.2s;
-
-    outline: none;
+  opacity: 0.85;
+  outline: none;
 }
 .rbc-button:hover {
-    filter: brightness(95%);
-
-    outline: none;
+  filter: brightness(95%);
+  outline: none;
 }
 .rbc-button:focus {
   outline: none;
+}
+
+.rbc-button:disabled {
+  cursor: default;
+  filter: brightness(90%) !important;
 }
 
 /* BUTTON BASIC END */
