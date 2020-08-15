@@ -10,7 +10,7 @@ import { Tab } from 'react-blended-components'
 
 class Navigation extends React.Component {
   onChangeNavigation(key) {
-    history.push(`/${key}`)
+    history.push(`${key}`)
   }
 
   render() {

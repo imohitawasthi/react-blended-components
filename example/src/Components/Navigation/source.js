@@ -9,19 +9,19 @@ const NAVIGATION_CHILDREN_OVERVIEW = (onClick, parentKey) => [
     className: CSS_CLASS_SUB_TAB,
     label: 'Introduction',
     key: Constants.MAP_NAVIGATION.OVERVIEW.sub.INTRODUCTION,
-    onClick: ({key}) => onClick(`${parentKey}/${key}`)
+    onClick: ({key}) => onClick(`${parentKey}-${key}`)
   },
   {
     className: CSS_CLASS_SUB_TAB,
     label: 'Author',
     key: Constants.MAP_NAVIGATION.OVERVIEW.sub.AUTHOR,
-    onClick: ({key}) => onClick(`${parentKey}/${key}`)
+    onClick: ({key}) => onClick(`${parentKey}-${key}`)
   },
   {
     className: CSS_CLASS_SUB_TAB,
     label: 'How to Contribute',
     key: Constants.MAP_NAVIGATION.OVERVIEW.sub.HOW_TO_CONTRIBUTE,
-    onClick: ({key}) => onClick(`${parentKey}/${key}`)
+    onClick: ({key}) => onClick(`${parentKey}-${key}`)
   }
 ]
 
@@ -30,31 +30,31 @@ const NAVIGATION_CHILDREN_DOCUMENTATION = (onClick, parentKey) => [
     className: CSS_CLASS_SUB_TAB,
     label: 'Button',
     key: Constants.MAP_NAVIGATION.DOCUMENTATION.sub.BUTTON,
-    onClick: ({key}) => onClick(`${parentKey}/${key}`)
+    onClick: ({key}) => onClick(`${parentKey}-${key}`)
   },
   {
     className: CSS_CLASS_SUB_TAB,
     label: 'Card',
     key: Constants.MAP_NAVIGATION.DOCUMENTATION.sub.CARD,
-    onClick: ({key}) => onClick(`${parentKey}/${key}`)
+    onClick: ({key}) => onClick(`${parentKey}-${key}`)
   },
   {
     className: CSS_CLASS_SUB_TAB,
     label: 'Dialog',
     key: Constants.MAP_NAVIGATION.DOCUMENTATION.sub.DIALOG,
-    onClick: ({key}) => onClick(`${parentKey}/${key}`)
+    onClick: ({key}) => onClick(`${parentKey}-${key}`)
   },
   {
     className: CSS_CLASS_SUB_TAB,
     label: 'Loader',
     key: Constants.MAP_NAVIGATION.DOCUMENTATION.sub.LOADER,
-    onClick: ({key}) => onClick(`${parentKey}/${key}`)
+    onClick: ({key}) => onClick(`${parentKey}-${key}`)
   },
   {
     className: CSS_CLASS_SUB_TAB,
     label: 'Form',
     key: Constants.MAP_NAVIGATION.DOCUMENTATION.sub.FORM,
-    onClick: ({key}) => onClick(`${parentKey}/${key}`)
+    onClick: ({key}) => onClick(`${parentKey}-${key}`)
   }
 ]
 
