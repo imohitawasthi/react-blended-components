@@ -12,6 +12,7 @@ import OverviewContribute from './Containers/OverviewContributeContainer';
 import Installation from './Containers/InstallationContainer';
 
 import DocumentationButton from './Containers/DocumentationButtonContainer';
+import DocumentationCard from './Containers/DocumentationCardContainer';
 
 class Routes extends React.Component {
   constructor(props) {
@@ -119,6 +120,12 @@ class Routes extends React.Component {
             <Route
               path={`/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.BUTTON}`}
               component={DocumentationButton}
+              exact
+            />
+            {/* Documentation Card */}
+            <Route
+              path={`/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.CARD}`}
+              component={DocumentationCard}
               exact
             />
 

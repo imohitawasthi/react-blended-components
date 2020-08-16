@@ -4,6 +4,18 @@
 .rbc-card {
   background-color: #ffffff;
   border-radius: 2px;
+
+  box-shadow: 3px 3px 6px 1px rgba(51,51,51,0.2);
+
+  margin: 0 auto;
+
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
+.rbc-card:hover {
+  box-shadow: 3px 3px 6px 1px rgba(51,51,51,0.25);
 }
 
 /* CARD BASIC END */
