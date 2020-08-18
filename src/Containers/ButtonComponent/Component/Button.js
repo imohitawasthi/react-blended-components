@@ -26,7 +26,7 @@ const SIZE_BUTTON_COMPONENT = {
 
 class Button extends React.Component {
   render() {
-    const { id, key, children, type, style, className, disabled, size, onClick } = this.props
+    const { children, type, style, className, disabled, size, onClick } = this.props
 
     const buttonClass = className && className.trim() ? className : `
         ${Styles['rbc-button']}
@@ -36,8 +36,6 @@ class Button extends React.Component {
 
     return (
       <button
-        id={id}
-        key={key}
         className={buttonClass}
         style={style}
         onClick={onClick}
@@ -50,11 +48,11 @@ class Button extends React.Component {
 }
 
 Button.propTypes = {
-  children: propTypes.oneOfType(propTypes.string, propTypes.element).isRequired,
+  children: propTypes.oneOfType([propTypes.string, propTypes.element]).isRequired,
   type: propTypes.oneOf(Object.keys(TYPE_BUTTON_COMPONENT)),
   style: propTypes.object,
   className: propTypes.string,
-  disable: propTypes.string,
+  disabled: propTypes.bool,
   size: propTypes.oneOf(Object.keys(SIZE_BUTTON_COMPONENT)),
   onClick: propTypes.func,
 }
@@ -63,7 +61,7 @@ Button.defaultProps = {
   type: Object.keys(TYPE_BUTTON_COMPONENT)[2],
   style: {},
   className: '',
-  disable: 'false',
+  disabled: false,
   size: Object.keys(SIZE_BUTTON_COMPONENT)[0],
   onClick: () => null
 }

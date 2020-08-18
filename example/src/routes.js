@@ -13,6 +13,7 @@ import Installation from './Containers/InstallationContainer';
 
 import DocumentationButton from './Containers/DocumentationButtonContainer';
 import DocumentationCard from './Containers/DocumentationCardContainer';
+import DocumentationDialog from './Containers/DocumentationDialogContainer';
 
 class Routes extends React.Component {
   constructor(props) {
@@ -31,7 +32,7 @@ class Routes extends React.Component {
 
     parentNavigation = Object.keys(Constants.MAP_NAVIGATION);
 
-    let loc = location.pathname.split(/[\\\/]/);
+    let loc = location.pathname.split(/[\\/]/);
     loc = loc.filter((element) => !!element);
 
     for (let i = 0; i < loc.length; i++) {
@@ -66,7 +67,7 @@ class Routes extends React.Component {
     });
   }
 
-  componentWillMount() {
+  componentDidMount() {
     const { location } = this.props;
 
     if (location) {
@@ -126,6 +127,12 @@ class Routes extends React.Component {
             <Route
               path={`/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.CARD}`}
               component={DocumentationCard}
+              exact
+            />
+            {/* Documentation Dialog */}
+            <Route
+              path={`/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.DIALOG}`}
+              component={DocumentationDialog}
               exact
             />
 

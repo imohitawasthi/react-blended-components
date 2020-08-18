@@ -101,8 +101,8 @@ const formInputRadioElement = (props, classes, type) => (
       {props.label ? (
         <label className={classes.labelClass}>{props.label}</label>
       ) : null}
-      {props.options.map((element) => (
-        <div className={classes.fieldClass}>
+      {props.options.map((element, index) => (
+        <div key={index} className={classes.fieldClass}>
           <input
             name={props.name}
             id={`${props.name}-${element.id}`}

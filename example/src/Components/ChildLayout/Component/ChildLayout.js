@@ -17,25 +17,25 @@ class ChildLayout extends React.Component {
 
   renderContent = (element, index) => (
     <div key={index} className='rbc-example-layout-content'>
-      {typeof element.render === 'object' && element.render.length ? element.render.map((e, i) => <div key={i}>{e}</div>) : element.render}
+      {typeof element.render === 'object' && element.render.length ? element.render.map((e, i) => <div key={`${index}-${i}`}>{e}</div>) : element.render}
     </div>
   )
 
   renderRemark = (element, index) => (
     <div key={index} className='rbc-example-layout-remark'>
-      {typeof element.render === 'object' && element.render.length ? element.render.map((e, i) => <div key={i}>{e}</div>) : element.render}
+      {typeof element.render === 'object' && element.render.length ? element.render.map((e, i) => <div key={`${index}-${i}`}>{e}</div>) : element.render}
     </div>
   )
 
   renderCode = (element, index) => (
     <div key={index} className='rbc-example-layout-code'>
-      {typeof element.render === 'object' && element.render.length ? element.render.map((e, i) => <div key={i}>{e}</div>) : element.render}
+      {typeof element.render === 'object' && element.render.length ? element.render.map((e, i) => <div key={`${index}-${i}`}>{e}</div>) : element.render}
     </div>
   )
 
   renderExample = (element, index) => (
     <div key={index} className='rbc-example-layout-example'>
-      {typeof element.render === 'object' && element.render.length ? element.render.map((e, i) => <div key={i}>{e}</div>) : element.render}
+      {typeof element.render === 'object' && element.render.length ? element.render.map((e, i) => <div key={`${index}-${i}`}>{e}</div>) : element.render}
     </div>
   )
 

@@ -1,4 +1,4 @@
-import React, { createRef } from 'react';
+import React from 'react';
 
 import ChildLayout from '../../../Components/ChildLayout';
 
@@ -86,7 +86,7 @@ class DocumentationButton extends React.Component {
   );
 
   renderDemoOptions = () => (
-    <div className="rbc-overview-button-demo-group">
+    <div className="row">
       {this.buttonType()}
       {this.buttonSize()}
       {this.buttonOptions()}
