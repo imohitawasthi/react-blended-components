@@ -55,6 +55,8 @@ class Dialog extends React.Component {
   render() {
     const { 
       active,
+      onClose,
+      onHide,
       form,
       buttons
     } = this.props
@@ -62,15 +64,17 @@ class Dialog extends React.Component {
     return (
       <Modal
         active={active}
-        onClose={()=>console.log("Made Closed")}
-        onHide={()=>console.log("Made Hidden")}
+        onClose={onClose}
+        onHide={onHide}
         showClose
       >
-        {this.renderHeader(this.props)}
-        {/* {form ? this.renderBody(this.props) : null} */}
-        {this.renderBody(this.props)}
-        {/* {buttons ? this.renderFooter(this.props) : null} */}
-        {this.renderFooter(this.props)}
+        <div>
+          {this.renderHeader(this.props)}
+          {/* {form ? this.renderBody(this.props) : null} */}
+          {this.renderBody(this.props)}
+          {/* {buttons ? this.renderFooter(this.props) : null} */}
+          {this.renderFooter(this.props)}
+        </div>
       </Modal>
     )
   }
