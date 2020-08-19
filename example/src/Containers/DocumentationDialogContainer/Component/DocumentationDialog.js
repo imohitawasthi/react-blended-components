@@ -14,43 +14,8 @@ class DocumentationDialog extends React.Component {
 
     this.state = {
       showDialog: false,
-
-      duration: 5,
-
-      // isOn: false,
-      // time: 0,
-      // start: null
     };
-
-    // this.startTimer = this.startTimer.bind(this)
-    // this.stopTimer = this.stopTimer.bind(this)
-    // this.resetTimer = this.resetTimer.bind(this)
   }
-
-  // startTimer() {
-  //   this.setState({
-  //     isOn: true,
-  //     time: this.state.time,
-  //     start: Date.now() - this.state.time,
-  //   });
-  //   this.timer = setInterval(() => {
-  //     this.setState({
-  //       time: Date.now() - this.state.start,
-  //     });
-
-  //     if (this.state.time > this.state.duration) {
-  //       this.stopTimer();
-  //     }
-  //   }, 1000);
-  // }
-  // stopTimer() {
-  //   this.setState({ isOn: false });
-  //   clearInterval(this.timer);
-  // }
-  // resetTimer() {
-  //   this.setState({ time: 0, isOn: true });
-  //   this.startTimer();
-  // }
 
   renderDemo = () => (
     <div className="center">
@@ -65,9 +30,7 @@ class DocumentationDialog extends React.Component {
       name="dialog-duration"
       label="Duration"
       onChange={(e) => {
-        this.setState({ duration: e }, () => {
-          this.startTimer();
-        });
+        this.setState({ duration: e });
       }}
       value={this.state.duration}
       options={OPTION_DIALOG_DURATION}

@@ -14,6 +14,7 @@ import Installation from './Containers/InstallationContainer';
 import DocumentationButton from './Containers/DocumentationButtonContainer';
 import DocumentationCard from './Containers/DocumentationCardContainer';
 import DocumentationDialog from './Containers/DocumentationDialogContainer';
+import DocumentationLoader from './Containers/DocumentationLoaderContainer';
 
 class Routes extends React.Component {
   constructor(props) {
@@ -133,6 +134,12 @@ class Routes extends React.Component {
             <Route
               path={`/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.DIALOG}`}
               component={DocumentationDialog}
+              exact
+            />
+            {/* Documentation Loader */}
+            <Route
+              path={`/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.LOADER}`}
+              component={DocumentationLoader}
               exact
             />
 
