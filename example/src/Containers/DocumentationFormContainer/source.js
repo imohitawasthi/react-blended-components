@@ -14,9 +14,30 @@ const META = (renderDemo, renderOptions) => [
   {
     type: 'SUB_HEADING',
     render: 'Demo',
+  },
+  {
+    type: 'EXAMPLE',
+    render: renderDemo()
   }
 ];
 
-export {}
+const META_FORM = [
+  {
+    name: 'textFieldName',
+    label: 'Name',
+    placeHolder: 'Name',
+    type: 'text'
+  },
+  {
+    name: 'textFieldPassword',
+    label: 'Password',
+    placeHolder: 'Password',
+    type: 'password'
+  }
+]
+
+export {
+  META_FORM
+}
 
 export default META;

@@ -287,7 +287,7 @@ class Form extends React.Component {
   }
 
   formElementMap(props) {
-    return {
+    return ({
       text: <Text {...props} />,
       password: <Password {...props} />,
       textarea: <TextArea {...props} />,
@@ -297,7 +297,7 @@ class Form extends React.Component {
       datepicker: <DatePicker {...props} />,
       switch: <Switch {...props} />,
       slider: <Slider {...props} />,
-    };
+    });
   }
 
   handleChange(value, name, validations) {
@@ -359,9 +359,9 @@ class Form extends React.Component {
             value: this.state[element.name],
             error: this.state[element.name],
 
-            onChange: this.handleChange,
-            onBlur: this.handleBlur,
-          })
+            onChange: (value, name, validations) => this.handleChange(value, name, validations),
+            onBlur: (value, error, name) => this.handleBlur(value, error, name),
+          })[element.type]
         )}
         {this.renderButtons(buttons)}
       </div>

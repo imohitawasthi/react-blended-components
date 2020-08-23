@@ -4,7 +4,7 @@ import ChildLayout from '../../../Components/ChildLayout';
 
 import './DocumentationForm.css';
 
-import META, { } from '../source';
+import META, { META_FORM } from '../source';
 
 import { Form } from 'react-blended-components';
 
@@ -15,8 +15,17 @@ class DocumentationForm extends React.Component {
     this.state = {};
   }
 
+  renderDemo = () => (
+    <Form 
+      name='tempForm'
+      meta={META_FORM}
+      onChange={()=>null}
+      onBlue={()=>null}
+    />
+  )
+
   render() {
-    return <ChildLayout meta={META()} />
+    return <ChildLayout meta={META(this.renderDemo)} />
   }
 }
 
