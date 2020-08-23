@@ -15,6 +15,7 @@ import DocumentationButton from './Containers/DocumentationButtonContainer';
 import DocumentationCard from './Containers/DocumentationCardContainer';
 import DocumentationDialog from './Containers/DocumentationDialogContainer';
 import DocumentationLoader from './Containers/DocumentationLoaderContainer';
+import DocumentationForm from './Containers/DocumentationFormContainer';
 
 class Routes extends React.Component {
   constructor(props) {
@@ -140,6 +141,12 @@ class Routes extends React.Component {
             <Route
               path={`/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.LOADER}`}
               component={DocumentationLoader}
+              exact
+            />
+            {/* Documentation Form */}
+            <Route
+              path={`/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.FORM}`}
+              component={DocumentationForm}
               exact
             />
 
