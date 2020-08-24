@@ -16,7 +16,7 @@ class Table extends React.Component {
           {header.map((element, index) => {
 
             return (
-              <th  style={element.thStyle} id={index}>{element.label}</th>
+              <th style={element.thStyle} id={index}>{element.label}</th>
             )
           })}
         </tr>

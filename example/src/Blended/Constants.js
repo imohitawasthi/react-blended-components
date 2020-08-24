@@ -18,7 +18,10 @@ const MAP_NAVIGATION = {
             'CARD': 'card',
             'DIALOG': 'dialog',
             'LOADER': 'loader',
-            'FORM': 'form'
+            'FORM': 'form',
+            'LIST': 'list',
+            'PAGINATION': 'pagination',
+            'AVATAR': 'avatar',
         }
     }
 }

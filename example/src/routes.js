@@ -16,6 +16,9 @@ import DocumentationCard from './Containers/DocumentationCardContainer';
 import DocumentationDialog from './Containers/DocumentationDialogContainer';
 import DocumentationLoader from './Containers/DocumentationLoaderContainer';
 import DocumentationForm from './Containers/DocumentationFormContainer';
+import DocumentationList from './Containers/DocumentationListContainer';
+import DocumentationPagination from './Containers/DocumentationPaginationContainer';
+import DocumentationAvatar from './Containers/DocumentationAvatarContainer';
 
 class Routes extends React.Component {
   constructor(props) {
@@ -113,11 +116,7 @@ class Routes extends React.Component {
             />
 
             {/* Installation */}
-            <Route
-              path={`/${Constants.MAP_NAVIGATION.INSTALLATION.self}`}
-              component={Installation}
-              exact
-            />
+            <Route path={`/${Constants.MAP_NAVIGATION.INSTALLATION.self}`} component={Installation} exact />
 
             {/* Documentation Button */}
             <Route
@@ -147,6 +146,24 @@ class Routes extends React.Component {
             <Route
               path={`/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.FORM}`}
               component={DocumentationForm}
+              exact
+            />
+            {/* Documentation List */}
+            <Route
+              path={`/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.LIST}`}
+              component={DocumentationList}
+              exact
+            />
+            {/* Documentation Pagination */}
+            <Route
+              path={`/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.PAGINATION}`}
+              component={DocumentationPagination}
+              exact
+            />
+            {/* Documentation Avatar */}
+            <Route
+              path={`/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.AVATAR}`}
+              component={DocumentationAvatar}
               exact
             />
 
