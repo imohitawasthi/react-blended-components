@@ -13,7 +13,8 @@ const TYPE_BUTTON_COMPONENT = {
   INFO: { className: 'rbc-button-type-info' },
   WARNING: { className: 'rbc-button-type-warning' },
   DANGER: { className: 'rbc-button-type-danger' },
-  TRANSPARENT: { className: 'rbc-button-type-transparent' }
+  TRANSPARENT: { className: 'rbc-button-type-transparent' },
+  DASHED: { className: 'rbc-button-type-dashed' }
 }
 
 const SIZE_BUTTON_COMPONENT = {

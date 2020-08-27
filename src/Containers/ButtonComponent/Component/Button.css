@@ -3,9 +3,9 @@
 .rbc-button {
   position: relative;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 2px;
   border: none;
-  outline: none;
+  outline: none !important;
 
   -webkit-transition: all 0.25s;
   -moz-transition: all 0.25s;
@@ -14,14 +14,11 @@
 
 .rbc-button:active {
   opacity: 0.85;
-  outline: none;
 }
 .rbc-button:hover {
   filter: brightness(95%);
-  outline: none;
 }
 .rbc-button:focus {
-  outline: none;
 }
 
 .rbc-button:disabled {
@@ -34,37 +31,50 @@
 /* BUTTON TYPE START */
 
 .rbc-button-type-basic {
-  background: #d4d4d4;
-  color: #3c3c3c;
+  background: #f2f2f2;
+  color: #333333;
 }
 .rbc-button-type-default {
-  background: #f4f4f4;
-  color: #3c3c3c;
-  border: 1px solid #3c3c3c;
+  background: #f2f2f2;
+  color: #333333;
+  border: 1px solid #4f4f4f;
 }
 .rbc-button-type-primary {
-  background: #4080e7;
+  background: #2f80ed;
   color: #ffffff;
 }
 .rbc-button-type-success {
-  background: #42ba0b;
+  background: #27ae60;
   color: #ffffff;
 }
 .rbc-button-type-info {
-  background: #5fb4cb;
-  color: #3c3c3c;
+  background: #90e4ff;
+  color: #333333;
 }
 .rbc-button-type-warning {
-  background: #f1ec5d;
-  color: #3c3c3c;
+  background: #f2c94c;
+  color: #333333;
 }
 .rbc-button-type-danger {
-  background: #f15151;
+  background: #eb5757;
   color: #ffffff;
 }
 .rbc-button-type-transparent {
   background: transparent;
-  color: #3c3c3c;
+  color: #333333;
+}
+.rbc-button-type-transparent:active {
+  opacity: 0.85;
+  background: #f2f2f2;
+}
+.rbc-button-type-dashed {
+  background: transparent;
+  color: #333333;
+  border: 2px dashed #333333;
+}
+.rbc-button-type-dashed:active {
+  opacity: 0.85;
+  background: #f2f2f2;
 }
 
 /* BUTTON TYPE END */
@@ -72,28 +82,26 @@
 /* BUTTON SIZE START */
 
 .rbc-button-size-normal {
-  padding: 10px 14px;
-  font-size: 12px;
-  /* font-weight: 600; */
+  padding: 14px 16px;
+  font-size: 16px;
+  line-height: 19px;
 }
 .rbc-button-size-extra-large {
-  padding: 18px 24px;
-  font-size: 16px;
-  font-weight: 600;
+  padding: 24px 36px;
+  font-size: 36px;
+  line-height: 28px;
 }
 .rbc-button-size-large {
-  padding: 16px 20px;
-  font-size: 16px;
-  font-weight: 600;
+  padding: 18px 24px;
+  font-size: 24px;
+  line-height: 28px;
 }
 .rbc-button-size-small {
-  padding: 8px 12px;
-  font-size: 10px;
-  font-weight: 500;
+  padding: 12px 14px;
+  font-size: 14px;
 }
 .rbc-button-size-extra-small {
-  padding: 8px 12px;
-  font-size: 8px;
-  font-weight: 500;
+  padding: 10px 12px;
+  font-size: 10px;
 }
 /* BUTTON SIZE END */

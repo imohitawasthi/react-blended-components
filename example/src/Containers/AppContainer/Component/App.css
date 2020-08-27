@@ -31,17 +31,15 @@
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 4px;
 }
 
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
-  border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: #c2c2c2;
-  border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb:hover {

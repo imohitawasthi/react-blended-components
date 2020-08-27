@@ -1,6 +1,8 @@
 .rbc-overview-button-demo-group {
   display: flex;
   flex-wrap: wrap;
+
+  height: 120px;
 }
 
 .rbc-overview-button-custom {

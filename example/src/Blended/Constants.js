@@ -4,7 +4,7 @@ const MAP_NAVIGATION = {
         self: 'overview',
         sub: {
             'INTRODUCTION': 'introduction',
-            'AUTHOR': 'author',
+            'AUTHOR': 'maintainer',
             'HOW_TO_CONTRIBUTE': 'how-to-contribute'
         }
     },

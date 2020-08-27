@@ -39,7 +39,7 @@ class Table extends React.Component {
 
 Table.propTypes = { 
   name: propTypes.string.isRequired, 
-  className: propTypes.string.isRequired, 
+  className: propTypes.string, 
   header: propTypes.array.isRequired, 
   data: propTypes.array.isRequired 
 }
