@@ -4,7 +4,7 @@ const MAP_NAVIGATION = {
         self: 'overview',
         sub: {
             'INTRODUCTION': 'introduction',
-            'AUTHOR': 'author',
+            'AUTHOR': 'maintainer',
             'HOW_TO_CONTRIBUTE': 'how-to-contribute'
         }
     },
@@ -18,7 +18,10 @@ const MAP_NAVIGATION = {
             'CARD': 'card',
             'DIALOG': 'dialog',
             'LOADER': 'loader',
-            'FORM': 'form'
+            'FORM': 'form',
+            'LIST': 'list',
+            'PAGINATION': 'pagination',
+            'AVATAR': 'avatar',
         }
     }
 }

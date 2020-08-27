@@ -16,7 +16,7 @@ class Table extends React.Component {
           {header.map((element, index) => {
 
             return (
-              <th  style={element.thStyle} id={index}>{element.label}</th>
+              <th style={element.thStyle} id={index}>{element.label}</th>
             )
           })}
         </tr>
@@ -39,7 +39,7 @@ class Table extends React.Component {
 
 Table.propTypes = { 
   name: propTypes.string.isRequired, 
-  className: propTypes.string.isRequired, 
+  className: propTypes.string, 
   header: propTypes.array.isRequired, 
   data: propTypes.array.isRequired 
 }

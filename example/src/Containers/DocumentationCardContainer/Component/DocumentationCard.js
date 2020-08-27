@@ -9,14 +9,13 @@ import META, { OPTION_CARD_WIDTH, OPTION_CARD_POSITION } from '../source';
 import { Card, FormElements } from 'react-blended-components';
 
 class DocumentationCard extends React.Component {
-
   constructor(props) {
-    super(props) 
+    super(props);
 
     this.state = {
       width: OPTION_CARD_WIDTH[OPTION_CARD_WIDTH.length - 1].value,
-      align: OPTION_CARD_POSITION[OPTION_CARD_POSITION.length - 1].value
-    }
+      align: OPTION_CARD_POSITION[OPTION_CARD_POSITION.length - 1].value,
+    };
   }
 
   renderDemo = () => (
@@ -32,7 +31,7 @@ class DocumentationCard extends React.Component {
   );
 
   cardWidth = () => (
-    <div className='col-12'>
+    <div className="col-12">
       <FormElements.Radio
         name="card-width"
         label="Width"
@@ -43,10 +42,10 @@ class DocumentationCard extends React.Component {
         options={OPTION_CARD_WIDTH}
       />
     </div>
-  )
+  );
 
   cardPosition = () => (
-    <div className='col-12'>
+    <div className="col-12">
       <FormElements.Radio
         name="card-align"
         label="Align"
@@ -57,14 +56,14 @@ class DocumentationCard extends React.Component {
         options={OPTION_CARD_POSITION}
       />
     </div>
-  )
+  );
 
   renderDemoOptions = () => (
-    <div className='row'>
+    <div className="row">
       {this.cardWidth()}
       {this.cardPosition()}
     </div>
-  )
+  );
 
   render() {
     return <ChildLayout meta={META(this.renderDemo, this.renderDemoOptions)} />;

@@ -14,6 +14,11 @@ import Installation from './Containers/InstallationContainer';
 import DocumentationButton from './Containers/DocumentationButtonContainer';
 import DocumentationCard from './Containers/DocumentationCardContainer';
 import DocumentationDialog from './Containers/DocumentationDialogContainer';
+import DocumentationLoader from './Containers/DocumentationLoaderContainer';
+import DocumentationForm from './Containers/DocumentationFormContainer';
+import DocumentationList from './Containers/DocumentationListContainer';
+import DocumentationPagination from './Containers/DocumentationPaginationContainer';
+import DocumentationAvatar from './Containers/DocumentationAvatarContainer';
 
 class Routes extends React.Component {
   constructor(props) {
@@ -87,54 +92,33 @@ class Routes extends React.Component {
   render() {
     const { parentIndex, childIndex } = this.state;
 
+    const routeMap = [
+      { path: `/`, component: OverviewIntroduction },
+      { path: `/${Constants.MAP_NAVIGATION.OVERVIEW.self}`, component: OverviewIntroduction },
+      { path: `/${Constants.MAP_NAVIGATION.OVERVIEW.self}/${Constants.MAP_NAVIGATION.OVERVIEW.sub.INTRODUCTION}`, component: OverviewIntroduction },
+      { path: `/${Constants.MAP_NAVIGATION.OVERVIEW.self}/${Constants.MAP_NAVIGATION.OVERVIEW.sub.AUTHOR}`, component: OverviewAuthor },
+      { path: `/${Constants.MAP_NAVIGATION.OVERVIEW.self}/${Constants.MAP_NAVIGATION.OVERVIEW.sub.HOW_TO_CONTRIBUTE}`, component: OverviewContribute },
+
+      { path: `/${Constants.MAP_NAVIGATION.INSTALLATION.self}`, component: Installation },
+
+      { path: `/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}`, component: DocumentationButton },
+      { path: `/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.BUTTON}`, component: DocumentationButton },
+      { path: `/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.CARD}`, component: DocumentationCard },
+      { path: `/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.DIALOG}`, component: DocumentationDialog },
+      { path: `/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.LOADER}`, component: DocumentationLoader },
+      { path: `/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.FORM}`, component: DocumentationForm },
+      { path: `/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.LIST}`, component: DocumentationList },
+      { path: `/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.PAGINATION}`, component: DocumentationPagination },
+      { path: `/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.AVATAR}`, component: DocumentationAvatar },
+    ];
+
     return (
       <section className="root-container">
         <Switch>
           <App parentIndex={parentIndex} childIndex={childIndex} history={this.props.history}>
-            {/* Overview Default */}
-            <Route path={`/`} component={OverviewIntroduction} exact />
-            <Route path={`/${Constants.MAP_NAVIGATION.OVERVIEW.self}`} component={OverviewIntroduction} exact />
-
-            {/* Overview Introduction */}
-            <Route
-              path={`/${Constants.MAP_NAVIGATION.OVERVIEW.self}/${Constants.MAP_NAVIGATION.OVERVIEW.sub.INTRODUCTION}`}
-              component={OverviewIntroduction}
-              exact
-            />
-            {/* Overview Author */}
-            <Route path={`/${Constants.MAP_NAVIGATION.OVERVIEW.self}/${Constants.MAP_NAVIGATION.OVERVIEW.sub.AUTHOR}`} component={OverviewAuthor} exact />
-            {/* Overview How to contribute */}
-            <Route
-              path={`/${Constants.MAP_NAVIGATION.OVERVIEW.self}/${Constants.MAP_NAVIGATION.OVERVIEW.sub.HOW_TO_CONTRIBUTE}`}
-              component={OverviewContribute}
-              exact
-            />
-
-            {/* Installation */}
-            <Route
-              path={`/${Constants.MAP_NAVIGATION.INSTALLATION.self}`}
-              component={Installation}
-              exact
-            />
-
-            {/* Documentation Button */}
-            <Route
-              path={`/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.BUTTON}`}
-              component={DocumentationButton}
-              exact
-            />
-            {/* Documentation Card */}
-            <Route
-              path={`/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.CARD}`}
-              component={DocumentationCard}
-              exact
-            />
-            {/* Documentation Dialog */}
-            <Route
-              path={`/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.DIALOG}`}
-              component={DocumentationDialog}
-              exact
-            />
+            {routeMap.map((element, index) => (
+              <Route key={index} path={element.path} component={element.component} exact />
+            ))}
 
             {/* Default Redirection */}
             <Redirect to={`/${Constants.MAP_NAVIGATION.OVERVIEW.self}/${Constants.MAP_NAVIGATION.OVERVIEW.sub.INTRODUCTION}`} />

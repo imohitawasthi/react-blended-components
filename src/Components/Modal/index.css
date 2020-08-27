@@ -1,6 +1,5 @@
 /* Modal Content */
 .rbc-modal {
-  display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   padding-top: 100px; /* Location of the box */
@@ -9,22 +8,37 @@
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+
+  background: rgba(51, 51, 51, 0.4); 
+
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 0.5s;
+  animation-name: fade;
+  animation-duration: 0.5s;
+}
+
+.rbc-modal-hidden {
+  display: none;
+}
+
+.rbc-modal-hidden.out .rbc-modal-active {
+  display: block;
 }
 
 .rbc-modal-content {
   position: relative;
-  background-color: #fefefe;
+  background-color: #ffffff;
   margin: auto;
   padding: 0;
-  border: 1px solid #888;
+  /* border: 1px solid #888; */
+  border-radius: 2px;
   width: 60%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+  
   -webkit-animation-name: animateTop;
-  -webkit-animation-duration: 0.4s;
+  -webkit-animation-duration: 0.5s;
   animation-name: animateTop;
-  animation-duration: 0.4s;
+  animation-duration: 0.5s;
 
   padding: 10px;
 }
@@ -52,6 +66,26 @@
   }
 }
 
+@-webkit-keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
 /* Modal Header */
 .rbc-modal-header {
   padding: 10px;
@@ -63,7 +97,7 @@
 }
 
 /* Modal Footer */
-.rbc-modal-footer { 
+.rbc-modal-footer {
   padding: 10px;
 }
 

@@ -41,11 +41,29 @@
   line-height: 16px;
 
   margin: 16px 0px;
-  padding: 8px;
+  padding: 18px;
 
   border-radius: 2px;
 
-  background: #e0e0e0;
+  background: #f2f2f2;
+}
+
+.rbc-example-layout-demo-code {
+  margin: 16px 0px;
+  padding: 32px;
+
+  border-radius: 2px;
+
+  background: #f2f2f2;
+}
+
+.rbc-example-layout-demo-code code {
+  white-space: pre-wrap;
+
+  color: #4f4f4f;
+
+  font-size: 14px;
+  line-height: 16px;
 }
 
 .rbc-example-layout-example {
@@ -64,4 +82,8 @@
   line-height: 16px;
 
   margin: 16px 0px;
+}
+
+.rbc-example-layout-props {
+  padding: 8px;
 }

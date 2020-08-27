@@ -1,3 +1,48 @@
+const CODE = `
+
+<Button
+  type={"SUCCESS"}
+  size={"NORMAL"}
+  onClick={() => console.log("Button Clicked!"))}
+>
+  Demo
+</Button>
+
+`;
+
+const PROPS = [
+  {
+    attribute: 'children',
+    type: 'String / Element',
+    default: '',
+    description: ''
+  },
+  {
+    attribute: 'type',
+    type: 'String',
+    default: 'PRIMARY',
+    description: ''
+  },
+  {
+    attribute: 'children',
+    type: 'String / Element',
+    default: '',
+    description: ''
+  },
+  {
+    attribute: 'children',
+    type: 'String / Element',
+    default: '',
+    description: ''
+  },
+  {
+    attribute: 'children',
+    type: 'String / Element',
+    default: '',
+    description: ''
+  }
+]
+
 const META = (demo, demoOptions) => [
   {
     type: 'HEADING',
@@ -9,7 +54,7 @@ const META = (demo, demoOptions) => [
   },
   {
     type: 'SPACING',
-    style: {padding: 8}
+    style: { padding: 8 },
   },
   {
     type: 'SUB_HEADING',
@@ -17,22 +62,38 @@ const META = (demo, demoOptions) => [
   },
   {
     type: 'CONTENT',
-    render: demo()
+    render: demo(),
   },
   {
     type: 'EXAMPLE',
-    render: demoOptions()
-  }
+    render: demoOptions(),
+  },
+  {
+    type: 'SUB_HEADING',
+    render: 'Code',
+  },
+  {
+    type: 'DEMO_CODE',
+    render: CODE,
+  },
+  {
+    type: 'SUB_HEADING',
+    render: 'Props',
+  },
+  {
+    type: 'PROPS',
+    render: PROPS,
+  },
 ];
 
 const OPTION_TYPE_BUTTON = [
   {
-    id: 'type-primary',
+    id: 'type-basic',
     label: 'BASIC',
     value: 'BASIC',
   },
   {
-    id: 'type-primary',
+    id: 'type-default',
     label: 'DEFAULT',
     value: 'DEFAULT',
   },
@@ -42,21 +103,36 @@ const OPTION_TYPE_BUTTON = [
     value: 'PRIMARY',
   },
   {
-    id: 'type-primary',
+    id: 'type-success',
     label: 'SUCCESS',
     value: 'SUCCESS',
   },
   {
-    id: 'type-primary',
+    id: 'type-info',
     label: 'INFO',
     value: 'INFO',
   },
   {
-    id: 'type-primary',
+    id: 'type-warning',
     label: 'WARNING',
     value: 'WARNING',
   },
-]
+  {
+    id: 'type-danger',
+    label: 'DANGER',
+    value: 'DANGER',
+  },
+  {
+    id: 'type-transparent',
+    label: 'TRANSPARENT',
+    value: 'TRANSPARENT',
+  },
+  {
+    id: 'type-dashed',
+    label: 'DASHED',
+    value: 'DASHED',
+  },
+];
 
 const OPTION_SIZE_BUTTON = [
   {
@@ -83,8 +159,8 @@ const OPTION_SIZE_BUTTON = [
     id: 'size-extra-small',
     label: 'EXTRA-SMALL',
     value: 'EXTRA-SMALL',
-  }
-]
+  },
+];
 
 const OPTION_DISABLED_BUTTON = [
   {
@@ -96,13 +172,9 @@ const OPTION_DISABLED_BUTTON = [
     id: 'custom',
     label: 'CUSTOM',
     value: true,
-  }
-]
+  },
+];
 
-export {
-  OPTION_TYPE_BUTTON,
-  OPTION_SIZE_BUTTON,
-  OPTION_DISABLED_BUTTON
-}
+export { OPTION_TYPE_BUTTON, OPTION_SIZE_BUTTON, OPTION_DISABLED_BUTTON, CODE };
 
 export default META;

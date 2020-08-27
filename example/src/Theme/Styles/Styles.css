@@ -6,3 +6,8 @@
 .center {
     text-align: center;
 }
+
+.middle {
+    vertical-align: middle;
+    margin: auto;
+}

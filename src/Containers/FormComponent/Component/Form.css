@@ -1,8 +1,6 @@
-
 /* FORM INPUT GENERIC START */
 
 .rbc-form-has-error {
-    
 }
 
 /* FORM INPUT GENERIC END */
@@ -10,23 +8,18 @@
 /* FORM INPUT TEXT START */
 
 .rbc-form-input-text-root {
-
 }
 
 .rbc-form-input-text-group {
-    
 }
 
 .rbc-form-input-text-label {
-    
 }
 
 .rbc-form-input-text-field {
-    
 }
 
 .rbc-form-input-text-error {
-    
 }
 
 /* FORM INPUT TEXT END */
@@ -34,52 +27,61 @@
 /* FORM RADIO START */
 
 .rbc-form-input-radio-root {
-
+  padding: 8px;
 }
 
 .rbc-form-input-radio-group {
-    
 }
 
 .rbc-form-input-radio-label {
-    display: block;
-    margin: 4px 8px;
+  display: block;
+  margin: 4px 8px;
+
+  font-size: 12px;
+  line-height: 14px;
 }
 
 .rbc-form-input-radio-field {
-    display: inline-block;
-    margin: 4px 8px;
+  display: inline-block;
+  margin: 4px 8px;
 
-    vertical-align: middle;
+  vertical-align: middle;
+
+  font-size: 14px;
+  line-height: 16px;
 }
 
 .rbc-form-input-radio-field input {
-    margin: -2px 4px 0px 0px;
+  margin: -3px 4px 0px 0px;
 
-    vertical-align: middle;
+  vertical-align: middle;
 
-    height: 20px;
-    width: 20px;
+  height: 20px;
+  width: 20px;
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .rbc-form-input-radio-field input:checked {
-    margin: -2px 4px 0px 0px;
+  margin: -3px 4px 0px 0px;
 
-    vertical-align: middle;
+  vertical-align: middle;
 
-    height: 20px;
-    width: 20px;
+  height: 20px;
+  width: 20px;
 }
 
 .rbc-form-input-radio-field label {
-    font-weight: 600;
-    margin: 0px;    
+  font-size: 14px;
+  line-height: 16px;
+
+  font-weight: 500;
+  margin: 0px;
+
+  cursor: pointer;
 }
 
 .rbc-form-input-radio-error {
-    
 }
 
 /* FORM RADIO END */
@@ -87,53 +89,59 @@
 /* FORM CHECKBOX START */
 
 .rbc-form-input-checkbox-root {
-
-    
+  padding: 8px;
 }
 
 .rbc-form-input-checkbox-group {
-    
 }
 
 .rbc-form-input-checkbox-label {
-    display: block;
-    margin: 4px 8px;
+  display: block;
+  margin: 4px 8px;
+
+  font-size: 12px;
+  line-height: 14px;
 }
 
 .rbc-form-input-checkbox-field {
-    display: inline-block;
-    margin: 4px 8px;
+  display: inline-block;
+  margin: 4px 8px;
 
-    vertical-align: middle;
+  vertical-align: middle;
+
+  font-size: 14px;
+  line-height: 16px;
 }
 
 .rbc-form-input-checkbox-field input {
-    margin: -2px 4px 0px 0px;
+  margin: -3px 4px 0px 0px;
 
-    vertical-align: middle;
+  vertical-align: middle;
 
-    height: 20px;
-    width: 20px;
+  height: 20px;
+  width: 20px;
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .rbc-form-input-checkbox-field input:checked {
-    margin: -2px 4px 0px 0px;
+  margin: -3px 4px 0px 0px;
 
-    vertical-align: middle;
+  vertical-align: middle;
 
-    height: 20px;
-    width: 20px;
+  height: 20px;
+  width: 20px;
 }
 
 .rbc-form-input-checkbox-field label {
-    font-weight: 600;
-    margin: 0px;    
+  font-size: 14px;
+  line-height: 16px;
+
+  font-weight: 500;
+  margin: 0px;
 }
 
 .rbc-form-input-checkbox-error {
-    
 }
 
 /* FORM CHECKBOX END */

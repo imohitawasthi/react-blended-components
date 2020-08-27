@@ -1,28 +1,47 @@
-
 @font-face {
-    font-family:Montserrat;
-    src: url('./../../../Theme/Font/Montserrat/Montserrat-Regular.otf');
+  font-family: Montserrat;
+  src: url('./../../../Theme/Font/Montserrat/Montserrat-Regular.otf');
 }
 
 .rbc-example-app-root {
-    background: #FFFFFF;
-    font-family:Montserrat;
-    font-weight: normal;
-    font-style: normal;
+  background: #ffffff;
+  font-family: Montserrat;
+  font-weight: normal;
+  font-style: normal;
 
-    color: #333333;
+  color: #333333;
 }
 
 .rbc-example-app-container {
-    display: flex;
-    flex-wrap: wrap;
-    padding-top: 72px;
+  display: flex;
+  flex-wrap: wrap;
+  /* padding-top: 72px; */
 }
 
 .rbc-example-app-container-navigation {
-    /* flex: 3; */
+  /* flex: 3; */
+
+  padding: 72px 0px 0px 0px !important;
 }
 
 .rbc-example-app-container-children {
-    /* flex: 7; */
+  /* flex: 7; */
+
+  padding: 72px 0px 0px 0px !important;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c2c2c2;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c2c0c0;
 }

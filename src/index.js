@@ -10,6 +10,7 @@ import Loader from './Containers/LoaderComponent'
 import Avatar from './Containers/AvatarComponent'
 import Pagination from './Containers/PaginationComponent'
 import Tab from './Containers/TabComponent'
+import Table from './Containers/TableComponent'
 import Toast from './Containers/ToastComponent'
 
 import Form, { Text, Password, TextArea, Radio, CheckBox, Select, DatePicker, Switch } from './Containers/FormComponent'
@@ -26,6 +27,7 @@ export {
   Avatar,
   Pagination,
   Tab,
+  Table,
     
   Form,
   FormElements
