@@ -27,11 +27,11 @@ class Table extends React.Component {
   }
 
   render() {
-    const { name, className, header, data, defaultValue } = this.props;
+    const { name, classNames, header, data, defaultValue } = this.props;
 
     return (
-      <table name={name} className={className.root ? className.root : Styles['rbc-table']}>
-        <tr className={className.head ? className.head : Styles['rbc-table-head']}>
+      <table name={name} className={classNames.root ? classNames.root : Styles['rbc-table']}>
+        <tr className={classNames.head ? classNames.head : Styles['rbc-table-head']}>
           {header.map((element, index) => {
             const styles = element.thStyle || {};
             const width = this.state.width ? (element.width / this.state.width) * 100 : null;
@@ -45,7 +45,7 @@ class Table extends React.Component {
         </tr>
         {data.map((elements, index) => {
           return (
-            <tr key={index} id={index} className={`${className.row ? className.row : Styles['rbc-table-body']} ${index % 2 === 0 ? 'rowEven' : 'rowOdd'}`}>
+            <tr key={index} id={index} className={`${classNames.row ? classNames.row : Styles['rbc-table-body']} ${index % 2 === 0 ? 'rowEven' : 'rowOdd'}`}>
               {header.map((element, i) =>
                 element.element ? (
                   <td key={i} style={element.tdStyle}>
@@ -67,14 +67,14 @@ class Table extends React.Component {
 
 Table.propTypes = {
   name: propTypes.string.isRequired,
-  className: propTypes.object,
+  classNames: propTypes.object,
   header: propTypes.array.isRequired,
   data: propTypes.array.isRequired,
   defaultValue: propTypes.string
 };
 
 Table.defaultProps = {
-  className: {}
+  classNames: {}
 };
 
 export default Table;

@@ -65,10 +65,6 @@ const META = (demo, demoOptions) => [
     render: `Describes an action and what action will occur when clicked.`,
   },
   {
-    type: 'SPACING',
-    style: { padding: 8 },
-  },
-  {
     type: 'SUB_HEADING',
     render: 'Demo',
   },
@@ -95,6 +91,10 @@ const META = (demo, demoOptions) => [
   {
     type: 'PROPS',
     render: PROPS,
+  },
+  {
+    type: 'SPACING',
+    style: { padding: 8 },
   },
 ];
 
