@@ -5,10 +5,10 @@ import { Table } from 'react-blended-components';
 import './ChildLayout.css';
 
 const PROPS_TABLE_HEADER = [
-  {label: 'Attribute', dataKey: 'attribute'},
-  {label: 'Type', dataKey: 'type'},
-  {label: 'Default', dataKey: 'default'},
-  {label: 'Description', dataKey: 'description'}
+  {label: 'Attribute', dataKey: 'attribute', colSpan: 1, width: 1},
+  {label: 'Type', dataKey: 'type', colSpan: 1, width: 1},
+  {label: 'Default', dataKey: 'default', colSpan: 1, width: 1},
+  {label: 'Description', dataKey: 'description', colSpan: 1, width: 2}
 ]
 
 class ChildLayout extends React.Component {
@@ -66,6 +66,7 @@ class ChildLayout extends React.Component {
         name="table-props" 
         header={PROPS_TABLE_HEADER}
         data={element.render && element.render.length ? element.render : []}
+        defaultValue="-"
       />
     </div>
   );

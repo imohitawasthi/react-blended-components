@@ -1,2 +1,21 @@
 
-.rbc-table {}
+.rbc-table {
+    width: 100%;
+}
+
+.rbc-table-head {
+    border-bottom: 2px solid #E0E0E0;
+}
+
+.rbc-table-head th {
+    padding: 8px;
+    overflow-wrap: anywhere;
+}
+
+.rbc-table-body {
+    border-top: 1px solid #E0E0E0;
+}
+
+.rbc-table-body td {
+    padding: 8px;
+}

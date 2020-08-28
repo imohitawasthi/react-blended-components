@@ -23,8 +23,7 @@ class DocumentationCard extends React.Component {
       <div className="col-12">
         <Card header="Lorem ipsum" footer="Lorem ipsum" width={this.state.width} align={this.state.align}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum erat ex, ac pretium elit facilisis sed. Sed ligula arcu, commodo quis lectus
-          in, mollis venenatis orci. Vivamus ac sollicitudin enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
-          Interdum et malesuada fames ac ante ipsum primis in faucibus.
+          in, mollis venenatis orci. Vivamus ac sollicitudin enim. 
         </Card>
       </div>
     </div>

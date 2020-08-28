@@ -13,33 +13,45 @@ const CODE = `
 const PROPS = [
   {
     attribute: 'children',
-    type: 'String / Element',
+    type: 'String | Element',
     default: '',
-    description: ''
+    description: 'It will get rendered as the button content. Use the Element in case of adding icons, custom loaders etc.'
   },
   {
     attribute: 'type',
     type: 'String',
     default: 'PRIMARY',
+    description: 'Use any of: BASIC | DEFAULT | PRIMARY | SUCCESS | INFO | WARNING | DANGER | TRANSPARENT | DASHED.' 
+  },
+  {
+    attribute: 'size',
+    type: 'String',
+    default: 'NORMAL',
+    description: 'Use any of: NORMAL | EXTRA-LARGE | LARGE | SMALL | EXTRA-SMALL.'
+  },
+  {
+    attribute: 'className',
+    type: 'String',
+    default: '',
+    description: 'If className is passed the default class will get removed and the style and type will get null and void.'
+  },
+  {
+    attribute: 'disabled',
+    type: 'Boolean',
+    default: 'false',
     description: ''
   },
   {
-    attribute: 'children',
-    type: 'String / Element',
-    default: '',
-    description: ''
+    attribute: 'style',
+    type: 'Object',
+    default: '{}',
+    description: 'Works with default React style Object. Ideal for making minor modifications.'
   },
   {
-    attribute: 'children',
-    type: 'String / Element',
+    attribute: 'onClick',
+    type: 'Function',
     default: '',
-    description: ''
-  },
-  {
-    attribute: 'children',
-    type: 'String / Element',
-    default: '',
-    description: ''
+    description: 'Will get fired on button press.'
   }
 ]
 
@@ -51,10 +63,6 @@ const META = (demo, demoOptions) => [
   {
     type: 'REMARK',
     render: `Describes an action and what action will occur when clicked.`,
-  },
-  {
-    type: 'SPACING',
-    style: { padding: 8 },
   },
   {
     type: 'SUB_HEADING',
@@ -83,6 +91,10 @@ const META = (demo, demoOptions) => [
   {
     type: 'PROPS',
     render: PROPS,
+  },
+  {
+    type: 'SPACING',
+    style: { padding: 8 },
   },
 ];
 

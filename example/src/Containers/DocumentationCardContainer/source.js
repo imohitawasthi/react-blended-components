@@ -1,3 +1,80 @@
+const CODE = `
+
+<Card 
+  header="Lorem ipsum" 
+  footer="Lorem ipsum" 
+  width="50%" 
+  align="CENTER"
+  classNames={
+    root: '',
+    header: 'center',
+    child: '',
+    footer: ''
+  }
+  style={
+    header: {fontWeight: "bolder"},
+    footer: {fontWeight: "bold"}
+  }
+>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum erat ex, ac pretium elit facilisis sed. Sed ligula arcu, commodo quis lectus
+  in, mollis venenatis orci. Vivamus ac sollicitudin enim. 
+</Card>
+
+`;
+
+const PROPS = [
+  {
+    attribute: 'children',
+    type: 'String | Element',
+    default: '',
+    description: 'It will get rendered as the main content.',
+  },
+  {
+    attribute: 'header',
+    type: 'String | Element',
+    default: '',
+    description: '',
+  },
+  {
+    attribute: 'footer',
+    type: 'String | Element',
+    default: '',
+    description: '',
+  },
+  {
+    attribute: 'classNames',
+    type: 'Object',
+    default: '{}',
+    description:
+      'Object may contains the following properties: rootClass(Parent Element), headClass(Card head), childClass(Child/Main content), and footClass(Card Foot). It is not necessary to add all the properties, any of them will work for their respective block. Once the property is used it will replace the default respective class.',
+  },
+  {
+    attribute: 'styles',
+    type: 'Object',
+    default: '{}',
+    description: 
+    'Object may contains the following properties: rootStyle(Parent Element), headStyle(Card head), childStyle(Child/Main content), and footStyle(Card Foot). It is not necessary to add all the properties, any of them will work for their respective block. Works with default React style Object.',
+  },
+  {
+    attribute: 'width',
+    type: 'String | Number',
+    default: '',
+    description: '',
+  },
+  {
+    attribute: 'height',
+    type: 'String | Number',
+    default: '',
+    description: '',
+  },
+  {
+    attribute: 'align',
+    type: 'String',
+    default: '',
+    description: 'use any of: LEFT | RIGHT | CENTER',
+  },
+];
+
 const META = (renderDemo, renderDemoOptions) => [
   {
     type: 'HEADING',
@@ -9,7 +86,7 @@ const META = (renderDemo, renderDemoOptions) => [
   },
   {
     type: 'SPACING',
-    style: {padding: 8}
+    style: { padding: 8 },
   },
   {
     type: 'SUB_HEADING',
@@ -17,12 +94,32 @@ const META = (renderDemo, renderDemoOptions) => [
   },
   {
     type: 'CONTENT',
-    render: renderDemo()
+    render: renderDemo(),
   },
   {
     type: 'EXAMPLE',
-    render: renderDemoOptions()
-  }
+    render: renderDemoOptions(),
+  },
+  {
+    type: 'SUB_HEADING',
+    render: 'Code',
+  },
+  {
+    type: 'DEMO_CODE',
+    render: CODE,
+  },
+  {
+    type: 'SUB_HEADING',
+    render: 'Props',
+  },
+  {
+    type: 'PROPS',
+    render: PROPS,
+  },
+  {
+    type: 'SPACING',
+    style: { padding: 8 },
+  },
 ];
 
 const OPTION_CARD_WIDTH = [
@@ -46,7 +143,7 @@ const OPTION_CARD_WIDTH = [
     label: '100%',
     value: '100%',
   },
-]
+];
 
 const OPTION_CARD_POSITION = [
   {
@@ -63,12 +160,9 @@ const OPTION_CARD_POSITION = [
     id: 'width-center',
     label: 'Center',
     value: 'CENTER',
-  }
-]
+  },
+];
 
-export {
-  OPTION_CARD_WIDTH,
-  OPTION_CARD_POSITION
-}
+export { OPTION_CARD_WIDTH, OPTION_CARD_POSITION };
 
 export default META;

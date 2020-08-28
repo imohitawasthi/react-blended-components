@@ -9,7 +9,7 @@ import Styles from './Tab.css'
 
 class Tab extends React.Component {
   tabElement = (element, index, selectedTab) => (
-    <span key={index}>
+    <div className={element.rootClass} key={index}>
       <Button
         type={element.type || 'BASIC'}
         size={element.size || 'NORMAL'}
@@ -20,11 +20,11 @@ class Tab extends React.Component {
       >
         {element.label}
       </Button>
-    </span>
+    </div>
   )
 
   subTabElement = (subElement, index, subIndex, selectedTab, selectedSubTab) => (
-    <span key={`${index}-${subIndex}`}>
+    <div className={subElement.rootClass} key={`${index}-${subIndex}`}>
       <Button
         type={subElement.type || 'BASIC'}
         size={subElement.size || 'NORMAL'}
@@ -35,7 +35,7 @@ class Tab extends React.Component {
       >
         {subElement.label}
       </Button>
-    </span>
+    </div>
   )
 
   render() {
@@ -54,12 +54,12 @@ class Tab extends React.Component {
       <div className={`${Styles['rbc-tab']} ${className || ''}`}>
         {tabs.map((element, index) =>
           element.subTabs && element.subTabs.length ? (
-            <span key={index}>
+            <div className={element.rootClass} key={index}>
               {this.tabElement(element, index, selectedTab)}
               {element.subTabs.map((subElement, subIndex) =>
                 this.subTabElement(subElement, index, subIndex, selectedTab, selectedSubTab)
               )}
-            </span>
+            </div>
           ) : (
             this.tabElement(element, index, selectedTab)
           )
