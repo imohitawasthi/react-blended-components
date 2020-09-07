@@ -9,7 +9,7 @@ const META = (renderDemo, renderOptions) => [
   },
   {
     type: 'SPACING',
-    style: {padding: 8}
+    style: {padding: 4}
   },
   {
     type: 'SUB_HEADING',

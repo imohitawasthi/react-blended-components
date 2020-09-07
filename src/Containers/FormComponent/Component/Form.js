@@ -97,8 +97,8 @@ const formInputRadioElement = (props, classes, type) => (
             checked={type === 'radio' ? element.value === props.value : element.value === props.value[element.id]}
             disabled={props.disabled || false}
             autoFocus={props.autoFocus}
-            onChange={(e) => props.onChange(e.target.value, `${element.id}-${props.name}`, props.validation)}
-            onBlur={() => props.onBlur(props.value, props.error, `${element.id}-${props.name}`)}
+            onChange={(e) => props.onChange(e.target.value, `${props.name}-${element.id}`, props.validation)}
+            onBlur={() => props.onBlur(props.value, props.error, `${props.name}-${element.id}`)}
           />
           <label htmlFor={`${props.name}-${element.id}`}>{element.label}</label>
         </div>

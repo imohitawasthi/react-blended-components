@@ -15,7 +15,7 @@ class DocumentationLoader extends React.Component {
     this.state = {
       showLoader: false,
 
-      duration: 5,
+      duration: OPTION_LOADER_DURATION[0],
 
       isOn: false,
       time: 0,
@@ -30,8 +30,8 @@ class DocumentationLoader extends React.Component {
   startTimer() {
     const meta = {
       isOn: true,
-      time: this.state.time,
-      start: Date.now() - this.state.time,
+      time: 0,
+      start: Date.now(),
       showLoader: true,
     };
     this.setState(meta);
@@ -40,7 +40,7 @@ class DocumentationLoader extends React.Component {
         time: Date.now() - meta.start,
       });
 
-      if (meta.time > this.state.duration * 1000) {
+      if (this.state.time > this.state.duration * 1000) {
         this.stopTimer();
       }
     }, 1000);
@@ -58,8 +58,8 @@ class DocumentationLoader extends React.Component {
 
   renderDemo = () => (
     <div className="center">
-      <Button size="EXTRA-LARGE" onClick={() => this.setState({ showDialog: true }, () => this.startTimer())}>
-        SHOW THE GOD DAMN DIALOG!
+      <Button size="LARGE" onClick={() => this.setState({ showDialog: true }, () => this.startTimer())}>
+        SHOW LOADER
       </Button>
     </div>
   );

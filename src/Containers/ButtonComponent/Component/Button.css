@@ -23,7 +23,7 @@
 
 .rbc-button:disabled {
   cursor: default;
-  filter: brightness(90%) !important;
+  filter: brightness(90%);
 }
 
 /* BUTTON BASIC END */
