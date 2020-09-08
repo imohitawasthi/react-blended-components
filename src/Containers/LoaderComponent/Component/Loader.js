@@ -47,13 +47,18 @@ class Loader extends React.Component {
   };
 
   render() {
-    const { active, blockUI, type, message } = this.props;
+    const { active, blockUI, message } = this.props;
 
-    return (
-      <Modal active={active} onClose={() => null} onHide={() => null} showClose>
+    return blockUI ? (
+      <Modal active={active} onClose={() => null} onHide={() => null} hideClose size="25%">
         {this.renderHeader(this.props)}
         {this.renderBody(this.props)}
       </Modal>
+    ) : (
+      <div className={Styles['rbc-loader-non-block-ui']}>
+        {this.renderHeader(this.props)}
+        {this.renderBody(this.props)}
+      </div>
     );
   }
 }
@@ -72,7 +77,8 @@ Loader.propTypes = {
 Loader.defaultProps = {
   active: false,
   blockUI: true,
-  type: TYPE_LOADERS["DOT-SPIN"]
+  type: TYPE_LOADERS['BARS'],
+  message: 'Please wait',
 };
 
 export default Loader;
