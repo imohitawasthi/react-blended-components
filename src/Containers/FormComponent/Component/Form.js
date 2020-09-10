@@ -11,11 +11,11 @@ const VALIDATION_FAILED = 'form-has-error';
 
 function getClasses(className = {}, baseClass) {
   return {
-    rootClass: className.rootClassName || Styles[`${baseClass}-root`],
-    groupClass: className.groupClassName || Styles[`${baseClass}-group`],
-    labelClass: className.labelClassName || Styles[`${baseClass}-label`],
-    fieldClass: className.fieldClassName || Styles[`${baseClass}-field`],
-    errorClass: className.errorClassName || Styles[`${baseClass}-error`],
+    rootClass: `${Styles[`${baseClass}-root`]} ${className.rootClassName}`,
+    groupClass: `${Styles[`${baseClass}-group`]} ${className.groupClassName}`,
+    labelClass: `${Styles[`${baseClass}-label`]} ${className.labelClassName}`,
+    fieldClass: `${Styles[`${baseClass}-field`]} ${className.fieldClassName}`,
+    errorClass: `${Styles[`${baseClass}-error`]} ${className.errorClassName}`,
   };
 }
 
@@ -97,8 +97,8 @@ const formInputRadioElement = (props, classes, type) => (
             checked={type === 'radio' ? element.value === props.value : element.value === props.value[element.id]}
             disabled={props.disabled || false}
             autoFocus={props.autoFocus}
-            onChange={(e) => props.onChange(e.target.value, `${element.id}-${props.name}`, props.validation)}
-            onBlur={() => props.onBlur(props.value, props.error, `${element.id}-${props.name}`)}
+            onChange={(e) => props.onChange(e.target.value, `${props.name}-${element.id}`, props.validation)}
+            onBlur={() => props.onBlur(props.value, props.error, `${props.name}-${element.id}`)}
           />
           <label htmlFor={`${props.name}-${element.id}`}>{element.label}</label>
         </div>

@@ -73,9 +73,9 @@ class DocumentationButton extends React.Component {
         name="button-other"
         label="Other"
         onChange={(value, id) => {
-          if (id === 'disabled-button-other') {
+          if (id === `button-other-${OPTION_DISABLED_BUTTON[0].id}`) {
             this.setState((pState) => ({ disabled: !pState.disabled }));
-          } else if (id === 'custom-button-other') {
+          } else if (id === `button-other-${OPTION_DISABLED_BUTTON[1].id}`) {
             this.setState((pState) => ({ custom: !pState.custom }));
           }
         }}

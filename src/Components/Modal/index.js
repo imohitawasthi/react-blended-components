@@ -33,12 +33,23 @@ class Modal extends React.Component {
   }
 
   render() {
-    const { children, active, onClose, showClose, bsSize } = this.props;
+    const { children, active, onClose, hideClose, size, background } = this.props;
+
+    const rootStyles = {
+      background: background ? 'rgba(51, 51, 51, 0.4)' : background
+    }
+    const contentStyles = {
+      width: size === 'SMALL' ? '40%' : size === 'NORMAL' ? '60%' : size === 'LARGE' ? '80%' : size === 'EXTRA-LARGE' ? '95%' : size || '60%',
+    }
 
     return (
-      <div id="rbc-modal" className={`${Styles['rbc-modal']} ${active ? Styles['rbc-modal-active'] : Styles['rbc-modal-hidden']}`}>
-        <div className={Styles['rbc-modal-content']} ref={this.refModal}>
-          {showClose ? (
+      <div 
+        id="rbc-modal" 
+        className={`${Styles['rbc-modal']} ${active ? Styles['rbc-modal-active'] : Styles['rbc-modal-hidden']}`}
+        style={rootStyles}
+      >
+        <div className={Styles['rbc-modal-content']} ref={this.refModal} style={contentStyles}>
+          {!hideClose ? (
             <span className={Styles['rbc-modal-close']} onClick={() => onClose()}>
               &times;
             </span>
@@ -79,7 +90,7 @@ Modal.propTypes = {
   active: propTypes.bool.isRequired,
   onClose: propTypes.func.isRequired,
   onHide: propTypes.func.isRequired,
-  showClose: propTypes.bool,
+  hideClose: propTypes.bool,
 };
 ModalHead.prototype = {
   className: propTypes.string,
@@ -97,7 +108,9 @@ ModalFoot.prototype = {
   children: propTypes.oneOfType([propTypes.string, propTypes.element]),
 };
 
-Modal.defaultProps = {};
+Modal.defaultProps = {
+  hideClose: false
+};
 ModalHead.defaultProps = {};
 ModalBody.defaultProps = {};
 ModalFoot.defaultProps = {};

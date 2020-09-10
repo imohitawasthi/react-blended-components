@@ -19,10 +19,10 @@ class Card extends React.Component {
     } = this.props;
 
     const classes = {
-      root: ` ${classNames.rootClass || Styles['rbc-card']} `,
-      header: ` ${classNames.headClass || Styles['rbc-card-head']} `,
-      child: ` ${classNames.childClass || Styles['rbc-card-child']} `,
-      footer: ` ${classNames.footClass || Styles['rbc-card-foot']} `,
+      root: ` ${Styles['rbc-card']} ${classNames.rootClass || ''} `,
+      header: `${Styles['rbc-card-head']}  ${classNames.headClass || ''} `,
+      child: ` ${Styles['rbc-card-child']} ${classNames.childClass || ''} `,
+      footer: ` ${Styles['rbc-card-foot']} ${classNames.footClass || ''} `,
     };
 
     const style = {

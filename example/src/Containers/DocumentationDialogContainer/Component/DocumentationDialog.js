@@ -4,7 +4,7 @@ import ChildLayout from '../../../Components/ChildLayout';
 
 import './DocumentationDialog.css';
 
-import META, { OPTION_DIALOG_DURATION } from '../source';
+import META, { OPTION_DIALOG_SIZE, OPTION_DIALOG_OTHER } from '../source';
 
 import { Button, Dialog, FormElements } from 'react-blended-components';
 
@@ -14,32 +14,57 @@ class DocumentationDialog extends React.Component {
 
     this.state = {
       showDialog: false,
+
+      hideClose: false,
+
+      size: OPTION_DIALOG_SIZE[0].value
     };
   }
 
   renderDemo = () => (
     <div className="center">
-      <Button size="EXTRA-LARGE" onClick={() => this.setState({ showDialog: true })}>
-        SHOW THE GOD DAMN DIALOG!
+      <Button size="LARGE" onClick={() => this.setState({ showDialog: true })}>
+        SHOW DIALOG
       </Button>
     </div>
   );
 
-  dialogDuration = () => (
-    <FormElements.Radio
-      name="dialog-duration"
-      label="Duration"
-      onChange={(e) => {
-        this.setState({ duration: e });
-      }}
-      value={this.state.duration}
-      options={OPTION_DIALOG_DURATION}
-    />
+  dialogWidth = () => (
+    <div className="col-12">
+      <FormElements.Radio
+        name="dialog-size"
+        label="Size"
+        onChange={(e) => {
+          this.setState({ size: e });
+        }}
+        value={this.state.size}
+        options={OPTION_DIALOG_SIZE}
+      />
+    </div>
+  );
+
+  dialogOptions = () => (
+    <div className="col-lg-12">
+      <FormElements.CheckBox
+        name="dialog-other"
+        label="Other"
+        onChange={(value, id) => {
+          if (id === `dialog-other-${OPTION_DIALOG_OTHER[0].id}`) {
+            this.setState((pState) => ({ hideClose: !pState.hideClose }));
+          }
+        }}
+        value={{
+          [OPTION_DIALOG_OTHER[0].id]: this.state.hideClose
+        }}
+        options={OPTION_DIALOG_OTHER}
+      />
+    </div>
   );
 
   renderOptions = () => (
     <div className="row">
-      <div className="col-xs-12"></div>
+      {this.dialogWidth()}
+      {this.dialogOptions()}
     </div>
   );
 
@@ -49,8 +74,8 @@ class DocumentationDialog extends React.Component {
         <ChildLayout meta={META(this.renderDemo, this.renderOptions)} />
         <Dialog
           active={this.state.showDialog}
-          onClose={()=>this.setState({showDialog: false})}
-          onHide={()=>this.setState({showDialog: false})}
+          onClose={() => this.setState({ showDialog: false })}
+          onHide={() => this.setState({ showDialog: false })}
           header="Sample Dialogs' Header"
           footer="Sample Dialogs' Footer"
           body={
@@ -64,6 +89,8 @@ class DocumentationDialog extends React.Component {
               </div>
             </div>
           }
+          size={this.state.size}
+          hideClose={this.state.hideClose}
         />
       </div>
     );

@@ -1,0 +1,12 @@
+
+.rbc-loader-body {
+}
+
+.rbc-loader-message {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.rbc-loader-non-block-ui {
+    display: inline-block;
+}

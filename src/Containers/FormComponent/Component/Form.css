@@ -8,21 +8,125 @@
 /* FORM INPUT TEXT START */
 
 .rbc-form-input-text-root {
+  padding: 8px;
 }
 
 .rbc-form-input-text-group {
 }
 
 .rbc-form-input-text-label {
+  display: block;
+  margin: 4px 8px;
+
+  font-size: 12px;
+  line-height: 14px;
 }
 
 .rbc-form-input-text-field {
+  display: inline-block;
+
+  margin: 4px 8px;
+  padding: 10px 8px;
+
+  vertical-align: middle;
+
+  font-size: 14px;
+  line-height: 16px;
+
+  width: 100%;
+
+  outline: none !important;
+
+  border: 1px solid #333333;
+  border-radius: 2px;
+}
+
+.rbc-form-input-text-field:active{
+  
+}
+
+.rbc-form-input-text-field:focus{
+
+}
+
+.rbc-form-input-text-field:hover{
+
+}
+
+.rbc-form-input-text-field::placeholder {
+  font-size: 14px;
+  line-height: 16px;
 }
 
 .rbc-form-input-text-error {
 }
 
 /* FORM INPUT TEXT END */
+
+/* FORM INPUT GENERIC START */
+
+.rbc-form-has-error {
+}
+
+/* FORM INPUT GENERIC END */
+
+/* FORM INPUT PASSWORD START */
+
+.rbc-form-input-password-root {
+  padding: 8px;
+}
+
+.rbc-form-input-password-group {
+}
+
+.rbc-form-input-password-label {
+  display: block;
+  margin: 4px 8px;
+
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.rbc-form-input-password-field {
+  display: inline-block;
+
+  margin: 4px 8px;
+  padding: 10px 8px;
+
+  vertical-align: middle;
+
+  font-size: 14px;
+  line-height: 16px;
+
+  width: 100%;
+
+  outline: none !important;
+
+  border: 1px solid #333333;
+  border-radius: 2px;
+}
+
+.rbc-form-input-password-field:active{
+  
+}
+
+.rbc-form-input-password-field:focus{
+
+}
+
+.rbc-form-input-password-field:hover{
+
+}
+
+.rbc-form-input-password-field::placeholder {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.rbc-form-input-password-error {
+}
+
+/* FORM INPUT PASSWORD END */
 
 /* FORM RADIO START */
 

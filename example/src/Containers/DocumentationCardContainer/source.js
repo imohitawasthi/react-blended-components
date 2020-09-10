@@ -86,7 +86,7 @@ const META = (renderDemo, renderDemoOptions) => [
   },
   {
     type: 'SPACING',
-    style: { padding: 8 },
+    style: {padding: 4}
   },
   {
     type: 'SUB_HEADING',

@@ -33,7 +33,7 @@ const PROPS = [
     attribute: 'className',
     type: 'String',
     default: '',
-    description: 'If className is passed the default class will get removed and the style and type will get null and void.'
+    description: 'If className is passed it will get append to current classes, Please use !important to make it work.'
   },
   {
     attribute: 'disabled',
@@ -63,6 +63,10 @@ const META = (demo, demoOptions) => [
   {
     type: 'REMARK',
     render: `Describes an action and what action will occur when clicked.`,
+  },
+  {
+    type: 'SPACING',
+    style: {padding: 4}
   },
   {
     type: 'SUB_HEADING',
@@ -101,47 +105,47 @@ const META = (demo, demoOptions) => [
 const OPTION_TYPE_BUTTON = [
   {
     id: 'type-basic',
-    label: 'BASIC',
+    label: 'Basic',
     value: 'BASIC',
   },
   {
     id: 'type-default',
-    label: 'DEFAULT',
+    label: 'Default',
     value: 'DEFAULT',
   },
   {
     id: 'type-primary',
-    label: 'PRIMARY',
+    label: 'Primary',
     value: 'PRIMARY',
   },
   {
     id: 'type-success',
-    label: 'SUCCESS',
+    label: 'Success',
     value: 'SUCCESS',
   },
   {
     id: 'type-info',
-    label: 'INFO',
+    label: 'Info',
     value: 'INFO',
   },
   {
     id: 'type-warning',
-    label: 'WARNING',
+    label: 'Warning',
     value: 'WARNING',
   },
   {
     id: 'type-danger',
-    label: 'DANGER',
+    label: 'Danger',
     value: 'DANGER',
   },
   {
     id: 'type-transparent',
-    label: 'TRANSPARENT',
+    label: 'Transparent',
     value: 'TRANSPARENT',
   },
   {
     id: 'type-dashed',
-    label: 'DASHED',
+    label: 'Dashed',
     value: 'DASHED',
   },
 ];
@@ -149,27 +153,27 @@ const OPTION_TYPE_BUTTON = [
 const OPTION_SIZE_BUTTON = [
   {
     id: 'size-normal',
-    label: 'NORMAL',
+    label: 'Normal',
     value: 'NORMAL',
   },
   {
     id: 'type-extra-large',
-    label: 'EXTRA-LARGE',
+    label: 'Extra Large',
     value: 'EXTRA-LARGE',
   },
   {
     id: 'size-large',
-    label: 'LARGE',
+    label: 'Large',
     value: 'LARGE',
   },
   {
     id: 'size-small',
-    label: 'SMALL',
+    label: 'Small',
     value: 'SMALL',
   },
   {
     id: 'size-extra-small',
-    label: 'EXTRA-SMALL',
+    label: 'Extra Small',
     value: 'EXTRA-SMALL',
   },
 ];
@@ -177,12 +181,12 @@ const OPTION_SIZE_BUTTON = [
 const OPTION_DISABLED_BUTTON = [
   {
     id: 'disabled',
-    label: 'DISABLE',
+    label: 'Disabled',
     value: true,
   },
   {
     id: 'custom',
-    label: 'CUSTOM',
+    label: 'Custom',
     value: true,
   },
 ];
