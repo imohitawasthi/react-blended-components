@@ -16,12 +16,13 @@ class DocumentationForm extends React.Component {
   }
 
   renderDemo = () => (
-    <Form 
-      name='tempForm'
-      meta={META_FORM}
-      onChange={()=>null}
-      onBlue={()=>null}
-    />
+      <Form 
+        name='tempForm'
+        meta={META_FORM}
+        onChange={()=>null}
+        onBlue={()=>null}
+        className='row'
+      />
   )
 
   render() {

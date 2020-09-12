@@ -5,18 +5,22 @@
 
 /* FORM INPUT GENERIC END */
 
+/*  */ 
+/*  */ 
+/*  */ 
+
 /* FORM INPUT TEXT START */
 
 .rbc-form-input-text-root {
-  padding: 8px;
 }
 
 .rbc-form-input-text-group {
+  padding: 8px;
 }
 
 .rbc-form-input-text-label {
   display: block;
-  margin: 4px 8px;
+  /* margin: 4px 8px; */
 
   font-size: 12px;
   line-height: 14px;
@@ -25,7 +29,7 @@
 .rbc-form-input-text-field {
   display: inline-block;
 
-  margin: 4px 8px;
+  /* margin: 4px 8px; */
   padding: 10px 8px;
 
   vertical-align: middle;
@@ -63,25 +67,18 @@
 
 /* FORM INPUT TEXT END */
 
-/* FORM INPUT GENERIC START */
-
-.rbc-form-has-error {
-}
-
-/* FORM INPUT GENERIC END */
-
 /* FORM INPUT PASSWORD START */
 
 .rbc-form-input-password-root {
-  padding: 8px;
 }
 
 .rbc-form-input-password-group {
+  padding: 8px;
 }
 
 .rbc-form-input-password-label {
   display: block;
-  margin: 4px 8px;
+  /* margin: 4px 8px; */
 
   font-size: 12px;
   line-height: 14px;
@@ -90,7 +87,7 @@
 .rbc-form-input-password-field {
   display: inline-block;
 
-  margin: 4px 8px;
+  /* margin: 4px 8px; */
   padding: 10px 8px;
 
   vertical-align: middle;
@@ -128,18 +125,76 @@
 
 /* FORM INPUT PASSWORD END */
 
-/* FORM RADIO START */
+/* FORM INPUT TEXTAREA START */
 
-.rbc-form-input-radio-root {
+.rbc-form-input-textarea-root {
+}
+
+.rbc-form-input-textarea-group {
   padding: 8px;
 }
 
+.rbc-form-input-textarea-label {
+  display: block;
+  /* margin: 4px 8px; */
+
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.rbc-form-input-textarea-field {
+  display: inline-block;
+
+  /* margin: 4px 8px; */
+  padding: 10px 8px;
+
+  vertical-align: middle;
+
+  font-size: 14px;
+  line-height: 16px;
+
+  width: 100%;
+
+  outline: none !important;
+
+  border: 1px solid #333333;
+  border-radius: 2px;
+}
+
+.rbc-form-input-textarea-field:active{
+  
+}
+
+.rbc-form-input-textarea-field:focus{
+
+}
+
+.rbc-form-input-textarea-field:hover{
+
+}
+
+.rbc-form-input-textarea-field::placeholder {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.rbc-form-input-textarea-error {
+}
+
+/* FORM INPUT TEXTAREA END */
+
+/* FORM RADIO START */
+
+.rbc-form-input-radio-root {
+}
+
 .rbc-form-input-radio-group {
+  padding: 8px;
 }
 
 .rbc-form-input-radio-label {
   display: block;
-  margin: 4px 8px;
+  margin: 4px 0px;
 
   font-size: 12px;
   line-height: 14px;
@@ -147,7 +202,7 @@
 
 .rbc-form-input-radio-field {
   display: inline-block;
-  margin: 4px 8px;
+  margin: 4px 16px 4px 0px;
 
   vertical-align: middle;
 
@@ -193,15 +248,15 @@
 /* FORM CHECKBOX START */
 
 .rbc-form-input-checkbox-root {
-  padding: 8px;
 }
 
 .rbc-form-input-checkbox-group {
+  padding: 8px;
 }
 
 .rbc-form-input-checkbox-label {
   display: block;
-  margin: 4px 8px;
+  margin: 4px 0px;
 
   font-size: 12px;
   line-height: 14px;
@@ -209,7 +264,7 @@
 
 .rbc-form-input-checkbox-field {
   display: inline-block;
-  margin: 4px 8px;
+  margin: 4px 16px 4px 0px;
 
   vertical-align: middle;
 
@@ -249,3 +304,119 @@
 }
 
 /* FORM CHECKBOX END */
+
+/* FORM INPUT SELECT START */
+
+.rbc-form-input-select-root {
+}
+
+.rbc-form-input-select-group {
+  padding: 8px;
+}
+
+.rbc-form-input-select-label {
+  display: block;
+  /* margin: 4px 8px; */
+
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.rbc-form-input-select-field {
+  display: inline-block;
+
+  /* margin: 4px 8px; */
+  padding: 10px 8px;
+
+  vertical-align: middle;
+
+  font-size: 14px;
+  line-height: 16px;
+
+  width: 100%;
+
+  outline: none !important;
+
+  border: 1px solid #333333;
+  border-radius: 2px;
+}
+
+.rbc-form-input-select-field:active{
+  
+}
+
+.rbc-form-input-select-field:focus{
+
+}
+
+.rbc-form-input-select-field:hover{
+
+}
+
+.rbc-form-input-select-field::placeholder {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.rbc-form-input-select-error {
+}
+
+/* FORM INPUT SELECT END */
+
+/* FORM INPUT DATE PICKER START */
+
+.rbc-form-input-date-picker-root {
+}
+
+.rbc-form-input-date-picker-group {
+  padding: 8px;
+}
+
+.rbc-form-input-date-picker-label {
+  display: block;
+  /* margin: 4px 8px; */
+
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.rbc-form-input-date-picker-field {
+  display: inline-block;
+
+  /* margin: 4px 8px; */
+  padding: 10px 8px;
+
+  vertical-align: middle;
+
+  font-size: 14px;
+  line-height: 16px;
+
+  width: 100%;
+
+  outline: none !important;
+
+  border: 1px solid #333333;
+  border-radius: 2px;
+}
+
+.rbc-form-input-date-picker-field:active{
+  
+}
+
+.rbc-form-input-date-picker-field:focus{
+
+}
+
+.rbc-form-input-date-picker-field:hover{
+
+}
+
+.rbc-form-input-date-picker-field::placeholder {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.rbc-form-input-date-picker-error {
+}
+
+/* FORM INPUT DATE PICKER END */
