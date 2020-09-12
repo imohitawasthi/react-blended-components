@@ -11,11 +11,11 @@ const VALIDATION_FAILED = 'form-has-error';
 
 function getClasses(className = {}, baseClass) {
   return {
-    rootClass: `${Styles[`${baseClass}-root`]} ${className.rootClassName}`,
-    groupClass: `${Styles[`${baseClass}-group`]} ${className.groupClassName}`,
-    labelClass: `${Styles[`${baseClass}-label`]} ${className.labelClassName}`,
-    fieldClass: `${Styles[`${baseClass}-field`]} ${className.fieldClassName}`,
-    errorClass: `${Styles[`${baseClass}-error`]} ${className.errorClassName}`,
+    rootClass: `${Styles[`${baseClass}-root`]} ${className.rootClassName || ''}`,
+    groupClass: `${Styles[`${baseClass}-group`]} ${className.groupClassName || ''}`,
+    labelClass: `${Styles[`${baseClass}-label`]} ${className.labelClassName || ''}`,
+    fieldClass: `${Styles[`${baseClass}-field`]} ${className.fieldClassName || ''}`,
+    errorClass: `${Styles[`${baseClass}-error`]} ${className.errorClassName || ''}`,
   };
 }
 
@@ -94,7 +94,7 @@ const formInputRadioElement = (props, classes, type) => (
             id={`${props.name}-${element.id}`}
             type={type}
             value={element.value}
-            checked={type === 'radio' ? element.value === props.value : element.value === props.value[element.id]}
+            checked={type === 'radio' ? element.value === props.value : props.value ? element.value === props.value[element.id] : false}
             disabled={props.disabled || false}
             autoFocus={props.autoFocus}
             onChange={(e) => props.onChange(e.target.value, `${props.name}-${element.id}`, props.validation)}
@@ -121,7 +121,7 @@ const formInputSelectElement = (props, classes, type) => (
         className={classes.fieldClass}
         name={props.name}
         id={props.name}
-        value={element.value}
+        value={props.value}
         disabled={props.disabled || false}
         autoFocus={props.autoFocus}
         onChange={(e) => props.onChange(e.target.value, props.name, props.validation)}
@@ -314,7 +314,7 @@ class Form extends React.Component {
 
     this.setState({
       [name]: value,
-      [`error-${name}`]: error,
+      [Constants.GENERATE_ERROR_FIELD_KEY(name)]: error,
     });
 
     if (onChange && typeof onChange === 'function') onChange(name, [`error-${name}`], value, error);
@@ -345,10 +345,10 @@ class Form extends React.Component {
     ) : null;
 
   render() {
-    const { name, meta, buttons } = this.props;
+    const { name, meta, buttons, className } = this.props;
 
     return (
-      <div i={name} key={name}>
+      <div i={name} key={name} className={className}>
         {meta.map(
           (element, index) =>
             this.formElementMap({
@@ -356,7 +356,7 @@ class Form extends React.Component {
               index,
 
               value: this.state[element.name],
-              error: this.state[element.name],
+              error: this.state[Constants.GENERATE_ERROR_FIELD_KEY(element.name)],
 
               onChange: (value, name, validations) => this.handleChange(value, name, validations),
               onBlur: (value, error, name) => this.handleBlur(value, error, name),
@@ -372,9 +372,14 @@ Form.propTypes = {
   name: propTypes.string,
   meta: propTypes.array,
   buttons: propTypes.array,
+  className: propTypes.string
 };
 
-Form.defaultProps = {};
+Form.defaultProps = {
+  name: 'customFormComponent',
+  meta: [],
+  className: ''
+};
 
 export default Form;
 
