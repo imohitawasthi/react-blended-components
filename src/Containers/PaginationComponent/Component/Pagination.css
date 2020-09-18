@@ -7,8 +7,6 @@
 
 .rbc-pagination-content {
     display: flex;
-    text-align: center;
-    vertical-align: middle;
 }
 
 .rbc-pagination-icon-back {
@@ -45,5 +43,9 @@
 }
 
 .rbc-pagination-icon-element {
-    padding: 0px 5px;
+    padding: 0px 8px;
+
+    margin: auto 0px;
+
+    vertical-align: middle;
 }

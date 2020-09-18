@@ -8,19 +8,25 @@ import Styles from './Badge.css'
 class Badge extends React.Component {
   render() {
     const {
-      elements
+      value,
+      className,
+      style
     } = this.props
 
     return (
-      <div>
-
-      </div>
+      <span className={`${Styles['rbc-badge']} ${className || ''}`} style={style}>{value}</span>
     )
   }
 }
 
-Badge.propTypes = {}
+Badge.propTypes = {
+  value: propTypes.oneOfType([propTypes.element, propTypes.string]).isRequired,
+  className: propTypes.string,
+  style: propTypes.object
+}
 
-Badge.defaultProps = {}
+Badge.defaultProps = {
+  style: {}
+}
 
 export default Badge

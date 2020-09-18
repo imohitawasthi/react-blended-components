@@ -23,9 +23,19 @@ class DocumentationList extends React.Component {
       data={DATA}
     />
   )
+  
+  listOptions = () => (
+    <div className="col-lg-12">
+    </div>
+  );
+
+  renderOptions = () => (
+    <div className="row">
+    </div>
+  );
 
   render() {
-    return <ChildLayout meta={META(this.renderDemo)} />
+    return <ChildLayout meta={META(this.renderDemo, this.renderOptions)} />
   }
 }
 

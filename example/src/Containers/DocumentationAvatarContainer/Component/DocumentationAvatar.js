@@ -19,10 +19,16 @@ class DocumentationAvatar extends React.Component {
     };
   }
 
-  renderDemo = () => <Avatar round={true} name="Sample Avatar" size={50} fontSize={20} />;
+  renderDemo = () => (
+    <div className="center">
+      <Avatar round={true} name="Sample Avatar" size={50} fontSize={20} />
+    </div>
+  );
+
+  renderOptions = () => <div className="row"></div>;
 
   render() {
-    return <ChildLayout meta={META(this.renderDemo)} />;
+    return <ChildLayout meta={META(this.renderDemo, this.renderOptions)} />;
   }
 }
 

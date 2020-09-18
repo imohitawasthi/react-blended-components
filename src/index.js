@@ -11,6 +11,7 @@ import Avatar from './Containers/AvatarComponent'
 import Pagination from './Containers/PaginationComponent'
 import Tab from './Containers/TabComponent'
 import Table from './Containers/TableComponent'
+import Badge from './Containers/BadgeComponent'
 import Toast from './Containers/ToastComponent'
 
 import Form, { Text, Password, TextArea, Radio, CheckBox, Select, DatePicker, Switch } from './Containers/FormComponent'
@@ -28,6 +29,7 @@ export {
   Pagination,
   Tab,
   Table,
+  Badge,
     
   Form,
   FormElements

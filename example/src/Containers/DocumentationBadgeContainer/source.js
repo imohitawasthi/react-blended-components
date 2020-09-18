@@ -1,13 +1,25 @@
 const CODE = `
-
+  <Badge value="10"/>
 `;
 
 const PROPS = [
   {
-    attribute: 'active',
-    type: 'boolean',
+    attribute: 'value',
+    type: 'String | Element',
     default: '-',
-    description: 'Show/hide dialog.',
+    description: 'The value will be displayed inside badge.',
+  },
+  {
+    attribute: 'className',
+    type: 'String',
+    default: '-',
+    description: 'Custom class for Badge, the attributes will get concat with the default class.',
+  },
+  {
+    attribute: 'style',
+    type: 'Object',
+    default: '-',
+    description: 'React style object.',
   }
 ];
 
@@ -32,10 +44,10 @@ const META = (renderDemo, renderOptions) => [
     type: 'CONTENT',
     render: renderDemo()
   },
-  {
-    type: 'EXAMPLE',
-    render: renderOptions()
-  },
+  // {
+  //   type: 'EXAMPLE',
+  //   render: renderOptions()
+  // },
   {
     type: 'SUB_HEADING',
     render: 'Code',

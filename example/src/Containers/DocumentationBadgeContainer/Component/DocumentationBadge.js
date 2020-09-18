@@ -2,13 +2,13 @@ import React from 'react';
 
 import ChildLayout from '../../../Components/ChildLayout';
 
-import './Dummy.css';
+import './DocumentationBadge.css';
 
-import { Table } from 'react-blended-components';
+import { Badge } from 'react-blended-components';
 
 import META from '../source';
 
-class Dummy extends React.Component {
+class DocumentationBadge extends React.Component {
 
   constructor(props) {
     super(props);
@@ -17,7 +17,11 @@ class Dummy extends React.Component {
   }
 
   renderDemo = () => (
-    <div></div>
+    <div className="center middle">
+      <Badge 
+        value="10"
+      />
+    </div>
   )
 
   renderOptions = () => (
@@ -30,4 +34,4 @@ class Dummy extends React.Component {
   }
 }
 
-export default Dummy;
+export default DocumentationBadge;
