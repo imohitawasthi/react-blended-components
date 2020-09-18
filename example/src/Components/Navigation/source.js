@@ -76,8 +76,44 @@ const NAVIGATION_CHILDREN_DOCUMENTATION = (onClick, parentKey) => [
   },
   {
     className: CSS_CLASS_SUB_TAB,
-    label: 'List',
-    key: Constants.MAP_NAVIGATION.DOCUMENTATION.sub.LIST,
+    label: 'Snack Bar',
+    key: Constants.MAP_NAVIGATION.DOCUMENTATION.sub.SNACK_BAR,
+    onClick: ({key}) => onClick(`${parentKey}/${key}`)
+  },
+  {
+    className: CSS_CLASS_SUB_TAB,
+    label: 'Tabs',
+    key: Constants.MAP_NAVIGATION.DOCUMENTATION.sub.TABS,
+    onClick: ({key}) => onClick(`${parentKey}/${key}`)
+  },
+  {
+    className: CSS_CLASS_SUB_TAB,
+    label: 'Tooltip',
+    key: Constants.MAP_NAVIGATION.DOCUMENTATION.sub.TOOL_TIP,
+    onClick: ({key}) => onClick(`${parentKey}/${key}`)
+  },
+  {
+    className: CSS_CLASS_SUB_TAB,
+    label: 'Toast',
+    key: Constants.MAP_NAVIGATION.DOCUMENTATION.sub.TOAST,
+    onClick: ({key}) => onClick(`${parentKey}/${key}`)
+  },
+  {
+    className: CSS_CLASS_SUB_TAB,
+    label: 'Breadcrumb',
+    key: Constants.MAP_NAVIGATION.DOCUMENTATION.sub.BREADCRUMB,
+    onClick: ({key}) => onClick(`${parentKey}/${key}`)
+  },
+  {
+    className: CSS_CLASS_SUB_TAB,
+    label: 'Steps',
+    key: Constants.MAP_NAVIGATION.DOCUMENTATION.sub.STEPS,
+    onClick: ({key}) => onClick(`${parentKey}/${key}`)
+  },
+  {
+    className: CSS_CLASS_SUB_TAB,
+    label: 'Badge',
+    key: Constants.MAP_NAVIGATION.DOCUMENTATION.sub.BADGE,
     onClick: ({key}) => onClick(`${parentKey}/${key}`)
   }
 ]

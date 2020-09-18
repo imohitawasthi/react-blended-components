@@ -2,13 +2,13 @@ import React from 'react';
 
 import ChildLayout from '../../../Components/ChildLayout';
 
-import './Dummy.css';
+import './Tabs.css';
 
-import { Table } from 'react-blended-components';
+import { } from 'react-blended-components';
 
 import META from '../source';
 
-class Dummy extends React.Component {
+class Tabs extends React.Component {
 
   constructor(props) {
     super(props);
@@ -30,4 +30,4 @@ class Dummy extends React.Component {
   }
 }
 
-export default Dummy;
+export default Tabs;

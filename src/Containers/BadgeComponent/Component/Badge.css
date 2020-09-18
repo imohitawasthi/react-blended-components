@@ -1,0 +1,14 @@
+.rbc-badge {
+
+  font-size: 12px;
+
+  padding: 6px;
+  border-radius: 100%;
+  background: #27ae60;
+  color: #ffffff;
+
+  margin: auto auto;
+
+  text-align: center;
+  vertical-align: middle;
+}

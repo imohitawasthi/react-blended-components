@@ -1,15 +1,11 @@
-import React from 'react'
-import propTypes from 'prop-types'
+import React from 'react';
+import propTypes from 'prop-types';
 
-import Modal, {
-  ModalHead,
-  ModalBody,
-  ModalFoot
-} from '../../../Components/Modal'
+import Modal, { ModalHead, ModalBody, ModalFoot } from '../../../Components/Modal';
 
-import Constants from '../../../Blended/Constants'
+import Constants from '../../../Blended/Constants';
 
-import Styles from './Avatar.css'
+import Styles from './Avatar.css';
 
 const POSSIBLE_COLORS = [
   { background: '#62AB37', label: '#FFFFFF' },
@@ -29,44 +25,31 @@ const POSSIBLE_COLORS = [
   { background: '#56203D', label: '#FFFFFF' },
   { background: '#483A58', label: '#FFFFFF' },
   { background: '#2F6690', label: '#FFFFFF' },
-  { background: '#FB5012', label: '#FFFFFF' }
-]
+  { background: '#FB5012', label: '#FFFFFF' },
+];
 
 class Avatar extends React.Component {
   render() {
-    const { round, borderRadius, name, src, size, fontSize, className } = this.props
+    const { round, borderRadius, name, src, size, fontSize, className } = this.props;
 
-    const color =
-      POSSIBLE_COLORS[Math.floor(Math.random() * POSSIBLE_COLORS.length)]
+    const color = POSSIBLE_COLORS[Math.floor(Math.random() * POSSIBLE_COLORS.length)];
 
     const styles = {
-      borderRadius: round
-        ? '100%'
-        : borderRadius
-        ? `${borderRadius}px`
-        : '0px',
+      borderRadius: round ? '100%' : borderRadius ? `${borderRadius}px` : '0px',
       height: size,
       width: size,
       fontSize: fontSize,
       backgroundColor: color.background,
-      color: color.label
-    }
+      color: color.label,
+    };
 
     return src ? (
-      <img
-        className={`${className} ${Styles['rbc-avatar'] || ''}`}
-        alt={name}
-        style={styles}
-      ></img>
+      <img className={`${className} ${Styles['rbc-avatar'] || ''}`} alt={name} style={styles}></img>
     ) : (
-      <div
-        className={className || Styles['rbc-avatar']}
-        alt={name}
-        style={styles}
-      >
+      <div className={`${className} ${Styles['rbc-avatar'] || ''}`} alt={name} style={styles}>
         <span className={Styles['rbc-avatar-content']}>{Constants.GENERATE_INITIALS(name)}</span>
       </div>
-    )
+    );
   }
 }
 
@@ -77,13 +60,13 @@ Avatar.propTypes = {
   src: propTypes.string,
   size: propTypes.number,
   fontSize: propTypes.number,
-  className: propTypes.string
-}
+  className: propTypes.string,
+};
 
 Avatar.defaultProps = {
   size: 50,
-  fontSize: 14, 
-  round: true
-}
+  fontSize: 14,
+  round: true,
+};
 
-export default Avatar
+export default Avatar;

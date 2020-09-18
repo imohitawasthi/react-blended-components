@@ -19,6 +19,13 @@ import DocumentationForm from './Containers/DocumentationFormContainer';
 import DocumentationList from './Containers/DocumentationListContainer';
 import DocumentationPagination from './Containers/DocumentationPaginationContainer';
 import DocumentationAvatar from './Containers/DocumentationAvatarContainer';
+import DocumentationBadge from './Containers/DocumentationBadgeContainer';
+import DocumentationBreadcrumb from './Containers/DocumentationBreadcrumbContainer';
+import DocumentationSnackbar from './Containers/DocumentationSnackbarContainer';
+import DocumentationSteps from './Containers/DocumentationStepsContainer';
+import DocumentationTabs from './Containers/DocumentationTabsContainer';
+import DocumentationToast from './Containers/DocumentationToastContainer';
+import DocumentationTooltip from './Containers/DocumentationTooltipContainer';
 
 class Routes extends React.Component {
   constructor(props) {
@@ -110,6 +117,13 @@ class Routes extends React.Component {
       { path: `/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.LIST}`, component: DocumentationList },
       { path: `/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.PAGINATION}`, component: DocumentationPagination },
       { path: `/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.AVATAR}`, component: DocumentationAvatar },
+      { path: `/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.SNACK_BAR}`, component: DocumentationSnackbar },
+      { path: `/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.TABS}`, component: DocumentationTabs },
+      { path: `/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.TOOL_TIP}`, component: DocumentationTooltip },
+      { path: `/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.TOAST}`, component: DocumentationToast },
+      { path: `/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.BREADCRUMB}`, component: DocumentationBreadcrumb },
+      { path: `/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.STEPS}`, component: DocumentationSteps },
+      { path: `/${Constants.MAP_NAVIGATION.DOCUMENTATION.self}/${Constants.MAP_NAVIGATION.DOCUMENTATION.sub.BADGE}`, component: DocumentationBadge },
     ];
 
     return (

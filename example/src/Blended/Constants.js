@@ -22,6 +22,13 @@ const MAP_NAVIGATION = {
             'LIST': 'list',
             'PAGINATION': 'pagination',
             'AVATAR': 'avatar',
+            'SNACK_BAR': 'snack-bar',
+            'TABS': 'tabs',
+            'TOOL_TIP': 'tooltip',
+            'TOAST': 'toast',
+            'BREADCRUMB': 'breadcrumb',
+            'STEPS': 'steps',
+            'BADGE': 'badge'
         }
     }
 }

@@ -19,19 +19,23 @@ class DocumentationPagination extends React.Component {
     };
   }
 
+  renderOptions = () => <div className="row"></div>;
+
   renderDemo = () => (
-    <Pagination
-      limit={this.state.limit}
-      offset={this.state.offset}
-      total={this.state.total}
-      onPageChange={(action) =>
-        action === 'back' ? this.setState((p) => ({ offset: p.offset - p.limit })) : this.setState((p) => ({ offset: p.offset + p.limit }))
-      }
-    />
+    <div className="center">
+      <Pagination
+        limit={this.state.limit}
+        offset={this.state.offset}
+        total={this.state.total}
+        onPageChange={(action) =>
+          action === 'back' ? this.setState((p) => ({ offset: p.offset - p.limit })) : this.setState((p) => ({ offset: p.offset + p.limit }))
+        }
+      />
+    </div>
   );
 
   render() {
-    return <ChildLayout meta={META(this.renderDemo)} />;
+    return <ChildLayout meta={META(this.renderDemo, this.renderOptions)} />;
   }
 }
 
