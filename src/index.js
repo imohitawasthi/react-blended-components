@@ -12,6 +12,7 @@ import Pagination from './Containers/PaginationComponent'
 import Tab from './Containers/TabComponent'
 import Table from './Containers/TableComponent'
 import Badge from './Containers/BadgeComponent'
+import Steps from './Containers/StepsComponent'
 import Toast from './Containers/ToastComponent'
 
 import Form, { Text, Password, TextArea, Radio, CheckBox, Select, DatePicker, Switch } from './Containers/FormComponent'
@@ -30,7 +31,8 @@ export {
   Tab,
   Table,
   Badge,
-    
+  Steps,  
+
   Form,
   FormElements
 }

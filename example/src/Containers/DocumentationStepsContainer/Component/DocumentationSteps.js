@@ -4,7 +4,7 @@ import ChildLayout from '../../../Components/ChildLayout';
 
 import './DocumentationSteps.css';
 
-import { } from 'react-blended-components';
+import { Steps } from 'react-blended-components';
 
 import META from '../source';
 
@@ -17,7 +17,11 @@ class DocumentationSteps extends React.Component {
   }
 
   renderDemo = () => (
-    <div></div>
+    <div className="center">
+      <Steps 
+        steps={[{step: 1}, {step: 2}, {step: 3}]}
+      />
+    </div>
   )
 
   renderOptions = () => (
