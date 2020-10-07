@@ -1,5 +1,5 @@
 
-import Tooltip from "./Component/Tooltip"
+import DocumentationTooltip from "./Component/DocumentationTooltip"
 
-export default Tooltip
+export default DocumentationTooltip
 

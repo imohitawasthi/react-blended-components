@@ -2,13 +2,13 @@ import React from 'react';
 
 import ChildLayout from '../../../Components/ChildLayout';
 
-import './DocumentationSteps.css';
+import './DocumentationBreadcrumb.css';
 
-import { Steps } from 'react-blended-components';
+import { Breadcrumb } from 'react-blended-components';
 
 import META from '../source';
 
-class DocumentationSteps extends React.Component {
+class DocumentationBreadcrumb extends React.Component {
 
   constructor(props) {
     super(props);
@@ -17,9 +17,13 @@ class DocumentationSteps extends React.Component {
   }
 
   renderDemo = () => (
-    <div className="center">
-      <Steps 
-        steps={[{step: 1}, {step: 2}, {step: 3}]}
+    <div className="center middle">
+      <Breadcrumb 
+        elements={[
+          {label: 'First Page'},
+          {label: 'Second Page'},
+          {label: 'Third Page'},
+        ]}
       />
     </div>
   )
@@ -34,4 +38,4 @@ class DocumentationSteps extends React.Component {
   }
 }
 
-export default DocumentationSteps;
+export default DocumentationBreadcrumb;

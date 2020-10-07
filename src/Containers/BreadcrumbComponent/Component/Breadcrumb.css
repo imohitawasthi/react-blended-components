@@ -1,0 +1,27 @@
+
+.rbc-breadcrumb {
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+.rbc-breadcrumb-element {
+    margin: auto 0px;
+    vertical-align: middle;
+
+    color: #333333;
+}
+
+.rbc-breadcrumb-element span {
+    margin: auto;
+    vertical-align: middle;
+
+    cursor: pointer;
+}
+
+.rbc-breadcrumb-icon-forward-icon {
+    height: 18px;
+    width: 18px;
+
+    color: #333333;
+    opacity: 0.4;
+}
