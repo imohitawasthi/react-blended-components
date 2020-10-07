@@ -2,13 +2,13 @@ import React from 'react';
 
 import ChildLayout from '../../../Components/ChildLayout';
 
-import './Breadcrumb.css';
+import './DocumentationTooltip.css';
 
-import { } from 'react-blended-components';
+import { Tooltip } from 'react-blended-components';
 
 import META from '../source';
 
-class Breadcrumb extends React.Component {
+class DocumentationTooltip extends React.Component {
 
   constructor(props) {
     super(props);
@@ -17,12 +17,14 @@ class Breadcrumb extends React.Component {
   }
 
   renderDemo = () => (
-    <div></div>
+    <div className="center">
+      SHOW TOAST
+      <Tooltip />
+    </div>
   )
 
   renderOptions = () => (
-    <div className="row">
-    </div>
+    <div></div>
   );
 
   render() {
@@ -30,4 +32,4 @@ class Breadcrumb extends React.Component {
   }
 }
 
-export default Breadcrumb;
+export default DocumentationTooltip;

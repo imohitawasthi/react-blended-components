@@ -1,5 +1,5 @@
 
-import Toast from "./Component/Toast"
+import DocumentationToast from "./Component/DocumentationToast"
 
-export default Toast
+export default DocumentationToast
 

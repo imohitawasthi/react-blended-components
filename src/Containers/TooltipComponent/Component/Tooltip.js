@@ -10,7 +10,9 @@ class Tooltip extends React.Component {
   render() {
     const {} = this.props
 
-    return ()
+    return (
+      <span class={`${Styles['rbc-tooltip']}`}>Tooltip text</span>
+    )
   }
 }
 

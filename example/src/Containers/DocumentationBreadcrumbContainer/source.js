@@ -1,5 +1,11 @@
 const CODE = `
-
+<Breadcrumb 
+  elements={[
+    {label: 'First Page'},
+    {label: 'Second Page'},
+    {label: 'Third Page'},
+  ]}
+/>
 `;
 
 const PROPS = [

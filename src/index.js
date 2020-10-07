@@ -14,6 +14,8 @@ import Table from './Containers/TableComponent'
 import Badge from './Containers/BadgeComponent'
 import Steps from './Containers/StepsComponent'
 import Toast from './Containers/ToastComponent'
+import Breadcrumb from './Containers/BreadcrumbComponent'
+import Tooltip from './Containers/TooltipComponent'
 
 import Form, { Text, Password, TextArea, Radio, CheckBox, Select, DatePicker, Switch } from './Containers/FormComponent'
 
@@ -32,6 +34,9 @@ export {
   Table,
   Badge,
   Steps,  
+  Toast,
+  Breadcrumb,
+  Tooltip,
 
   Form,
   FormElements

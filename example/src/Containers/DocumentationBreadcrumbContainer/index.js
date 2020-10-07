@@ -1,5 +1,5 @@
 
-import Breadcrumb from "./Component/Breadcrumb"
+import DocumentationBreadcrumb from "./Component/DocumentationBreadcrumb"
 
-export default Breadcrumb
+export default DocumentationBreadcrumb
 
