@@ -1,13 +1,66 @@
+/* Defaults */
 
-.padding-0 {
-    padding: 0px !important;
+@font-face {
+  font-family: Montserrat;
+  src: url('./../Font/Montserrat/Montserrat-Regular.otf');
 }
 
+.rbc-example-app-font {
+  background: #ffffff;
+  font-family: Montserrat;
+  font-weight: normal;
+  font-style: normal;
+
+  color: #333333;
+}
+
+/* Heights */
+
+.height-match-view-port {
+    height: 100vh;
+}
+
+/* Paddings */
+
+.padding-0 {
+  padding: 0px !important;
+}
+
+/* Alignment */
+
 .center {
-    text-align: center;
+  text-align: center;
 }
 
 .middle {
-    vertical-align: middle;
-    margin: auto;
+  vertical-align: middle;
+  margin: auto;
+}
+
+/* Animations */
+
+.animate-3s {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/* Scroll Bar */
+
+::-webkit-scrollbar {
+  width: 8px;  
+}
+
+::-webkit-scrollbar-track {
+  /* background: #f1f1f1; */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(194, 194, 194, .5);
+  border-radius: 32px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(194, 194, 194, .7);
+  border-radius: 32px !important;
 }
