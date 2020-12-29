@@ -17,9 +17,9 @@ class DocumentationTooltip extends React.Component {
   }
 
   renderDemo = () => (
-    <div className="center">
+    <div className="center" tooltipKey="showToast">
       SHOW TOAST
-      <Tooltip />
+      <Tooltip id="showToast"/>
     </div>
   )
 

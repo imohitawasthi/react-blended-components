@@ -127,7 +127,7 @@ class Routes extends React.Component {
     ];
 
     return (
-      <section className="root-container">
+      <section className="root-container rbc-example-app-font">
         <Switch>
           <App parentIndex={parentIndex} childIndex={childIndex} history={this.props.history}>
             {routeMap.map((element, index) => (
