@@ -105,7 +105,7 @@ class Routes extends React.Component {
   }
 
   render() {
-    const { basePath, parentIndex, childIndex } = this.state;
+    const { parentIndex, childIndex } = this.state;
 
     const routeMap = [
       { path: `/`, component: OverviewIntroduction },
