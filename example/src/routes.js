@@ -27,6 +27,8 @@ import DocumentationTabs from './Containers/DocumentationTabsContainer';
 import DocumentationToast from './Containers/DocumentationToastContainer';
 import DocumentationTooltip from './Containers/DocumentationTooltipContainer';
 
+const GIT_PAGES_BASE_PATH = "react-blended-components"
+
 class Routes extends React.Component {
   constructor(props) {
     super(props);
@@ -34,6 +36,8 @@ class Routes extends React.Component {
     this.state = {
       parentIndex: 0,
       childIndex: 0,
+
+      basePath:""
     };
   }
 
@@ -46,6 +50,10 @@ class Routes extends React.Component {
 
     let loc = location.pathname.split(/[\\/]/);
     loc = loc.filter((element) => !!element);
+
+    if ( loc[0] === GIT_PAGES_BASE_PATH ) {
+      this.setState({basePath: GIT_PAGES_BASE_PATH})
+    }
 
     for (let i = 0; i < loc.length; i++) {
       parentIndex = parentNavigation.filter((e) => Constants.MAP_NAVIGATION[e] && Constants.MAP_NAVIGATION[e].self === loc[i]);
@@ -97,7 +105,7 @@ class Routes extends React.Component {
   }
 
   render() {
-    const { parentIndex, childIndex } = this.state;
+    const { basePath, parentIndex, childIndex } = this.state;
 
     const routeMap = [
       { path: `/`, component: OverviewIntroduction },
