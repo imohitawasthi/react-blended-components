@@ -91,7 +91,7 @@ class Routes extends React.Component {
     const { location } = this.props;
 
     if (location) {
-      this.possiblePaths(location);
+      // this.possiblePaths(location);
     }
   }
 
