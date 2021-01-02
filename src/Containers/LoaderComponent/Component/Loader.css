@@ -1,5 +1,6 @@
 
 .rbc-loader-body {
+    min-height: 64px;
 }
 
 .rbc-loader-message {

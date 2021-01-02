@@ -5,9 +5,9 @@
 
 /* FORM INPUT GENERIC END */
 
-/*  */ 
-/*  */ 
-/*  */ 
+/*  */
+/*  */
+/*  */
 
 /* FORM INPUT TEXT START */
 
@@ -45,16 +45,13 @@
   border-radius: 2px;
 }
 
-.rbc-form-input-text-field:active{
-  
+.rbc-form-input-text-field:active {
 }
 
-.rbc-form-input-text-field:focus{
-
+.rbc-form-input-text-field:focus {
 }
 
-.rbc-form-input-text-field:hover{
-
+.rbc-form-input-text-field:hover {
 }
 
 .rbc-form-input-text-field::placeholder {
@@ -103,16 +100,13 @@
   border-radius: 2px;
 }
 
-.rbc-form-input-password-field:active{
-  
+.rbc-form-input-password-field:active {
 }
 
-.rbc-form-input-password-field:focus{
-
+.rbc-form-input-password-field:focus {
 }
 
-.rbc-form-input-password-field:hover{
-
+.rbc-form-input-password-field:hover {
 }
 
 .rbc-form-input-password-field::placeholder {
@@ -161,16 +155,13 @@
   border-radius: 2px;
 }
 
-.rbc-form-input-textarea-field:active{
-  
+.rbc-form-input-textarea-field:active {
 }
 
-.rbc-form-input-textarea-field:focus{
-
+.rbc-form-input-textarea-field:focus {
 }
 
-.rbc-form-input-textarea-field:hover{
-
+.rbc-form-input-textarea-field:hover {
 }
 
 .rbc-form-input-textarea-field::placeholder {
@@ -339,18 +330,17 @@
 
   border: 1px solid #333333;
   border-radius: 2px;
+
+  cursor: pointer;
 }
 
-.rbc-form-input-select-field:active{
-  
+.rbc-form-input-select-field:active {
 }
 
-.rbc-form-input-select-field:focus{
-
+.rbc-form-input-select-field:focus {
 }
 
-.rbc-form-input-select-field:hover{
-
+.rbc-form-input-select-field:hover {
 }
 
 .rbc-form-input-select-field::placeholder {
@@ -397,18 +387,17 @@
 
   border: 1px solid #333333;
   border-radius: 2px;
+
+  cursor: pointer;
 }
 
-.rbc-form-input-date-picker-field:active{
-  
+.rbc-form-input-date-picker-field:active {
 }
 
-.rbc-form-input-date-picker-field:focus{
-
+.rbc-form-input-date-picker-field:focus {
 }
 
-.rbc-form-input-date-picker-field:hover{
-
+.rbc-form-input-date-picker-field:hover {
 }
 
 .rbc-form-input-date-picker-field::placeholder {
@@ -420,3 +409,100 @@
 }
 
 /* FORM INPUT DATE PICKER END */
+
+/* FORM SWITCH START */
+
+.rbc-form-input-switch-root {
+}
+
+.rbc-form-input-switch-group {
+  padding: 8px;
+}
+
+.rbc-form-input-switch-label {
+  display: block;
+  /* margin: 4px 8px; */
+
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.rbc-form-input-switch-field {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+
+  padding: 10px 8px;
+
+  vertical-align: middle;
+
+  cursor: pointer;
+}
+
+.rbc-form-input-switch-field input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.rbc-form-input-switch-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+
+  border-radius: 64px;
+}
+
+.rbc-form-input-switch-slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+
+  border-radius: 64px;
+}
+
+input:checked + .rbc-form-input-switch-slider {
+  background-color: #2196f3;
+}
+
+input:focus + .rbc-form-input-switch-slider {
+  /* box-shadow: 0 0 0px #2196f3; */
+}
+
+input:checked + .rbc-form-input-switch-slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.rbc-form-input-switch-field:active {
+}
+
+.rbc-form-input-switch-field:focus {
+}
+
+.rbc-form-input-switch-field:hover {
+}
+
+.rbc-form-input-switch-field::placeholder {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.rbc-form-input-switch-error {
+}
+
+/* FORM SWITCH START END*/

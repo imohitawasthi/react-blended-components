@@ -142,9 +142,9 @@ const OPTION_LOADER_TYPE = [
     value: 'BARS',
   },
   {
-    id: 'type-dot-spin',
-    label: 'Dot Spin',
-    value: 'DOT-SPIN',
+    id: 'type-dots',
+    label: 'Dots',
+    value: 'DOTS',
   },
   // {
   //   id: 'type-dot-bounce',
@@ -152,9 +152,9 @@ const OPTION_LOADER_TYPE = [
   //   value: 'DOT-BOUNCE',
   // },
   {
-    id: 'type-dot-circle',
-    label: 'Dot Circle',
-    value: 'DOT-CIRCLE',
+    id: 'type-spinner',
+    label: 'Spinner',
+    value: 'SPINNER',
   }
 ]
 
