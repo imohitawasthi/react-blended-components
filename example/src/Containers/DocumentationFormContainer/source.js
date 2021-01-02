@@ -2,115 +2,7 @@ const CODE = `
 
 <Form 
   name='customForm'
-  meta={
-    [
-      {
-        name: 'textFieldName',
-        label: 'Name',
-        placeholder: 'Full Name',
-        type: 'text',
-      },
-      {
-        name: 'textFieldPassword',
-        label: 'Password',
-        placeholder: 'Password',
-        type: 'password',
-      },
-      {
-        name: 'textareaFieldDescription',
-        label: 'Description',
-        placeholder: 'A short description',
-        type: 'textarea',
-      },
-      {
-        name: 'radioFieldFavFood',
-        label: 'Favorite food',
-        type: 'radio',
-        options: [
-          {
-            id: 'pizza',
-            label: 'Pizza',
-            value: '0',
-          },
-          {
-            id: '2pizza',
-            label: '2 Pizzas',
-            value: '1',
-          },
-        ],
-      },
-      {
-        name: 'checkboxFieldMood',
-        label: 'Current Mood',
-        type: 'checkbox',
-        options: [
-          {
-            id: 'good',
-            label: 'Good',
-            value: 'good',
-          },
-          {
-            id: 'calm',
-            label: 'Calm',
-            value: 'calm',
-          },
-        ],
-      },
-      {
-        name: 'selectFieldSuperhero',
-        label: 'Select the best one',
-        type: 'select',
-        options: [
-          {
-            label: 'Superman',
-            value: 'superman',
-          },
-          {
-            label: 'Batman',
-            value: 'batman',
-          },
-        ],
-      },
-      {
-        name: 'selectFieldParticles',
-        label: 'Select the most amazing',
-        type: 'select',
-        options: [
-          {
-            label: 'Quarks',
-            meta: [
-              {
-                value: 'up',
-                label: 'Up',
-              },
-              {
-                value: 'down',
-                label: 'Down',
-              },
-            ],
-          },
-          {
-            label: 'Leptons',
-            meta: [
-              {
-                value: 'electron',
-                label: 'Electron',
-              },
-              {
-                value: 'electronNeutrino',
-                label: 'Electron Neutrino',
-              },
-            ],
-          },
-        ],
-      },
-      {
-        name: 'datepickerFieldAnyTime',
-        label: 'Any time',
-        type: 'datepicker',
-      },
-    ];
-  }
+  meta={ SEE META STRUCTURE }
   onChange={()=>{/*HANDLE CHANGE HERE*/}}
   onBlue={()=>{/*HANDLE BLUR HERE*/}}
   className=''
@@ -169,7 +61,7 @@ const PROPS = [
   },
 ];
 
-const META = (renderDemo, renderOptions) => [
+const META = (renderDemo, renderMetaStructure) => [
   {
     type: 'HEADING',
     render: 'Form',
@@ -197,6 +89,25 @@ const META = (renderDemo, renderOptions) => [
   {
     type: 'DEMO_CODE',
     render: CODE,
+  },
+  {
+    type: 'SUB_HEADING',
+    render: 'Remarks',
+  },
+  {
+    type: 'REMARK',
+    render: [
+      ` - Meta structure objects should be combined and passed into an array `,
+      ` - "className" object can have rootClassName, groupClassName, labelClassName, fieldClassName, and errorClassName`
+    ],
+  },
+  {
+    type: 'SUB_HEADING',
+    render: 'Meta Structure',
+  },
+  {
+    type: 'DEMO_CODE',
+    render: renderMetaStructure(),
   },
   {
     type: 'SUB_HEADING',
@@ -415,14 +326,14 @@ const META_FORM = [
       rootClassName: 'col-6',
     },
   },
-  // {
-  //   name: 'switchFieldPartyMode',
-  //   label: 'Party Mode',
-  //   type: 'switch',
-  //   className: {
-  //     rootClassName: 'col-6',
-  //   },
-  // },
+  {
+    name: 'switchFieldPartyMode',
+    label: 'Party Mode',
+    type: 'switch',
+    className: {
+      rootClassName: 'col-6',
+    },
+  },
   // {
   //   name: 'sliderFieldEnthusiasm',
   //   label: 'Enthusiasm',
@@ -433,6 +344,198 @@ const META_FORM = [
   // },
 ];
 
-export { META_FORM };
+const META_FORM_STRUCTURE = [
+  {
+    label: "Text",
+    code: `
+      {
+        name: 'textFieldName',
+        label: 'Name',
+        placeholder: 'Full Name',
+        type: 'text',
+        className: {
+          rootClassName: 'col-6',
+        },
+      }
+    `
+  },
+  {
+    label: "Password",
+    code: `
+      {
+        name: 'textFieldPassword',
+        label: 'Password',
+        placeholder: 'Password',
+        type: 'password',
+        className: {
+          rootClassName: 'col-6',
+        },
+      }
+    `
+  },
+  {
+    label: "Text Area",
+    code: `
+      {    
+        name: 'textareaFieldDescription',
+        label: 'Description',
+        placeholder: 'A short description',
+        type: 'textarea',
+        className: {
+          rootClassName: 'col-12',
+        },
+      }
+    `
+  },
+  {
+    label: "Radio",
+    code: `
+      {
+        name: 'radioFieldFavFood',
+        label: 'Favorite food',
+        type: 'radio',
+        className: {
+          rootClassName: 'col-12',
+        },
+        options: [
+          {
+            id: 'pizza',
+            label: 'Pizza',
+            value: '0',
+          },
+          {
+            id: '2pizza',
+            label: '2 Pizzas',
+            value: '1',
+          }
+        ],
+      }
+    `
+  },
+  {
+    label: "Checkbox",
+    code: `
+      {
+        name: 'checkboxFieldMood',
+        label: 'Current Mood',
+        type: 'checkbox',
+        className: {
+          rootClassName: 'col-12',
+        },
+        options: [
+          {
+            id: 'good',
+            label: 'Good',
+            value: 'good',
+          },
+          {
+            id: 'calm',
+            label: 'Calm',
+            value: 'calm',
+          }
+        ],
+      }
+    `
+  },
+  {
+    label: "Select",
+    code: `
+      {
+        name: 'selectFieldSuperhero',
+        label: 'Select the best one',
+        type: 'select',
+        className: {
+          rootClassName: 'col-6',
+        },
+        options: [
+          {
+            label: 'Superman',
+            value: 'superman',
+          },
+          {
+            label: 'Batman',
+            value: 'batman',
+          }
+        ],
+      }
+    `
+  },
+  {
+    label: "Select (With Sub Options)",
+    code: `
+      {
+        name: 'selectFieldParticles',
+        label: 'Select the most amazing',
+        type: 'select',
+        className: {
+          rootClassName: 'col-6',
+        },
+        options: [
+          {
+            label: 'Quarks',
+            meta: [
+              {
+                value: 'up',
+                label: 'Up',
+              },
+              {
+                value: 'down',
+                label: 'Down',
+              },
+            ],
+          },
+          {
+            label: 'Leptons',
+            meta: [
+              {
+                value: 'electron',
+                label: 'Electron',
+              },
+            ],
+          },
+        ],
+      }
+    `
+  },
+  {
+    label: "Date Picker",
+    code: `
+      {
+        name: 'datepickerFieldAnyTime',
+        label: 'Any time',
+        type: 'datepicker',
+        className: {
+          rootClassName: 'col-6',
+        },
+      }
+    `
+  },
+  {
+    label: "",
+    code: `
+
+    `
+  },
+  {
+    label: "",
+    code: `
+
+    `
+  },
+  {
+    label: "",
+    code: `
+
+    `
+  },
+  {
+    label: "",
+    code: `
+
+    `
+  }
+]
+
+export { META_FORM, META_FORM_STRUCTURE };
 
 export default META;

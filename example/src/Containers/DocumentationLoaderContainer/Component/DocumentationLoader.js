@@ -74,7 +74,7 @@ class DocumentationLoader extends React.Component {
     <div className="col-12">
       <FormElements.Radio
         name="dialog-duration"
-        label="Duration"
+        label={`Duration (Limited to demo only; state is dependent on "active" props)`}
         onChange={(e) => {
           this.setState({ duration: e });
         }}

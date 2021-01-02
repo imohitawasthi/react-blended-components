@@ -8,31 +8,39 @@ import Constants from '../../../Blended/Constants';
 import Styles from './Loader.css';
 
 import LoaderBars from './Assets/LoaderBars.css';
-import LoaderDotSpin from './Assets/LoaderDotSpin.css';
-import LoaderDotBounce from './Assets/LoaderDotBounce.css';
-import LoaderDotCircle from './Assets/LoaderDotCircle.css';
+import LoaderDots from './Assets/LoaderDots.css';
+import LoaderSpinner from './Assets/LoaderSpinner.css';
 import LoaderCircle from './Assets/LoaderCircle.css';
 
 const TYPE_LOADERS = {
   BARS: 'BARS',
   CIRCLE: 'CIRCLE',
-  'DOT-SPIN': 'DOT-SPIN',
-  'DOT-BOUNCE': 'DOT-BOUNCE',
+  DOTS: 'DOTS',
+  SPINNER: 'SPINNER',
   'DOT-CIRCLE': 'DOT-CIRCLE',
 };
 
+function getEmptyDiv(n) {
+  let arr = []
+  
+  for( let i=0; i<n; i++ ) {
+    arr.push(<div></div>)
+  }
+
+  return arr
+}
+
 const MAP_LOADERS = {
-  [TYPE_LOADERS['BARS']]: () => <div className={LoaderBars['rbc-loader-bars']}></div>,
-  [TYPE_LOADERS['CIRCLE']]: () => <div className={LoaderCircle['rbc-loader-circle']}></div>,
-  [TYPE_LOADERS['DOT-SPIN']]: () => <div className={LoaderDotSpin['rbc-loader-dot-spin']}></div>,
-  [TYPE_LOADERS['DOT-BOUNCE']]: () => <div className={LoaderDotBounce['rbc-loader-dot-bounce']}></div>,
-  [TYPE_LOADERS['DOT-CIRCLE']]: () => <div className={LoaderDotCircle['rbc-loader-dot-circle']}></div>,
+  [TYPE_LOADERS['BARS']]: () => <div className={LoaderBars['rbc-loader-bars']}>{getEmptyDiv(3)}</div>,
+  [TYPE_LOADERS['CIRCLE']]: () => <div className={LoaderCircle['rbc-loader-circle']}>{getEmptyDiv(8)}</div>,
+  [TYPE_LOADERS['DOTS']]: () => <div className={LoaderDots['rbc-loader-dots']}>{getEmptyDiv(12)}</div>,
+  [TYPE_LOADERS['SPINNER']]: () => <div className={LoaderSpinner['rbc-loader-spinner']}>{getEmptyDiv(12)}</div>,
 };
 
 class Loader extends React.Component {
   renderHeader = ({ message, headerClass, headerStyle }) => {
     return message ? (
-      <ModalHead className={`${headerClass || ''} ${Styles['rbc-loader-message']}`} style={headerStyle}>
+      <ModalHead className={`${Styles['rbc-loader-message']} ${headerClass || ''} `} style={headerStyle || {}}>
         {message}
       </ModalHead>
     ) : null;
@@ -40,14 +48,14 @@ class Loader extends React.Component {
 
   renderBody = ({ bodyClass, bodyStyle, type }) => {
     return (
-      <ModalHead className={`${bodyClass || ''} ${Styles['rbc-loader-body']}`} style={bodyStyle}>
+      <ModalBody className={`${Styles['rbc-loader-body']} ${bodyClass || ''} `} style={bodyStyle || {}}>
         {MAP_LOADERS[type]()}
-      </ModalHead>
+      </ModalBody>
     );
   };
 
   render() {
-    const { active, blockUI, message } = this.props;
+    const { active, blockUI } = this.props;
 
     return blockUI ? (
       <Modal active={active} onClose={() => null} onHide={() => null} hideClose size="25%">
@@ -72,6 +80,7 @@ Loader.propTypes = {
   headerStyle: propTypes.object,
   bodyClass: propTypes.string,
   bodyStyle: propTypes.object,
+  
 };
 
 Loader.defaultProps = {

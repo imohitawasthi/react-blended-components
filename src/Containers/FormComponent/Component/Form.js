@@ -45,7 +45,7 @@ const formInputTextElement = (props, classes, type) => (
         autoFocus={props.autoFocus}
         autocomplete={props.autocomplete}
         onChange={(e) => props.onChange(e.target.value, props.name, props.validation)}
-        onBlur={() => props.onBlur(props.value, props.error, props.name)}
+        onBlur={() => props.onBlur(props.value, props.error, props.name, props.validation)}
       />
       <span className={classes.errorClass}>{props.error}</span>
     </div>
@@ -71,14 +71,14 @@ const formInputTextAreaElement = (props, classes) => (
         autoFocus={props.autoFocus}
         maxLength={props.maxLength}
         onChange={(e) => props.onChange(e.target.value, props.name, props.validation)}
-        onBlur={() => props.onBlur(props.value, props.error, props.name)}
+        onBlur={() => props.onBlur(props.value, props.error, props.name, props.validation)}
       />
       <span className={classes.errorClass}>{props.error}</span>
     </div>
   </div>
 );
 
-// Radio, Checkbox
+// Radio
 const formInputRadioElement = (props, classes, type) => (
   <div
     key={props.index}
@@ -87,22 +87,76 @@ const formInputRadioElement = (props, classes, type) => (
   >
     <div className={classes.groupClass}>
       {props.label ? <label className={classes.labelClass}>{props.label}</label> : null}
-      {props.options.map((element, index) => (
-        <div key={index} className={classes.fieldClass}>
-          <input
-            name={props.name}
-            id={`${props.name}-${element.id}`}
-            type={type}
-            value={element.value}
-            checked={type === 'radio' ? element.value === props.value : props.value ? element.value === props.value[element.id] : false}
-            disabled={props.disabled || false}
-            autoFocus={props.autoFocus}
-            onChange={(e) => props.onChange(e.target.value, `${props.name}-${element.id}`, props.validation)}
-            onBlur={() => props.onBlur(props.value, props.error, `${props.name}-${element.id}`)}
-          />
-          <label htmlFor={`${props.name}-${element.id}`}>{element.label}</label>
-        </div>
-      ))}
+      {props.options.map((element, index) => {
+        let _value, _checked;
+
+        if (props.isForm) {
+          _value = props.state ? props.state[props.name] : null;
+        } else {
+          _value = props.value;
+        }
+
+        _checked = _value === element.value;
+
+        return (
+          <div key={index} className={classes.fieldClass}>
+            <input
+              name={props.name}
+              id={`${props.name}-${element.id}`}
+              type={type}
+              value={_value}
+              checked={_checked}
+              disabled={props.disabled || false}
+              autoFocus={props.autoFocus}
+              onChange={() => props.onChange(element.value, props.name, props.validation)}
+              onBlur={() => props.onBlur(element.value, props.error, props.name, props.validation)}
+            />
+            <label htmlFor={`${props.name}-${element.id}`}>{element.label}</label>
+          </div>
+        );
+      })}
+      <span className={classes.errorClass}>{props.error}</span>
+    </div>
+  </div>
+);
+
+// Checkbox
+const formInputCheckboxElement = (props, classes, type) => (
+  <div
+    key={props.index}
+    className={`${classes.rootClass} ${props.error ? VALIDATION_FAILED : ''}`}
+    style={{ ...makeHidden(props.hidden), ...allowResize(props.stopResize) }}
+  >
+    <div className={classes.groupClass}>
+      {props.label ? <label className={classes.labelClass}>{props.label}</label> : null}
+      {props.options.map((element, index) => {
+        let _value, _checked;
+
+        if (props.isForm) {
+          _value = props.state ? props.state[`${props.name}-${element.id}`] : null;
+        } else {
+          _value = props.value;
+        }
+
+        _checked = _value && Object.keys(_value).includes(element.id) ? _value[element.id] : _value;
+
+        return (
+          <div key={index} className={classes.fieldClass}>
+            <input
+              name={`${props.name}-${element.id}`}
+              id={`${props.name}-${element.id}`}
+              type={type}
+              value={_value}
+              checked={_checked}
+              disabled={props.disabled || false}
+              autoFocus={props.autoFocus}
+              onChange={() => props.onChange(props.isForm ? !!!_value : element.value, `${props.name}-${element.id}`, props.validation)}
+              onBlur={() => props.onBlur(props.isForm ? !!!_value : element.value, props.error, `${props.name}-${element.id}`, props.validation)}
+            />
+            <label htmlFor={`${props.name}-${element.id}`}>{element.label}</label>
+          </div>
+        );
+      })}
       <span className={classes.errorClass}>{props.error}</span>
     </div>
   </div>
@@ -125,7 +179,7 @@ const formInputSelectElement = (props, classes, type) => (
         disabled={props.disabled || false}
         autoFocus={props.autoFocus}
         onChange={(e) => props.onChange(e.target.value, props.name, props.validation)}
-        onBlur={() => props.onBlur(props.value, props.error, props.name)}
+        onBlur={() => props.onBlur(props.value, props.error, props.name, props.validation)}
       >
         {props.options.map((element) =>
           element.meta && element.meta.length ? (
@@ -165,7 +219,7 @@ const formInputDatePickerElement = (props, classes) => (
         min={props.startDate || null}
         max={props.endDate || null}
         onChange={(e) => props.onChange(e.target.value, props.name, props.validation)}
-        onBlur={() => props.onBlur(props.value, props.error, props.name)}
+        onBlur={() => props.onBlur(props.value, props.error, props.name, props.validation)}
       />
       <span className={classes.errorClass}>{props.error}</span>
     </div>
@@ -182,10 +236,10 @@ const formInputSwitchElement = (props, classes) => (
         <input
           type="checkbox"
           checked={props.value}
-          onChange={(e) => props.onChange(e.target.value, props.name, props.validation)}
-          onBlur={() => props.onBlur(props.value, props.error, props.name)}
+          onChange={(e) => props.onChange(!!!props.value, props.name, props.validation)}
+          onBlur={() => props.onBlur(!!!props.value, props.error, props.name, props.validation)}
         />
-        <span class="slider"></span>
+        <span className={Styles["rbc-form-input-switch-slider"]}></span>
       </label>
       <span className={classes.errorClass}>{props.error}</span>
     </div>
@@ -205,7 +259,7 @@ const formInputSliderElement = (props, classes) => (
           value={props.value}
           class="slider"
           onChange={(e) => props.onChange(e.target.value, props.name, props.validation)}
-          onBlur={() => props.onBlur(props.value, props.error, props.name)}
+          onBlur={() => props.onBlur(props.value, props.error, props.name, props.validation)}
         />
       </div>
       <span className={classes.errorClass}>{props.error}</span>
@@ -248,7 +302,7 @@ const Radio = (props) => {
 const CheckBox = (props) => {
   const classes = getClasses(props.className, 'rbc-form-input-checkbox');
 
-  return formInputRadioElement(props, classes, 'checkbox');
+  return formInputCheckboxElement(props, classes, 'checkbox');
 };
 
 // Props: index, name, className, label, validation, onChange, onBlur, disabled, hidden, value, error, options, autoFocus
@@ -291,8 +345,8 @@ class Form extends React.Component {
       text: <Text {...props} />,
       password: <Password {...props} />,
       textarea: <TextArea {...props} />,
-      radio: <Radio {...props} />,
-      checkbox: <CheckBox {...props} />,
+      radio: <Radio {...props} isForm={true} />,
+      checkbox: <CheckBox {...props} isForm={true} />,
       select: <Select {...props} />,
       datepicker: <DatePicker {...props} />,
       switch: <Switch {...props} />,
@@ -300,7 +354,7 @@ class Form extends React.Component {
     };
   }
 
-  handleChange(value, name, validations) {
+  handleChange(value, name, validations, type) {
     const { onChange } = this.props;
 
     let error = null;
@@ -317,13 +371,13 @@ class Form extends React.Component {
       [Constants.GENERATE_ERROR_FIELD_KEY(name)]: error,
     });
 
-    if (onChange && typeof onChange === 'function') onChange(name, [`error-${name}`], value, error);
+    if (onChange && typeof onChange === 'function') onChange(name, Constants.GENERATE_ERROR_FIELD_KEY(name), value, error, type);
   }
 
-  handleBlur(value, error, name) {
+  handleBlur(value, error, name, validation, type) {
     const { onBlur } = this.props;
 
-    if (onBlur && typeof onBlur === 'function') onBlur(value, error, name);
+    if (onBlur && typeof onBlur === 'function') onBlur(value, error, name, validation, type);
   }
 
   renderButtons = (buttons) =>
@@ -355,11 +409,13 @@ class Form extends React.Component {
               ...element,
               index,
 
+              state: this.state,
+
               value: this.state[element.name],
               error: this.state[Constants.GENERATE_ERROR_FIELD_KEY(element.name)],
 
-              onChange: (value, name, validations) => this.handleChange(value, name, validations),
-              onBlur: (value, error, name) => this.handleBlur(value, error, name),
+              onChange: (_value, _name, _validations) => this.handleChange(_value, _name, _validations, element.type),
+              onBlur: (_value, _error, _name, _validation) => this.handleBlur(_value, _error, _name, _validation, element.type),
             })[element.type]
         )}
         {this.renderButtons(buttons)}
@@ -372,13 +428,13 @@ Form.propTypes = {
   name: propTypes.string,
   meta: propTypes.array,
   buttons: propTypes.array,
-  className: propTypes.string
+  className: propTypes.string,
 };
 
 Form.defaultProps = {
   name: 'customFormComponent',
   meta: [],
-  className: ''
+  className: '',
 };
 
 export default Form;
@@ -400,9 +456,9 @@ Text.propTypes = {
 Text.defaultProps = {
   className: {},
   validation: [],
-  onChange: ()=>null,
-  onBlur: ()=>null,
-}
+  onChange: () => null,
+  onBlur: () => null,
+};
 
 Password.propTypes = {
   name: propTypes.string,
@@ -421,9 +477,9 @@ Password.propTypes = {
 Password.defaultProps = {
   className: {},
   validation: [],
-  onChange: ()=>null,
-  onBlur: ()=>null,
-}
+  onChange: () => null,
+  onBlur: () => null,
+};
 
 TextArea.propTypes = {
   name: propTypes.string,
@@ -442,9 +498,9 @@ TextArea.propTypes = {
 TextArea.defaultProps = {
   className: {},
   validation: [],
-  onChange: ()=>null,
-  onBlur: ()=>null,
-}
+  onChange: () => null,
+  onBlur: () => null,
+};
 
 Radio.prototype = {
   name: propTypes.string,
@@ -457,16 +513,16 @@ Radio.prototype = {
   hidden: propTypes.bool,
   value: propTypes.string,
   error: propTypes.string,
-  options: propTypes.array
-}
+  options: propTypes.array,
+};
 
 Radio.defaultProps = {
   className: {},
   validation: [],
-  onChange: ()=>null,
-  onBlur: ()=>null,
-  options: []
-}
+  onChange: () => null,
+  onBlur: () => null,
+  options: [],
+};
 
 CheckBox.prototype = {
   name: propTypes.string,
@@ -479,16 +535,16 @@ CheckBox.prototype = {
   hidden: propTypes.bool,
   value: propTypes.string,
   error: propTypes.string,
-  options: propTypes.array
-}
+  options: propTypes.array,
+};
 
 CheckBox.defaultProps = {
   className: {},
   validation: [],
-  onChange: ()=>null,
-  onBlur: ()=>null,
-  options: []
-}
+  onChange: () => null,
+  onBlur: () => null,
+  options: [],
+};
 
 Select.prototype = {
   name: propTypes.string,
@@ -501,16 +557,16 @@ Select.prototype = {
   hidden: propTypes.bool,
   value: propTypes.string,
   error: propTypes.string,
-  options: propTypes.array
-}
+  options: propTypes.array,
+};
 
 Select.defaultProps = {
   className: {},
   validation: [],
-  onChange: ()=>null,
-  onBlur: ()=>null,
-  options: []
-}
+  onChange: () => null,
+  onBlur: () => null,
+  options: [],
+};
 
 DatePicker.prototype = {
   name: propTypes.string,
@@ -523,16 +579,16 @@ DatePicker.prototype = {
   hidden: propTypes.bool,
   value: propTypes.string,
   error: propTypes.string,
-  startDate: propTypes.string, 
-  endDate: propTypes.string
-}
+  startDate: propTypes.string,
+  endDate: propTypes.string,
+};
 
 DatePicker.defaultProps = {
   className: {},
   validation: [],
-  onChange: ()=>null,
-  onBlur: ()=>null,
-}
+  onChange: () => null,
+  onBlur: () => null,
+};
 
 Switch.prototype = {
   name: propTypes.string,
@@ -545,14 +601,14 @@ Switch.prototype = {
   hidden: propTypes.bool,
   value: propTypes.string,
   error: propTypes.string,
-}
+};
 
 Switch.defaultProps = {
   className: {},
   validation: [],
-  onChange: ()=>null,
-  onBlur: ()=>null,
-}
+  onChange: () => null,
+  onBlur: () => null,
+};
 
 Slider.prototype = {
   name: propTypes.string,
@@ -565,15 +621,15 @@ Slider.prototype = {
   hidden: propTypes.bool,
   value: propTypes.string,
   error: propTypes.string,
-  minValue: propTypes.number, 
-  maxValue: propTypes.number
-}
+  minValue: propTypes.number,
+  maxValue: propTypes.number,
+};
 
 Slider.defaultProps = {
   className: {},
   validation: [],
-  onChange: ()=>null,
-  onBlur: ()=>null,
-}
+  onChange: () => null,
+  onBlur: () => null,
+};
 
 export { Text, Password, TextArea, Radio, CheckBox, Select, DatePicker, Switch, Slider };
