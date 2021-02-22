@@ -1,0 +1,23 @@
+.rbc-documentation-table-root {
+
+}
+
+.rbc-documentation-table-head {
+    border: none !important;
+    background-color: rgb(216, 216, 216) !important;
+}
+
+.rbc-documentation-table-row {
+    border: none !important;
+}
+
+.rbc-documentation-table-row:hover {
+    background-color: rgb(226, 226, 226) !important;
+}
+
+.rbc-documentation-table-row:nth-child(even) {
+}
+
+.rbc-documentation-table-row:nth-child(odd) {
+    background-color: #f2f2f2;
+}

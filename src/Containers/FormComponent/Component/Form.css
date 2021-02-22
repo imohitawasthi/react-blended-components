@@ -506,3 +506,73 @@ input:checked + .rbc-form-input-switch-slider:before {
 }
 
 /* FORM SWITCH START END*/
+
+/* FORM SLIDER START */
+
+.rbc-form-input-slider-root {
+}
+
+.rbc-form-input-slider-group {
+  padding: 8px;
+}
+
+.rbc-form-input-slider-label {
+  display: block;
+  /* margin: 4px 8px; */
+
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.rbc-form-input-slider-field {
+  -webkit-appearance: none; 
+  appearance: none;
+  width: 100%; 
+  height: 12px;
+  border-radius: 25px; 
+  background: #ccc; 
+  outline: none; 
+  opacity: 0.7; 
+  -webkit-transition: .2s; 
+  transition: opacity .2s;
+}
+
+.rbc-form-input-slider-field::-webkit-slider-thumb {
+  -webkit-appearance: none; 
+  appearance: none;
+  width: 25px; 
+  height: 25px; 
+  background: #2f80ed; 
+  cursor: pointer; 
+
+  border-radius: 25px;
+}
+
+.rbc-form-input-slider-field::-moz-range-thumb {
+  width: 25px; 
+  height: 25px; 
+  background: #2f80ed; 
+  cursor: pointer; 
+
+  border-radius: 25px;
+}
+
+.rbc-form-input-slider-field:active {
+}
+
+.rbc-form-input-slider-field:focus {
+}
+
+.rbc-form-input-slider-field:hover {
+  opacity: 1; 
+}
+
+.rbc-form-input-slider-field::placeholder {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.rbc-form-input-slider-error {
+}
+
+/* FORM SLIDER START END*/

@@ -17,8 +17,12 @@ class DocumentationList extends React.Component {
 
   renderDemo = () => (
     <Table 
-      name='' 
-      className=''
+      name='tableDemo' 
+      className={{
+        rootClassName: "rbc-documentation-table-root",
+        headClassName: "rbc-documentation-table-head",
+        rowClassName: "rbc-documentation-table-row",
+      }}
       header={HEADER} 
       data={DATA}
     />

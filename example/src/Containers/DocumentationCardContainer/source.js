@@ -3,8 +3,6 @@ const CODE = `
 <Card 
   header="Lorem ipsum" 
   footer="Lorem ipsum" 
-  width="50%" 
-  align="CENTER"
   classNames={
     root: '',
     header: 'center',
@@ -36,9 +34,21 @@ const PROPS = [
     description: '',
   },
   {
+    attribute: 'hideHeader',
+    type: 'Boolean',
+    default: 'false',
+    description: '',
+  },
+  {
     attribute: 'footer',
     type: 'String | Element',
     default: '',
+    description: '',
+  },
+  {
+    attribute: 'hideFooter',
+    type: 'Boolean',
+    default: 'false',
     description: '',
   },
   {
@@ -122,47 +132,19 @@ const META = (renderDemo, renderDemoOptions) => [
   },
 ];
 
-const OPTION_CARD_WIDTH = [
+const OPTION_OTHER_CARD = [
   {
-    id: 'width-30',
-    label: '30%',
-    value: '30%',
+    id: 'hide-header',
+    label: 'Hide Header',
+    value: false,
   },
   {
-    id: 'width-50',
-    label: '50%',
-    value: '50%',
-  },
-  {
-    id: 'width-80',
-    label: '80%',
-    value: '80%',
-  },
-  {
-    id: 'width-100',
-    label: '100%',
-    value: '100%',
+    id: 'hide-footer',
+    label: 'Hide Footer',
+    value: false,
   },
 ];
 
-const OPTION_CARD_POSITION = [
-  {
-    id: 'width-left',
-    label: 'Left',
-    value: 'LEFT',
-  },
-  {
-    id: 'width-right',
-    label: 'Right',
-    value: 'RIGHT',
-  },
-  {
-    id: 'width-center',
-    label: 'Center',
-    value: 'CENTER',
-  },
-];
-
-export { OPTION_CARD_WIDTH, OPTION_CARD_POSITION };
+export { OPTION_OTHER_CARD };
 
 export default META;

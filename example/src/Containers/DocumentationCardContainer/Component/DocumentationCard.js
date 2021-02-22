@@ -4,7 +4,7 @@ import ChildLayout from '../../../Components/ChildLayout';
 
 import './DocumentationCard.css';
 
-import META, { OPTION_CARD_WIDTH, OPTION_CARD_POSITION } from '../source';
+import META, { OPTION_OTHER_CARD } from '../source';
 
 import { Card, FormElements } from 'react-blended-components';
 
@@ -13,15 +13,15 @@ class DocumentationCard extends React.Component {
     super(props);
 
     this.state = {
-      width: OPTION_CARD_WIDTH[OPTION_CARD_WIDTH.length - 1].value,
-      align: OPTION_CARD_POSITION[OPTION_CARD_POSITION.length - 1].value,
+      hideFooter: false,
+      hideHeader: false
     };
   }
 
   renderDemo = () => (
     <div className="row">
       <div className="col-12">
-        <Card header="Lorem ipsum" footer="Lorem ipsum" width={this.state.width} align={this.state.align}>
+        <Card header="Lorem ipsum" footer="Lorem ipsum" hideFooter={this.state.hideFooter} hideHeader={this.state.hideHeader}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum erat ex, ac pretium elit facilisis sed. Sed ligula arcu, commodo quis lectus
           in, mollis venenatis orci. Vivamus ac sollicitudin enim. 
         </Card>
@@ -29,38 +29,30 @@ class DocumentationCard extends React.Component {
     </div>
   );
 
-  cardWidth = () => (
-    <div className="col-12">
-      <FormElements.Radio
-        name="card-width"
-        label="Width"
-        onChange={(e) => {
-          this.setState({ width: e });
+  cardOptions = () => (
+    <div className="col-lg-12">
+      <FormElements.CheckBox
+        name="card-other"
+        label="Other"
+        onChange={(value, id) => {
+          if (id === `card-other-${OPTION_OTHER_CARD[0].id}`) {
+            this.setState((pState) => ({ hideHeader: !pState.hideHeader }));
+          } else if (id === `card-other-${OPTION_OTHER_CARD[1].id}`) {
+            this.setState((pState) => ({ hideFooter: !pState.hideFooter }));
+          }
         }}
-        value={this.state.width}
-        options={OPTION_CARD_WIDTH}
-      />
-    </div>
-  );
-
-  cardPosition = () => (
-    <div className="col-12">
-      <FormElements.Radio
-        name="card-align"
-        label="Align"
-        onChange={(e) => {
-          this.setState({ align: e });
+        value={{
+          [OPTION_OTHER_CARD[0].id]: this.state.hideHeader,
+          [OPTION_OTHER_CARD[1].id]: this.state.hideFooter,
         }}
-        value={this.state.align}
-        options={OPTION_CARD_POSITION}
+        options={OPTION_OTHER_CARD}
       />
     </div>
   );
 
   renderDemoOptions = () => (
     <div className="row">
-      {this.cardWidth()}
-      {this.cardPosition()}
+      {this.cardOptions()}
     </div>
   );
 

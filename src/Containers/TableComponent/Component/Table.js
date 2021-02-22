@@ -27,11 +27,13 @@ class Table extends React.Component {
   }
 
   render() {
-    const { name, classNames, header, data, defaultValue } = this.props;
+    const { name, className, header, data, defaultValue, onRowClick } = this.props;
+
+    const { rootClassName, headClassName, rowClassName } = className;
 
     return (
-      <table name={name} className={`${Styles['rbc-table']} ${classNames.root || ''}`}>
-        <tr className={`${Styles['rbc-table-head']} ${classNames.head}`}>
+      <table name={name} className={`${Styles['rbc-table']} ${rootClassName || ''}`}>
+        <tr className={`${Styles['rbc-table-head']} ${headClassName || ''}`}>
           {header.map((element, index) => {
             const styles = element.thStyle || {};
             const width = this.state.width ? (element.width / this.state.width) * 100 : null;
@@ -45,7 +47,12 @@ class Table extends React.Component {
         </tr>
         {data.map((elements, index) => {
           return (
-            <tr key={index} id={index} className={`${Styles['rbc-table-body']} ${classNames.row} ${index % 2 === 0 ? 'rowEven' : 'rowOdd'}`}>
+            <tr
+              key={index}
+              id={index}
+              className={`${Styles['rbc-table-body']} ${rowClassName || ''} ${index % 2 === 0 ? 'row-even' : 'row-odd'}`}
+              onClick={onRowClick}
+            >
               {header.map((element, i) =>
                 element.element ? (
                   <td key={i} style={element.tdStyle}>
@@ -67,14 +74,21 @@ class Table extends React.Component {
 
 Table.propTypes = {
   name: propTypes.string.isRequired,
-  classNames: propTypes.object,
+  className: propTypes.object,
   header: propTypes.array.isRequired,
   data: propTypes.array.isRequired,
-  defaultValue: propTypes.string
+  defaultValue: propTypes.string,
+  onRowClick: propTypes.func,
 };
 
 Table.defaultProps = {
-  classNames: {}
+  className: {
+    rootClassName: '',
+    headClassName: '',
+    rowClassName: '',
+  },
+  defaultValue: '-',
+  onRowClick: () => null,
 };
 
 export default Table;
