@@ -334,14 +334,14 @@ const META_FORM = [
       rootClassName: 'col-6',
     },
   },
-  // {
-  //   name: 'sliderFieldEnthusiasm',
-  //   label: 'Enthusiasm',
-  //   type: 'slider',
-  //   className: {
-  //     rootClassName: 'col-12',
-  //   },
-  // },
+  {
+    name: 'sliderFieldEnthusiasm',
+    label: 'Enthusiasm',
+    type: 'slider',
+    className: {
+      rootClassName: 'col-12',
+    },
+  },
 ];
 
 const META_FORM_STRUCTURE = [

@@ -3,29 +3,29 @@
 }
 
 .rbc-example-layout-heading {
-  font-size: 24px;
-  line-height: 28px;
+  font-size: 23px;
+  line-height: 37px;
 
   margin: 12px 0px;
 }
 
 .rbc-example-layout-sub-heading {
   font-size: 18px;
-  line-height: 21px;
+  line-height: 30px;
 
   margin: 16px 0px;
 }
 
 .rbc-example-layout-content {
   font-size: 14px;
-  line-height: 16px;
+  line-height: 24px;
 
   margin: 16px 0px;
 }
 
 .rbc-example-layout-remark {
   font-size: 14px;
-  line-height: 16px;
+  line-height: 24px;
 
   color: #828282;
 
@@ -38,7 +38,7 @@
 
 .rbc-example-layout-code {
   font-size: 14px;
-  line-height: 16px;
+  line-height: 24px;
 
   margin: 16px 0px;
   padding: 18px;
@@ -68,7 +68,7 @@
 
 .rbc-example-layout-example {
   font-size: 14px;
-  line-height: 16px;
+  line-height: 24px;
 
   margin: 16px 0px;
   padding: 8px;
@@ -79,7 +79,7 @@
 
 .rbc-example-layout-custom {
   font-size: 14px;
-  line-height: 16px;
+  line-height: 24px;
 
   margin: 16px 0px;
 }

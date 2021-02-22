@@ -5,7 +5,7 @@
   background-color: #ffffff;
   border-radius: 2px;
 
-  box-shadow: 3px 3px 6px 1px rgba(51,51,51,0.2);
+  box-shadow: 2px 2px 4px 0px rgba(51,51,51,0.25);
 
   margin: 0 auto;
 
@@ -15,7 +15,7 @@
 }
 
 .rbc-card:hover {
-  box-shadow: 3px 3px 6px 1px rgba(51,51,51,0.25);
+  box-shadow: 2px 2px 4px 0px rgba(51,51,51,0.35);
 }
 
 /* CARD BASIC END */
@@ -25,10 +25,13 @@
 .rbc-card-head {
   text-align: left;
   color: #333333;
-  font-size: 16px;
+
+  font-size: 18px;
+  line-height: 30px;
+
   font-weight: 600;
 
-  padding: 10px 10px;
+  padding: 16px;
 
   border-bottom: 1px #E2E2E2 solid ;
   border-radius: 2px;
@@ -41,10 +44,12 @@
 .rbc-card-child {
   text-align: left;
   color: #333333;
+
   font-size: 14px;
+  line-height: 24px;
   font-weight: 500;
 
-  padding: 10px 10px;
+  padding: 16px;
 }
 
 /* CARD CHILD END */
@@ -54,10 +59,12 @@
 .rbc-card-foot {
   text-align: left;
   color: #333333;
-  font-size: 10px;
+
+  font-size: 11px;
+  line-height: 19px;
   font-weight: 500;
 
-  padding: 10px 10px;
+  padding: 16px;
 
   border-top: 1px #E2E2E2 solid ;
   border-radius: 2px;

@@ -30,10 +30,10 @@ class Button extends React.Component {
     const { id, children, type, style, className, disabled, size, onClick } = this.props
 
     const buttonClass = `
+        ${className || ''}
         ${Styles['rbc-button']}
         ${Styles[TYPE_BUTTON_COMPONENT[type].className] || ''} 
         ${Styles[SIZE_BUTTON_COMPONENT[size].className] || ''} 
-        ${className || ''}
     `
 
     return (

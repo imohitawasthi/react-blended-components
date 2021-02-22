@@ -7,16 +7,7 @@ import Styles from './Card.css';
 
 class Card extends React.Component {
   render() {
-    const {
-      classNames,
-      styles,
-      header,
-      footer,
-      children,
-      align,
-      width,
-      height,
-    } = this.props;
+    const { classNames, styles, header, footer, children, hideHeader, hideFooter } = this.props;
 
     const classes = {
       root: ` ${Styles['rbc-card']} ${classNames.rootClass || ''} `,
@@ -30,18 +21,15 @@ class Card extends React.Component {
       header: styles.headStyle || {},
       child: styles.childStyle || {},
       footer: styles.footStyle || {},
-    }
+    };
 
     const rootStyle = {
       ...style.root,
-      float: align === 'CENTER' ? '' : align === 'LEFT' ? 'left' : align === 'RIGHT' ? 'right' : null,
-      width: width,
-      height: height,
     };
 
     return (
       <div className={classes.root} style={rootStyle}>
-        {header ? (
+        {header && !hideHeader ? (
           <div className={classes.header} style={style.header}>
             {header}
           </div>
@@ -49,7 +37,7 @@ class Card extends React.Component {
         <div className={classes.child} style={style.child}>
           {children}
         </div>
-        {footer ? (
+        {footer && !hideFooter ? (
           <div className={classes.footer} style={style.footer}>
             {footer}
           </div>
@@ -62,6 +50,8 @@ class Card extends React.Component {
 Card.propTypes = {
   classNames: propTypes.string,
   styles: propTypes.object,
+  hideHeader: propTypes.bool,
+  hideFooter: propTypes.bool,
   header: propTypes.oneOfType([propTypes.string, propTypes.element]),
   footer: propTypes.oneOfType([propTypes.string, propTypes.element]),
   children: propTypes.oneOfType([propTypes.string, propTypes.element]).isRequired,
@@ -75,6 +65,8 @@ Card.defaultProps = {
   styles: {},
   header: '',
   footer: '',
+  hideHeader: false,
+  hideFooter: false,
 };
 
 export default Card;

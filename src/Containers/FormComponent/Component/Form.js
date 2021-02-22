@@ -239,7 +239,7 @@ const formInputSwitchElement = (props, classes) => (
           onChange={(e) => props.onChange(!!!props.value, props.name, props.validation)}
           onBlur={() => props.onBlur(!!!props.value, props.error, props.name, props.validation)}
         />
-        <span className={Styles["rbc-form-input-switch-slider"]}></span>
+        <span className={Styles['rbc-form-input-switch-slider']}></span>
       </label>
       <span className={classes.errorClass}>{props.error}</span>
     </div>
@@ -251,17 +251,18 @@ const formInputSliderElement = (props, classes) => (
   <div key={props.index} className={`${classes.rootClass} ${props.error ? VALIDATION_FAILED : ''}`} style={makeHidden(props.hidden)}>
     <div className={classes.groupClass}>
       {props.label ? <label className={classes.labelClass}>{props.label}</label> : null}
-      <div name={props.name} autoFocus={props.autoFocus} disabled={props.disabled || false} className={classes.fieldClass}>
-        <input
-          type="range"
-          min={props.minValue}
-          max={props.maxValue}
-          value={props.value}
-          class="slider"
-          onChange={(e) => props.onChange(e.target.value, props.name, props.validation)}
-          onBlur={() => props.onBlur(props.value, props.error, props.name, props.validation)}
-        />
-      </div>
+      <input
+        type="range"
+        name={props.name}
+        autoFocus={props.autoFocus}
+        disabled={props.disabled || false}
+        className={classes.fieldClass}
+        min={props.minValue}
+        max={props.maxValue}
+        value={props.value}
+        onChange={(e) => props.onChange(e.target.value, props.name, props.validation)}
+        onBlur={() => props.onBlur(props.value, props.error, props.name, props.validation)}
+      />
       <span className={classes.errorClass}>{props.error}</span>
     </div>
   </div>
