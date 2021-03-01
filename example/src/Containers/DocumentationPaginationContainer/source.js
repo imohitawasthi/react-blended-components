@@ -1,126 +1,58 @@
 const CODE = `
 
-<Dialog
-  active={this.state.showDialog}
-  onClose={() => this.setState({ showDialog: false })}
-  onHide={() => this.setState({ showDialog: false })}
-  header="Sample Dialogs' Header"
-  footer="Sample Dialogs' Footer"
-  body={
-    <div className="row">
-      Cras a velit iaculis, faucibus ante et, ultricies ante. Maecenas, consequat. 
-      Quisque non enim varius, gravida metus quis. Phasellus in nibh fermentum, 
-      condimentum felis nec, euismod arcu. Proin. Mauris congue cursus ultricies, 
-      tellus erat ultrices neque, leo, varius in feugiat nec, interdum vel urna.
-    </div>
+<Pagination
+  limit={this.state.limit}
+  offset={this.state.offset}
+  total={this.state.total}
+  onPageChange={(action) =>
+    action === 'back' ? this.setState((p) => ({ offset: p.offset - p.limit })) : this.setState((p) => ({ offset: p.offset + p.limit }))
   }
-  size="SMALL"
-  hideClose={false}
+  type={"BASIC"}
 />
 
 `;
 
 const PROPS = [
   {
-    attribute: 'active',
-    type: 'boolean',
+    attribute: 'type',
+    type: 'String',
     default: '-',
-    description: 'Show/hide dialog.',
+    description: 'Pagination type, One of BASIC | ONLY-NAVIGATION | BUTTON | CURRENT_PAGE',
   },
   {
-    attribute: 'onClose',
-    type: 'Functions',
+    attribute: 'limit',
+    type: 'Number',
     default: '-',
-    description: 'Callback on closing the modal',
+    description: 'Page size',
   },
   {
-    attribute: 'onHide',
-    type: 'Functions',
-    default: '',
-    description: 'Callback on clinking outside of the modal',
+    attribute: 'offset',
+    type: 'Number',
+    default: '-',
+    description: 'Page Offset',
   },
   {
-    attribute: 'size',
-    type: 'String',
-    default: 'NORMAL',
-    description: 'Modal Size, use any of: NORMAL | SMALL | LARGE | EXTRA-LARGE. Defines width of the dialog.',
+    attribute: 'total',
+    type: 'Number',
+    default: '-',
+    description: 'Total number of elements',
   },
   {
-    attribute: 'background',
-    type: 'String',
-    default: '',
-    description: 'Dialogs background color.',
-  },
-  {
-    attribute: 'hideClose',
-    type: 'Boolean',
-    default: '',
-    description: 'Hide close button on top left of the dialog.',
-  },
-  {
-    attribute: 'header',
-    type: 'String | Element',
-    default: '',
-    description: 'Dialog\'s Header.',
-  },
-  {
-    attribute: 'headerClass',
-    type: 'String',
-    default: '',
-    description: 'This class will be applied on the header.',
-  },
-  {
-    attribute: 'headerStyle',
-    type: 'Object',
-    default: '',
-    description: 'React styles, will get applied on the header.',
-  },
-  {
-    attribute: 'body',
-    type: 'String | Element',
-    default: '',
-    description: 'Dialog\'s Header.',
-  },
-  {
-    attribute: 'bodyClass',
-    type: 'String',
-    default: '',
-    description: 'This class will be applied on the body.',
-  },
-  {
-    attribute: 'bodyStyle',
-    type: 'Object',
-    default: '',
-    description: 'React styles, will get applied on the body.',
-  },
-  {
-    attribute: 'footer',
-    type: 'String | Element',
-    default: '',
-    description: 'Dialog\'s footer.',
-  },
-  {
-    attribute: 'footerClass',
-    type: 'String',
-    default: '',
-    description: 'This class will be applied on the footer.',
-  },
-  {
-    attribute: 'footerStyle',
-    type: 'Object',
-    default: '',
-    description: 'React styles, will get applied on the footer.',
-  },
+    attribute: 'onPageChange',
+    type: 'Function',
+    default: '-',
+    description: 'Callback, on page change (Next/back)',
+  }
 ];
 
 const META = (renderDemo, renderOptions) => [
   {
     type: 'HEADING',
-    render: 'Form',
+    render: 'Pagination',
   },
   {
     type: 'REMARK',
-    render: `A warping element for some awesome content.`,
+    render: `Element for controlling/loading multi-page components.`,
   },
   {
     type: 'SPACING',
@@ -160,6 +92,29 @@ const META = (renderDemo, renderOptions) => [
   }
 ];
 
-export { }
+const OPTION_TYPE_PAGINATION = [
+  {
+    id: 'BASIC',
+    label: 'BASIC',
+    value: "BASIC",
+  },
+  {
+    id: 'ONLY-NAVIGATION',
+    label: 'ONLY NAVIGATION',
+    value: "ONLY-NAVIGATION",
+  },
+  {
+    id: 'BUTTON',
+    label: 'BUTTON',
+    value: "BUTTON",
+  },
+  {
+    id: 'CURRENT-PAGE',
+    label: 'CURRENT PAGE',
+    value: "CURRENT-PAGE",
+  },
+]
+
+export { OPTION_TYPE_PAGINATION }
 
 export default META;

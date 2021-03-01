@@ -4,7 +4,7 @@ import ChildLayout from '../../../Components/ChildLayout';
 
 import './DocumentationList.css';
 
-import META, { HEADER, DATA } from '../source';
+import META, { HEADER, DATA, META_FORM_STRUCTURE } from '../source';
 
 import { Table } from 'react-blended-components';
 
@@ -14,6 +14,23 @@ class DocumentationList extends React.Component {
 
     this.state = {};
   }
+
+  renderMetaStructure = () => (
+    <div className="rbc-documentation-form-meta-structure">
+      {META_FORM_STRUCTURE.map((e, i) => (
+        <div key={i}>
+          <div className="rbc-documentation-form-meta-structure-heading">
+            {e.label}
+          </div>
+          <div className="rbc-documentation-form-meta-structure-body">
+            <code>
+              {e.code}
+            </code>
+          </div>
+        </div>
+      ))}
+    </div>
+  )
 
   renderDemo = () => (
     <Table 
@@ -39,7 +56,7 @@ class DocumentationList extends React.Component {
   );
 
   render() {
-    return <ChildLayout meta={META(this.renderDemo, this.renderOptions)} />
+    return <ChildLayout meta={META(this.renderDemo, this.renderOptions, this.renderMetaStructure)} />
   }
 }
 

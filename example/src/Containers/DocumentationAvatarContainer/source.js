@@ -1,126 +1,55 @@
 const CODE = `
 
-<Dialog
-  active={this.state.showDialog}
-  onClose={() => this.setState({ showDialog: false })}
-  onHide={() => this.setState({ showDialog: false })}
-  header="Sample Dialogs' Header"
-  footer="Sample Dialogs' Footer"
-  body={
-    <div className="row">
-      Cras a velit iaculis, faucibus ante et, ultricies ante. Maecenas, consequat. 
-      Quisque non enim varius, gravida metus quis. Phasellus in nibh fermentum, 
-      condimentum felis nec, euismod arcu. Proin. Mauris congue cursus ultricies, 
-      tellus erat ultrices neque, leo, varius in feugiat nec, interdum vel urna.
-    </div>
-  }
-  size="SMALL"
-  hideClose={false}
+<Avatar 
+  round={true} 
+  name="Sample Avatar" 
+  size={50} 
+  fontSize={20} 
 />
 
 `;
 
 const PROPS = [
   {
-    attribute: 'active',
-    type: 'boolean',
+    attribute: 'round',
+    type: 'Boolean',
     default: '-',
-    description: 'Show/hide dialog.',
+    description: 'Controls shape',
   },
   {
-    attribute: 'onClose',
-    type: 'Functions',
+    attribute: 'name',
+    type: 'String',
     default: '-',
-    description: 'Callback on closing the modal',
+    description: 'Avatar Display Name',
   },
   {
-    attribute: 'onHide',
-    type: 'Functions',
-    default: '',
-    description: 'Callback on clinking outside of the modal',
+    attribute: 'src',
+    type: 'String',
+    default: '-',
+    description: 'Path to image to display. Preferred over name(initials)',
   },
   {
     attribute: 'size',
-    type: 'String',
-    default: 'NORMAL',
-    description: 'Modal Size, use any of: NORMAL | SMALL | LARGE | EXTRA-LARGE. Defines width of the dialog.',
+    type: 'Number',
+    default: '-',
+    description: 'Size of Avatar',
   },
   {
-    attribute: 'background',
-    type: 'String',
-    default: '',
-    description: 'Dialogs background color.',
-  },
-  {
-    attribute: 'hideClose',
-    type: 'Boolean',
-    default: '',
-    description: 'Hide close button on top left of the dialog.',
-  },
-  {
-    attribute: 'header',
-    type: 'String | Element',
-    default: '',
-    description: "Dialog's Header.",
-  },
-  {
-    attribute: 'headerClass',
-    type: 'String',
-    default: '',
-    description: 'This class will be applied on the header.',
-  },
-  {
-    attribute: 'headerStyle',
-    type: 'Object',
-    default: '',
-    description: 'React styles, will get applied on the header.',
-  },
-  {
-    attribute: 'body',
-    type: 'String | Element',
-    default: '',
-    description: "Dialog's Header.",
-  },
-  {
-    attribute: 'bodyClass',
-    type: 'String',
-    default: '',
-    description: 'This class will be applied on the body.',
-  },
-  {
-    attribute: 'bodyStyle',
-    type: 'Object',
-    default: '',
-    description: 'React styles, will get applied on the body.',
-  },
-  {
-    attribute: 'footer',
-    type: 'String | Element',
-    default: '',
-    description: "Dialog's footer.",
-  },
-  {
-    attribute: 'footerClass',
-    type: 'String',
-    default: '',
-    description: 'This class will be applied on the footer.',
-  },
-  {
-    attribute: 'footerStyle',
-    type: 'Object',
-    default: '',
-    description: 'React styles, will get applied on the footer.',
-  },
+    attribute: 'fontSize',
+    type: 'Number',
+    default: '-',
+    description: 'Font size for Initials',
+  }
 ];
 
 const META = (renderDemo, renderOptions) => [
   {
     type: 'HEADING',
-    render: 'Form',
+    render: 'Avatar',
   },
   {
     type: 'REMARK',
-    render: `A warping element for some awesome content.`,
+    render: `Is used to mean a virtual representation of a user.`,
   },
   {
     type: 'SPACING',
@@ -134,10 +63,10 @@ const META = (renderDemo, renderOptions) => [
     type: 'CONTENT',
     render: renderDemo(),
   },
-  {
-    type: 'EXAMPLE',
-    render: renderOptions(),
-  },
+  // {
+  //   type: 'EXAMPLE',
+  //   render: renderOptions(),
+  // },
   {
     type: 'SUB_HEADING',
     render: 'Code',

@@ -23,7 +23,7 @@ class DocumentationDialog extends React.Component {
 
   renderDemo = () => (
     <div className="center">
-      <Button size="LARGE" onClick={() => this.setState({ showDialog: true })}>
+      <Button size="NORMAL" onClick={() => this.setState({ showDialog: true })}>
         SHOW DIALOG
       </Button>
     </div>

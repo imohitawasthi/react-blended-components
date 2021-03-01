@@ -19,14 +19,14 @@ const PROPS = [
   {
     attribute: 'blockUI',
     type: 'Boolean',
-    default: '-',
+    default: 'true',
     description: 'Switch between inline and modal view of loader.',
   },
   {
     attribute: 'type',
     type: 'String',
     default: 'BARS',
-    description: 'Loader type, use any of: BARS | CIRCLE | DOT-SPIN | DOT-BOUNCE | DOT-CIRCLE.',
+    description: 'Loader type, use any of: BARS | CIRCLE | SPINNER | DOTS.',
   },
   {
     attribute: 'message',
@@ -63,11 +63,11 @@ const PROPS = [
 const META = (renderDemo, renderOptions) => [
   {
     type: 'HEADING',
-    render: 'Card',
+    render: 'Loader',
   },
   {
     type: 'REMARK',
-    render: `A warping element for some awesome content.`,
+    render: `A loader is a major component of an operating system that ensures all necessary programs and libraries are loaded.`,
   },
   {
     type: 'SPACING',

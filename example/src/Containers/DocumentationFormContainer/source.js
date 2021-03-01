@@ -12,53 +12,29 @@ const CODE = `
 
 const PROPS = [
   {
-    attribute: 'active',
-    type: 'Boolean',
+    attribute: 'name',
+    type: 'String',
     default: '-',
-    description: 'Show/hide dialog.',
+    description: 'Name of the form',
   },
   {
-    attribute: 'blockUI',
-    type: 'Boolean',
+    attribute: 'meta',
+    type: 'Object',
     default: '-',
-    description: 'Switch between inline and modal view of loader.',
+    description: 'Form is created based on this meta, see "Meta Structure" for more.',
   },
   {
-    attribute: 'type',
-    type: 'String',
-    default: 'BARS',
-    description: 'Loader type, use any of: BARS | CIRCLE | DOT-SPIN | DOT-BOUNCE | DOT-CIRCLE.',
+    attribute: 'onChange',
+    type: 'Function',
+    default: '-',
+    description: 'Callback on change',
   },
   {
-    attribute: 'message',
-    type: 'String',
+    attribute: 'onBlur',
+    type: 'Function',
     default: '',
-    description: 'Message to show while screen is loading.',
-  },
-  {
-    attribute: 'headerClass',
-    type: 'String',
-    default: '',
-    description: 'Message class.',
-  },
-  {
-    attribute: 'headerStyle',
-    type: 'String',
-    default: '',
-    description: 'Message style.',
-  },
-  {
-    attribute: 'bodyClass',
-    type: 'String',
-    default: '',
-    description: 'Loader class.',
-  },
-  {
-    attribute: 'bodyStyle',
-    type: 'Style',
-    default: '',
-    description: 'Loader style',
-  },
+    description: 'Callback on blur',
+  }
 ];
 
 const META = (renderDemo, renderMetaStructure) => [
@@ -68,7 +44,7 @@ const META = (renderDemo, renderMetaStructure) => [
   },
   {
     type: 'REMARK',
-    render: `A warping element for some awesome content.`,
+    render: `Allows to create dynamic forms with meta-data. Also, each element in form can be used independently.`,
   },
   {
     type: 'SPACING',
@@ -511,27 +487,29 @@ const META_FORM_STRUCTURE = [
     `
   },
   {
-    label: "",
+    label: "Switch",
     code: `
-
+      {
+        name: 'switchFieldPartyMode',
+        label: 'Party Mode',
+        type: 'switch',
+        className: {
+          rootClassName: 'col-6',
+        },
+      }
     `
   },
   {
-    label: "",
+    label: "Slider",
     code: `
-
-    `
-  },
-  {
-    label: "",
-    code: `
-
-    `
-  },
-  {
-    label: "",
-    code: `
-
+      {
+        name: 'sliderFieldEnthusiasm',
+        label: 'Enthusiasm',
+        type: 'slider',
+        className: {
+          rootClassName: 'col-12',
+        },
+      }
     `
   }
 ]

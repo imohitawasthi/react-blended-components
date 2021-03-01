@@ -63,7 +63,7 @@ class DocumentationLoader extends React.Component {
       {this.state.showLoader ? (
         <Loader active={this.state.showLoader} type={this.state.type} blockUI={this.state.blockUI} />
       ) : (
-        <Button size="LARGE" onClick={() => this.setState({ showDialog: true }, () => this.startTimer())}>
+        <Button size="NORMAL" onClick={() => this.setState({ showDialog: true }, () => this.startTimer())}>
           SHOW LOADER
         </Button>
       )}

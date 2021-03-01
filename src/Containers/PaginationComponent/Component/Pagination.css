@@ -1,11 +1,15 @@
 
 .rbc-pagination {
-    display: inline-table;
+    display: inline-flex;
     text-align: center;
     vertical-align: middle;
 }
 
 .rbc-pagination-content {
+    /* display: flex; */
+}
+
+.rbc-pagination-content-root {
     display: flex;
 }
 

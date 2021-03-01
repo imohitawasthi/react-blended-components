@@ -1,6 +1,8 @@
 import React from 'react';
 import propTypes, { element } from 'prop-types';
 
+import Button from '../../ButtonComponent';
+
 import Constants from '../../../Blended/Constants';
 
 import Styles from './Pagination.css';
@@ -13,44 +15,132 @@ const iconForward =
 const TYPE_PAGINATION_COMPONENT = {
   BASIC: 'BASIC',
   NAVIGATION_BUTTONS: 'ONLY-NAVIGATION',
-  PAGES: 'PAGES',
+  // PAGES: 'PAGES',
   BUTTON: 'BUTTON',
-  CURRENT_PAGE: 'CURRENT_PAGE'
-}
+  CURRENT_PAGE: 'CURRENT-PAGE',
+};
 
 class Pagination extends React.Component {
-  render() {
-    const { rootClassName, contentClassName, icons, element, limit, offset, total, onPageChange } = this.props;
-
+  renderBackButton = () => {
+    const { icons, limit, offset, onPageChange } = this.props;
     const disableBack = offset - limit > 0 ? false : true;
+
+    return (
+      <div className={`${Styles['rbc-pagination-icon-back']} ${disableBack ? Styles['rbc-pagination-icon-back-disabled'] : ''}`}>
+        {icons && icons.back ? icons.back : <img className={Styles['rbc-pagination-icon-back-icon']} src={iconBack} onClick={() => onPageChange('back')} />}
+      </div>
+    );
+  };
+
+  renderForwardButton = () => {
+    const { icons, limit, offset, total, onPageChange } = this.props;
+
     const disableForward = offset + limit < total ? false : true;
 
     return (
+      <div className={`${Styles['rbc-pagination-icon-forward']} ${disableForward ? Styles['rbc-pagination-icon-forward-disabled'] : ''}`}>
+        {icons && icons.forward ? (
+          icons.forward
+        ) : (
+          <img className={Styles['rbc-pagination-icon-forward-icon']} src={iconForward} onClick={() => onPageChange('forward')} />
+        )}
+      </div>
+    );
+  };
+
+  paginationBasic = () => {
+    const { limit, offset, total } = this.props;
+
+    return (
+      <div className={Styles['rbc-pagination-content-root']}>
+        {this.renderBackButton()}
+        <div className={Styles['rbc-pagination-icon-element']}>{`${(offset || 0) + 1} - ${(offset || 0) + (limit || 0) || 0} of ${total}`}</div>
+        {this.renderForwardButton()}
+      </div>
+    );
+  };
+
+  paginationButtons = () => {
+    return (
+      <div className={Styles['rbc-pagination-content-root']}>
+        {this.renderBackButton()}
+        {this.renderForwardButton()}
+      </div>
+    );
+  };
+
+  paginationCurrentPage = () => {
+    const { offset, limit } = this.props;
+
+    return (
+      <div className={Styles['rbc-pagination-content-root']}>
+        {this.renderBackButton()}
+        <div className={Styles['rbc-pagination-icon-element']}>{`${offset && limit ? offset / limit : 0}`}</div>
+        {this.renderForwardButton()}
+      </div>
+    );
+  };
+
+  paginationButton = () => {
+    const { onPageChange } = this.props;
+
+    return (
+      <Button size={'NORMAL'} type={'PRIMARY'} onClick={() => onPageChange('forward')}>
+        Load More
+      </Button>
+    );
+  };
+
+  // paginationPages = () => {
+  //   const { limit, offset, total } = this.props;
+
+  //   const getInitialPages = () => {
+
+  //     let added = []
+  //     let page = []
+
+  //     for( let i=0; i<3; i++ ) {
+  //       if ( i < total ) {
+  //         page.push(<span>{i+1}</span>)
+  //         added.push(i)
+  //       }
+  //     }
+
+  //     return (
+  //       ``
+  //     )
+  //   }
+
+  //   return (
+  //     <div className={Styles['rbc-pagination-content-root']}>
+  //       {this.renderBackButton()}
+  //       <div className={Styles['rbc-pagination-icon-element']}>{`${(offset || 0) + 1} - ${(offset || 0) + (limit || 0) || 0} of ${total}`}</div>
+  //       {this.renderForwardButton()}
+  //     </div>
+  //   );
+  // };
+
+  render() {
+    const { rootClassName, contentClassName, type } = this.props;
+
+    const mapPagination = {
+      [TYPE_PAGINATION_COMPONENT.BASIC]: this.paginationBasic(),
+      [TYPE_PAGINATION_COMPONENT.NAVIGATION_BUTTONS]: this.paginationButtons(),
+      [TYPE_PAGINATION_COMPONENT.CURRENT_PAGE]: this.paginationCurrentPage(),
+      [TYPE_PAGINATION_COMPONENT.BUTTON]: this.paginationButton(),
+      // [TYPE_PAGINATION_COMPONENT.PAGES]: this.paginationPages(),
+    };
+
+    return (
       <div className={`${Styles['rbc-pagination']} ${rootClassName || ''}`}>
-        <div className={`${Styles['rbc-pagination-content']} ${contentClassName || ''}`}>
-          <div className={`${Styles['rbc-pagination-icon-back']} ${disableBack ? Styles['rbc-pagination-icon-back-disabled'] : ''}`}>
-            {icons && icons.back ? icons.back : <img className={Styles['rbc-pagination-icon-back-icon']} src={iconBack} onClick={() => onPageChange('back')} />}
-          </div>
-          {element ? (
-            element
-          ) : (
-            <div className={Styles['rbc-pagination-icon-element']}>{`${(offset || 0) + 1} - ${(offset || 0) + (limit || 0) || 0} of ${total}`}</div>
-          )}
-          <div className={`${Styles['rbc-pagination-icon-forward']} ${disableForward ? Styles['rbc-pagination-icon-forward-disabled'] : ''}`}>
-            {icons && icons.forward ? (
-              icons.forward
-            ) : (
-              <img className={Styles['rbc-pagination-icon-forward-icon']} src={iconForward} onClick={() => onPageChange('forward')} />
-            )}
-          </div>
-        </div>
+        <div className={`${Styles['rbc-pagination-content']} ${contentClassName || ''}`}>{mapPagination[type]}</div>
       </div>
     );
   }
 }
 
 Pagination.propTypes = {
-  // type:
+  type: propTypes.oneOf(TYPE_PAGINATION_COMPONENT),
   rootClassName: propTypes.string,
   contentClassName: propTypes.string,
   icons: propTypes.object,
@@ -61,6 +151,8 @@ Pagination.propTypes = {
   onPageChange: propTypes.func.isRequired,
 };
 
-Pagination.defaultProps = {};
+Pagination.defaultProps = {
+  type: TYPE_PAGINATION_COMPONENT.BASIC,
+};
 
 export default Pagination;
