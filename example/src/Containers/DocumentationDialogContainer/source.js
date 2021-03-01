@@ -116,11 +116,11 @@ const PROPS = [
 const META = (renderDemo, renderOptions) => [
   {
     type: 'HEADING',
-    render: 'Card',
+    render: 'Dialog',
   },
   {
     type: 'REMARK',
-    render: `A warping element for some awesome content.`,
+    render: `Creates a mode that disables the main window but keeps it visible, with the modal window as a child window in front of it.`,
   },
   {
     type: 'SPACING',

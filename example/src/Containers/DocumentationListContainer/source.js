@@ -1,126 +1,53 @@
 const CODE = `
 
-<Dialog
-  active={this.state.showDialog}
-  onClose={() => this.setState({ showDialog: false })}
-  onHide={() => this.setState({ showDialog: false })}
-  header="Sample Dialogs' Header"
-  footer="Sample Dialogs' Footer"
-  body={
-    <div className="row">
-      Cras a velit iaculis, faucibus ante et, ultricies ante. Maecenas, consequat. 
-      Quisque non enim varius, gravida metus quis. Phasellus in nibh fermentum, 
-      condimentum felis nec, euismod arcu. Proin. Mauris congue cursus ultricies, 
-      tellus erat ultrices neque, leo, varius in feugiat nec, interdum vel urna.
-    </div>
-  }
-  size="SMALL"
-  hideClose={false}
+<Table 
+  name='tableDemo' 
+  className={{
+    rootClassName: "",
+    headClassName: "",
+    rowClassName: "",
+  }}
+  header={ /* SEE HEADER META */ } 
+  data={ /* SEE DATA META */ }
 />
 
 `;
 
 const PROPS = [
   {
-    attribute: 'active',
-    type: 'boolean',
-    default: '-',
-    description: 'Show/hide dialog.',
-  },
-  {
-    attribute: 'onClose',
-    type: 'Functions',
-    default: '-',
-    description: 'Callback on closing the modal',
-  },
-  {
-    attribute: 'onHide',
-    type: 'Functions',
-    default: '',
-    description: 'Callback on clinking outside of the modal',
-  },
-  {
-    attribute: 'size',
+    attribute: 'name',
     type: 'String',
-    default: 'NORMAL',
-    description: 'Modal Size, use any of: NORMAL | SMALL | LARGE | EXTRA-LARGE. Defines width of the dialog.',
+    default: '-',
+    description: 'Name of table',
   },
   {
-    attribute: 'background',
-    type: 'String',
-    default: '',
-    description: 'Dialogs background color.',
-  },
-  {
-    attribute: 'hideClose',
-    type: 'Boolean',
-    default: '',
-    description: 'Hide close button on top left of the dialog.',
+    attribute: 'className',
+    type: 'Object',
+    default: '-',
+    description: 'Class Object for over-writing default classes. Object can have "rootClassName", "headClassName", and "rowClassName" as property.',
   },
   {
     attribute: 'header',
-    type: 'String | Element',
-    default: '',
-    description: 'Dialog\'s Header.',
-  },
-  {
-    attribute: 'headerClass',
-    type: 'String',
-    default: '',
-    description: 'This class will be applied on the header.',
-  },
-  {
-    attribute: 'headerStyle',
     type: 'Object',
     default: '',
-    description: 'React styles, will get applied on the header.',
+    description: 'See Header Meta-Data',
   },
   {
-    attribute: 'body',
-    type: 'String | Element',
-    default: '',
-    description: 'Dialog\'s Header.',
-  },
-  {
-    attribute: 'bodyClass',
-    type: 'String',
-    default: '',
-    description: 'This class will be applied on the body.',
-  },
-  {
-    attribute: 'bodyStyle',
+    attribute: 'data',
     type: 'Object',
     default: '',
-    description: 'React styles, will get applied on the body.',
-  },
-  {
-    attribute: 'footer',
-    type: 'String | Element',
-    default: '',
-    description: 'Dialog\'s footer.',
-  },
-  {
-    attribute: 'footerClass',
-    type: 'String',
-    default: '',
-    description: 'This class will be applied on the footer.',
-  },
-  {
-    attribute: 'footerStyle',
-    type: 'Object',
-    default: '',
-    description: 'React styles, will get applied on the footer.',
+    description: 'See data Meta-Data',
   },
 ];
 
-const META = (renderDemo, renderOptions) => [
+const META = (renderDemo, renderOptions, renderMetaStructure) => [
   {
     type: 'HEADING',
-    render: 'Form',
+    render: 'List',
   },
   {
     type: 'REMARK',
-    render: `A warping element for some awesome content.`,
+    render: `An arrangement of data in rows and columns, or possibly in a more complex structure.`,
   },
   {
     type: 'SPACING',
@@ -145,6 +72,14 @@ const META = (renderDemo, renderOptions) => [
   {
     type: 'DEMO_CODE',
     render: CODE,
+  },
+  {
+    type: 'SUB_HEADING',
+    render: 'Meta Structure',
+  },
+  {
+    type: 'DEMO_CODE',
+    render: renderMetaStructure(),
   },
   {
     type: 'SUB_HEADING',
@@ -212,6 +147,69 @@ const DATA = [
   }
 ]
 
-export { HEADER, DATA }
+const META_FORM_STRUCTURE = [
+  {
+    label: "Header",
+    code: `
+      const HEADER = [
+        {
+          label: 'S.No.',
+          dataKey: 'sNo',
+          thStyle: {}
+        },
+        {
+          label: 'First Name',
+          dataKey: 'firstName',
+          thStyle: {}
+        },
+        {
+          label: 'Last Name',
+          dataKey: 'lastName',
+          thStyle: {}
+        },
+        {
+          label: 'favorite superhero',
+          dataKey: 'favoriteSuperhero',
+          thStyle: {}
+        },
+        {
+          label: 'Black or White',
+          dataKey: 'bOrW',
+          thStyle: {}
+        }
+      ]
+    `
+  },
+  {
+    label: 'Data',
+    code: `
+      const DATA = [
+        {
+          sNo: 1,
+          firstName: 'Demo',
+          lastName: 'One',
+          favoriteSuperhero: 'Spider Man',
+          bOrW: 'Black'
+        },
+        {
+          sNo: 2,
+          firstName: 'demonstrace',
+          lastName: 'Two',
+          favoriteSuperhero: 'Iron Man',
+          bOrW: 'Black'
+        },
+        {
+          sNo: 3,
+          firstName: 'demonstration',
+          lastName: 'Three',
+          favoriteSuperhero: 'Bob the builder',
+          bOrW: 'White'
+        }
+      ]
+    `
+  }
+]
+
+export { HEADER, DATA, META_FORM_STRUCTURE }
 
 export default META;

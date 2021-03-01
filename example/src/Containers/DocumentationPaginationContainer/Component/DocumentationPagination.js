@@ -4,9 +4,9 @@ import ChildLayout from '../../../Components/ChildLayout';
 
 import './DocumentationPagination.css';
 
-import META from '../source';
+import META, { OPTION_TYPE_PAGINATION } from '../source';
 
-import { Pagination } from 'react-blended-components';
+import { Pagination, FormElements } from 'react-blended-components';
 
 class DocumentationPagination extends React.Component {
   constructor(props) {
@@ -16,10 +16,25 @@ class DocumentationPagination extends React.Component {
       limit: 10,
       offset: 0,
       total: 100,
+      type: 'BASIC',
     };
   }
 
-  renderOptions = () => <div className="row"></div>;
+  paginationType = () => (
+    <div className="col-lg-12">
+      <FormElements.Radio
+        name="pagination-type"
+        label="Type"
+        onChange={(e) => {
+          this.setState({ type: e });
+        }}
+        value={this.state.type}
+        options={OPTION_TYPE_PAGINATION}
+      />
+    </div>
+  );
+
+  renderOptions = () => <div className="row">{this.paginationType()}</div>;
 
   renderDemo = () => (
     <div className="center">
@@ -30,6 +45,7 @@ class DocumentationPagination extends React.Component {
         onPageChange={(action) =>
           action === 'back' ? this.setState((p) => ({ offset: p.offset - p.limit })) : this.setState((p) => ({ offset: p.offset + p.limit }))
         }
+        type={this.state.type}
       />
     </div>
   );
