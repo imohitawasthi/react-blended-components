@@ -1,0 +1,306 @@
+@import "./theme";
+// -- Fonts
+
+// Font color
+.font-color-black {
+    color: $color-black;
+}
+
+.font-color-white {
+    color: $color-white;
+}
+
+.font-color-h-I {
+    color: $color-h-I;
+}
+
+.font-color-h-II {
+    color: $color-h-II;
+}
+
+.font-color-h-III {
+    color: $color-h-III;
+}
+
+.font-color-primary {
+    color: $color-primary;
+}
+
+// Font Style
+.font-style-semi-bold {
+    font-weight: 500;
+}
+
+.font-style-bold {
+    font-weight: 600;
+}
+
+.font-style-italic {
+    font-style: italic;
+}
+
+// Font Size
+.font-size-footnote {
+    font-size: 13px;
+    line-height: 23px;
+}
+
+.font-size-base {
+    font-size: 16px;
+    line-height: 27px;
+}
+
+.font-size-heading {
+    font-size: 20px;
+    line-height: 33px;
+}
+
+.font-size-big-heading {
+    font-size: 26px;
+    line-height: 42px;
+}
+
+.font-size-title {
+    font-size: 33px;
+    line-height: 52px;
+}
+
+.font-size-big-title {
+    font-size: 42px;
+    line-height: 65px;
+}
+
+// -- Background
+
+.background-main {
+    background-color: $color-background;
+}
+
+// -- Animation
+
+.animation-transition-ease {
+    transition: all 0.25s ease;
+}
+
+// -- Dimensions
+
+.height-match-parent {
+    height: 100%;
+}
+
+.height-match-view-port {
+    height: 100vh;
+}
+
+.width-match-parent {
+    width: 100%;
+}
+
+.width-match-view-port {
+    width: 100vh;
+}
+
+// -- Paddings
+
+.padding-0 {
+    padding: 0px;
+}
+
+.padding-4 {
+    padding: 4px;
+}
+
+.padding-8 {
+    padding: 8px;
+}
+
+.padding-16 {
+    padding: 16px;
+}
+
+.padding-32 {
+    padding: 32px;
+}
+
+.padding-lr-4 {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.padding-lr-8 {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.padding-lr-16 {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.padding-lr-32 {
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.padding-tb-8 {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.padding-tb-16 {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.padding-tb-32 {
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+// -- Padding Mixed
+
+.padding-32-64 {
+    padding: 32px 64px;
+}
+
+// -- Negative Padding on LR and TB
+
+.padding-n-lr-8 {
+    padding-left: -8px;
+    padding-right: -8px;
+}
+
+.padding-n-lr-16 {
+    padding-left: -16px;
+    padding-right: -16px;
+}
+
+.padding-n-lr-32 {
+    padding-left: -32px;
+    padding-right: -32px;
+}
+
+.padding-n-tb-8 {
+    padding-top: -8px;
+    padding-bottom: -8px;
+}
+
+.padding-n-tb-16 {
+    padding-top: -16px;
+    padding-bottom: -16px;
+}
+
+.padding-n-tb-32 {
+    padding-top: -32px;
+    padding-bottom: -32px;
+}
+
+// -- Margins 
+
+.margin-0 {
+    margin: 0px;
+}
+
+.margin-8 {
+    margin: 8px;
+}
+
+.margin-16 {
+    margin: 16px;
+}
+
+.margin-32 {
+    margin: 32px;
+}
+
+.margin-lr-4 {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.margin-lr-8 {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.padding-lr-16 {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.margin-lr-32 {
+    margin-left: 32px;
+    margin-right: 32px;
+}
+
+.margin-tb-8 {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.margin-tb-16 {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.margin-tb-32 {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+// Negative Margin TB and LR
+
+.margin-n-lr-4 {
+    margin-left: -4px;
+    margin-right: -4px;
+}
+
+.margin-n-lr-8 {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.margin-n-lr-16 {
+    margin-left: -16px;
+    margin-right: -16px;
+}
+
+.margin-n-lr-32 {
+    margin-left: -32px;
+    margin-right: -32px;
+}
+
+.margin-n-tb-8 {
+    margin-top: -8px;
+    margin-bottom: -8px;
+}
+
+.margin-n-tb-16 {
+    margin-top: -16px;
+    margin-bottom: -16px;
+}
+
+.margin-n-tb-32 {
+    margin-top: -32px;
+    margin-bottom: -32px;
+}
+
+// Boarder Radius
+
+.border-radius-4 {
+    border-radius: 4px;
+}
+
+.border-radius-2 {
+    border-radius: 2px;
+}
+
+// No data message
+
+.no-data-message {
+    display: flex;
+
+    justify-content: center;
+
+    @extend .padding-16;
+}

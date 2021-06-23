@@ -1,8 +1,6 @@
 import React, { createRef } from 'react';
 import propTypes from 'prop-types';
 
-import Styles from './index.css';
-
 // const MODAL_SIZE = {
 //   NORMAL: '60%'
 // }
@@ -45,12 +43,12 @@ class Modal extends React.Component {
     return (
       <div 
         id="rbc-modal" 
-        className={`${Styles['rbc-modal']} ${active ? Styles['rbc-modal-active'] : Styles['rbc-modal-hidden']}`}
+        className={`${'rbc-modal'} ${active ? 'rbc-modal-active' : 'rbc-modal-hidden'}`}
         style={rootStyles}
       >
-        <div className={Styles['rbc-modal-content']} ref={this.refModal} style={contentStyles}>
+        <div className={'rbc-modal-content'} ref={this.refModal} style={contentStyles}>
           {!hideClose ? (
-            <span className={Styles['rbc-modal-close']} onClick={() => onClose()}>
+            <span className={'rbc-modal-close'} onClick={() => onClose()}>
               &times;
             </span>
           ) : null}
@@ -63,7 +61,7 @@ class Modal extends React.Component {
 
 export const ModalHead = ({ className, style, children }) => {
   return (
-    <div className={`${Styles['rbc-modal-header']} ${className || ''}`} style={style || {}}>
+    <div className={`${'rbc-modal-header'} ${className || ''}`} style={style || {}}>
       {children}
     </div>
   );
@@ -71,7 +69,7 @@ export const ModalHead = ({ className, style, children }) => {
 
 export const ModalBody = ({ className, style, children }) => {
   return (
-    <div className={`${Styles['rbc-modal-body']} ${className || ''}`} style={style || {}}>
+    <div className={`${'rbc-modal-body'} ${className || ''}`} style={style || {}}>
       {children}
     </div>
   );
@@ -79,7 +77,7 @@ export const ModalBody = ({ className, style, children }) => {
 
 export const ModalFoot = ({ className, style, children }) => {
   return (
-    <div className={`${Styles['rbc-modal-footer']} ${className || ''}`} style={style || {}}>
+    <div className={`${'rbc-modal-footer'} ${className || ''}`} style={style || {}}>
       {children}
     </div>
   );

@@ -1,6 +1,6 @@
 {
   "name": "react-blended-components",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "React Blended Components",
   "author": "Mohit Awasthi",
   "license": "MIT",
@@ -51,6 +51,7 @@
     "dist"
   ],
   "dependencies": {
+    "node-sass": "^6.0.0",
     "prop-types": "^15.7.2"
   }
 }

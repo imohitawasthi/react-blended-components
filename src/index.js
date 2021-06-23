@@ -1,5 +1,6 @@
 import React from 'react'
-import styles from './styles.module.css'
+
+import './Theme/styles/index.scss'
 
 import Validator from './Blended/Validator'
 
