@@ -42,18 +42,18 @@ const META = (renderDemo, renderMetaStructure) => [
     type: 'HEADING',
     render: 'Form',
   },
-  {
-    type: 'REMARK',
-    render: `Allows to create dynamic forms with meta-data. Also, each element in form can be used independently.`,
-  },
+  // {
+  //   type: 'REMARK',
+  //   render: `Allows to create dynamic forms with meta-data. Also, each element in form can be used independently.`,
+  // },
   {
     type: 'SPACING',
     style: { padding: 4 },
   },
-  {
-    type: 'SUB_HEADING',
-    render: 'Demo',
-  },
+  // {
+  //   type: 'SUB_HEADING',
+  //   render: 'Demo',
+  // },
   {
     type: 'CONTENT',
     render: renderDemo(),

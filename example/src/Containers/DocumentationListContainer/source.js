@@ -45,18 +45,18 @@ const META = (renderDemo, renderOptions, renderMetaStructure) => [
     type: 'HEADING',
     render: 'List',
   },
-  {
-    type: 'REMARK',
-    render: `An arrangement of data in rows and columns, or possibly in a more complex structure.`,
-  },
+  // {
+  //   type: 'REMARK',
+  //   render: `An arrangement of data in rows and columns, or possibly in a more complex structure.`,
+  // },
   {
     type: 'SPACING',
     style: {padding: 4}
   },
-  {
-    type: 'SUB_HEADING',
-    render: 'Demo',
-  },
+  // {
+  //   type: 'SUB_HEADING',
+  //   render: 'Demo',
+  // },
   {
     type: 'CONTENT',
     render: renderDemo()

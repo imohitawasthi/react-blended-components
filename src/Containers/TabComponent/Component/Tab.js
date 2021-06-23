@@ -8,30 +8,34 @@ import Button from '../../ButtonComponent'
 import Styles from './Tab.css'
 
 class Tab extends React.Component {
-  tabElement = (element, index, selectedTab) => (
-    <div className={element.rootClass} key={index}>
-      <Button
-        type={element.type || 'BASIC'}
-        size={element.size || 'NORMAL'}
-        className={`${element.className} ${selectedTab === index ? 'tab-selected' : ''}`}
-        style={{ borderRadius: 0, ...element.style }}
-        disable={element.disable || false}
-        onClick={()=>element.onClick(element)}
-      >
-        {element.label}
-      </Button>
-    </div>
-  )
+  tabElement = (element, index, selectedTab) => {
+
+    console.log(selectedTab === index, selectedTab, index)
+    return (
+      <div className={element.rootClass} key={index}>
+        <Button
+          type={element.type || 'TRANSPARENT'}
+          size={element.size || 'NORMAL'}
+          className={`${element.className} ${selectedTab === index ? Styles['rbc-tab-selected'] : ''}`}
+          style={{ borderRadius: 0, ...element.style }}
+          disable={element.disable || false}
+          onClick={()=>element.onClick({ ...element, index })}
+        >
+          {element.label}
+        </Button>
+      </div>
+    )
+  }
 
   subTabElement = (subElement, index, subIndex, selectedTab, selectedSubTab) => (
     <div className={subElement.rootClass} key={`${index}-${subIndex}`}>
       <Button
-        type={subElement.type || 'BASIC'}
+        type={subElement.type || 'TRANSPARENT'}
         size={subElement.size || 'NORMAL'}
         className={`${subElement.className} ${selectedSubTab === subIndex && selectedTab === index ? 'sub-tab-selected' : ''}`}
         style={{ borderRadius: 0, ...subElement.style }}
         disable={subElement.disable || false}
-        onClick={()=>subElement.onClick(subElement)}
+        onClick={()=>subElement.onClick({ ...subElement, index })}
       >
         {subElement.label}
       </Button>

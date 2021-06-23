@@ -1,5 +1,5 @@
 
-import Tabs from "./Component/Tabs"
+import Tabs from "./Component/DocumentationTabs"
 
 export default Tabs
 

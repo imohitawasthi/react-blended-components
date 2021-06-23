@@ -50,18 +50,18 @@ const META = (renderDemo, renderOptions) => [
     type: 'HEADING',
     render: 'Pagination',
   },
-  {
-    type: 'REMARK',
-    render: `Element for controlling/loading multi-page components.`,
-  },
+  // {
+  //   type: 'REMARK',
+  //   render: `Element for controlling/loading multi-page components.`,
+  // },
   {
     type: 'SPACING',
     style: {padding: 4}
   },
-  {
-    type: 'SUB_HEADING',
-    render: 'Demo',
-  },
+  // {
+  //   type: 'SUB_HEADING',
+  //   render: 'Demo',
+  // },
   {
     type: 'CONTENT',
     render: renderDemo()

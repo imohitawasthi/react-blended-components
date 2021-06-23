@@ -1,6 +1,8 @@
 .rbc-example-navigation-root {}
 
-.rbc-example-navigation-container {}
+.rbc-example-navigation-container {
+  display: block !important;
+}
 
 .rbc-example-navigation-tab {
   font-size: 16px !important;
@@ -14,6 +16,7 @@
   background: transparent !important;
 
   border-left: 0px solid #e0e0e0 !important;
+  border-bottom: none !important;
 }
 
 .rbc-example-navigation-tab:active {

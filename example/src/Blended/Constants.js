@@ -13,6 +13,7 @@ const MAP_NAVIGATION = {
     },
     'DOCUMENTATION': {
         self: 'documentation',
+        // Order should be same as defined in the navigation meta
         sub: {
             'BUTTON': 'button',
             'CARD': 'card',
@@ -22,10 +23,10 @@ const MAP_NAVIGATION = {
             'LIST': 'list',
             'PAGINATION': 'pagination',
             'AVATAR': 'avatar',
-            'SNACK_BAR': 'snack-bar',
+            // 'SNACK_BAR': 'snack-bar',
             'TABS': 'tabs',
-            'TOOL_TIP': 'tooltip',
-            'TOAST': 'toast',
+            // 'TOOL_TIP': 'tooltip',
+            // 'TOAST': 'toast',
             'BREADCRUMB': 'breadcrumb',
             'STEPS': 'steps',
             'BADGE': 'badge'

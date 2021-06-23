@@ -90,18 +90,18 @@ const META = (renderDemo, renderDemoOptions) => [
     type: 'HEADING',
     render: 'Card',
   },
-  {
-    type: 'REMARK',
-    render: `A warping element for some awesome content.`,
-  },
+  // {
+  //   type: 'REMARK',
+  //   render: `A warping element for some awesome content.`,
+  // },
   {
     type: 'SPACING',
     style: {padding: 4}
   },
-  {
-    type: 'SUB_HEADING',
-    render: 'Demo',
-  },
+  // {
+  //   type: 'SUB_HEADING',
+  //   render: 'Demo',
+  // },
   {
     type: 'CONTENT',
     render: renderDemo(),

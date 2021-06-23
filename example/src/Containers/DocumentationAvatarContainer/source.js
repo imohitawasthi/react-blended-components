@@ -47,18 +47,18 @@ const META = (renderDemo, renderOptions) => [
     type: 'HEADING',
     render: 'Avatar',
   },
-  {
-    type: 'REMARK',
-    render: `Is used to mean a virtual representation of a user.`,
-  },
+  // {
+  //   type: 'REMARK',
+  //   render: `Is used to mean a virtual representation of a user.`,
+  // },
   {
     type: 'SPACING',
     style: { padding: 4 },
   },
-  {
-    type: 'SUB_HEADING',
-    render: 'Demo',
-  },
+  // {
+  //   type: 'SUB_HEADING',
+  //   render: 'Demo',
+  // },
   {
     type: 'CONTENT',
     render: renderDemo(),

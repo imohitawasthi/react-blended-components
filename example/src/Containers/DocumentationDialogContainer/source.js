@@ -118,18 +118,18 @@ const META = (renderDemo, renderOptions) => [
     type: 'HEADING',
     render: 'Dialog',
   },
-  {
-    type: 'REMARK',
-    render: `Creates a mode that disables the main window but keeps it visible, with the modal window as a child window in front of it.`,
-  },
+  // {
+  //   type: 'REMARK',
+  //   render: `Creates a mode that disables the main window but keeps it visible, with the modal window as a child window in front of it.`,
+  // },
   {
     type: 'SPACING',
     style: {padding: 4}
   },
-  {
-    type: 'SUB_HEADING',
-    render: 'Demo',
-  },
+  // {
+  //   type: 'SUB_HEADING',
+  //   render: 'Demo',
+  // },
   {
     type: 'CONTENT',
     render: renderDemo()

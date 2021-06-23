@@ -60,18 +60,18 @@ const META = (demo, demoOptions) => [
     type: 'HEADING',
     render: 'Button',
   },
-  {
-    type: 'REMARK',
-    render: `Describes an action and what action will occur when clicked.`,
-  },
+  // {
+  //   type: 'REMARK',
+  //   render: `Describes an action and what action will occur when clicked.`,
+  // },
   {
     type: 'SPACING',
     style: {padding: 4}
   },
-  {
-    type: 'SUB_HEADING',
-    render: 'Demo',
-  },
+  // {
+  //   type: 'SUB_HEADING',
+  //   render: 'Demo',
+  // },
   {
     type: 'CONTENT',
     render: demo(),

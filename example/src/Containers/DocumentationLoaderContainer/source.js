@@ -65,18 +65,18 @@ const META = (renderDemo, renderOptions) => [
     type: 'HEADING',
     render: 'Loader',
   },
-  {
-    type: 'REMARK',
-    render: `A loader is a major component of an operating system that ensures all necessary programs and libraries are loaded.`,
-  },
+  // {
+  //   type: 'REMARK',
+  //   render: `A loader is a major component of an operating system that ensures all necessary programs and libraries are loaded.`,
+  // },
   {
     type: 'SPACING',
     style: {padding: 4}
   },
-  {
-    type: 'SUB_HEADING',
-    render: 'Demo',
-  },
+  // {
+  //   type: 'SUB_HEADING',
+  //   render: 'Demo',
+  // },
   {
     type: 'CONTENT',
     render: renderDemo()
