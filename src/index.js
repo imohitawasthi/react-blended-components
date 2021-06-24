@@ -2,43 +2,8 @@ import React from 'react'
 
 import './Theme/styles/index.scss'
 
-import Validator from './Blended/Validator'
-
-import Button from './Containers/ButtonComponent'
-import Card from './Containers/CardComponent'
-import Dialog from './Containers/DialogComponent'
-import Loader from './Containers/LoaderComponent'
-import Avatar from './Containers/AvatarComponent'
-import Pagination from './Containers/PaginationComponent'
-import Tab from './Containers/TabComponent'
-import Table from './Containers/TableComponent'
-import Badge from './Containers/BadgeComponent'
-import Steps from './Containers/StepsComponent'
-import Toast from './Containers/ToastComponent'
-import Breadcrumb from './Containers/BreadcrumbComponent'
-import Tooltip from './Containers/TooltipComponent'
-
-import Form, { Text, Password, TextArea, Radio, CheckBox, Select, DatePicker, Switch } from './Containers/FormComponent'
-
-const FormElements = { Text, Password, TextArea, Radio, CheckBox, Select, DatePicker, Switch }
+import Dummy from './Containers/dummyContainer'
 
 export {
-  Validator,
-  
-  Button,
-  Card,
-  Dialog, 
-  Loader,
-  Avatar,
-  Pagination,
-  Tab,
-  Table,
-  Badge,
-  Steps,  
-  Toast,
-  Breadcrumb,
-  Tooltip,
-
-  Form,
-  FormElements
+    Dummy
 }
